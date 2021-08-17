@@ -1,9 +1,9 @@
 .h3 {
   font-size: 24px;
   background: #a46ffe;
+  background: linear-gradient(120deg, #a46ffe 3%, #ef69c3 10%);
   background: -webkit-linear-gradient(120deg, #a46ffe 3%, #ef69c3 10%);
   background: -moz-linear-gradient(120deg, #a46ffe 3%, #ef69c3 10%);
-  background: linear-gradient(120deg, #a46ffe 3%, #ef69c3 10%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

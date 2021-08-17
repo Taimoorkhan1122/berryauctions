@@ -1,0 +1,95 @@
+.container {
+  width: 335px;
+  background: #fff;
+  border-radius: 10px;
+  margin: auto;
+  overflow: hidden;
+}
+.imgContainer{
+    height: 335px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer img{
+    object-fit: contain;
+}
+
+.bottomContainer {
+    padding: 18px 22px 12px;
+}
+
+.bottomContainer .heading {
+    font-family: Noto Sans CJK KR;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 15px 0 23px;
+}
+
+.avatarContainer {
+    border-radius: 50px;
+    border: none;
+    height: 56px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 8px 0 0;
+}
+
+.avatarContainer img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #eeeded;
+}
+
+.avatarContainer span {
+    padding-left: 12px;
+    color: #666666;
+}
+
+.detailsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px;
+    background: #fff;
+    border-top: 1px solid #f2f2f2;
+}
+
+.dark {
+    background: #000;
+    border: none;
+}
+
+.detailsContainer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsContainer > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.detailsContainer > div > span {
+    font-size: 20px;
+    display: flex;
+}
+
+.detailsContainer > div h3 {
+    font-family: Noto Sans CJK KR;
+    font-size: 15px;
+    margin: 0 0 13px 0;
+}
+
+
+.circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    background: #a46ffe;
+    background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 100%);
+    margin-right: 10px;
+}
