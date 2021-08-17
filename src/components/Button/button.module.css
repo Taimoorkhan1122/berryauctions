@@ -1,0 +1,18 @@
+.btn {
+    height: 60px;
+    border-radius: 50px;
+    font-family: Noto Sans CJK KR;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: black;
+    color: #fff;
+    border: none;
+}
+
+.secondary {
+    background-color: white;
+    color: #000;
+    border: 2px solid #000;
+}
