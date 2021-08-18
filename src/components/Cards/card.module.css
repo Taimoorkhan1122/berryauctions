@@ -16,6 +16,16 @@
     object-fit: contain;
 }
 
+.artistImg {
+    height: 190px;
+}
+
+.artistImg img {
+    object-fit: cover;
+    width: 100%;
+    height: 190px;
+}
+
 .bottomContainer {
     padding: 18px 22px 12px;
 }
@@ -47,6 +57,23 @@
 .avatarContainer span {
     padding-left: 12px;
     color: #666666;
+}
+
+.artistAvatar {
+    width: 87px;
+    height: 87px;
+    background: #ffffff;
+    margin-top: -60px;
+    /* z-index: 100; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistAvatar img {
+    width: 76px;
+    height: 76px;
 }
 
 .detailsContainer {
@@ -92,4 +119,10 @@
     background: #a46ffe;
     background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 100%);
     margin-right: 10px;
+}
+.infoContainer{
+    margin: 10px 0 20px;
+}
+.infoContainer h3 {
+    margin: 0;
 }

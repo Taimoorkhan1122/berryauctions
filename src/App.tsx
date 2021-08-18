@@ -2,6 +2,7 @@ import React from 'react';
 
 import Avatar from './components/Avatar/Avatar';
 import Button from './components/Button/Button';
+import ArtistCard from './components/Cards/ArtistCard';
 import AuctionCard from './components/Cards/AuctionCard';
 import MajorWorkCard from './components/Cards/MajorWorkCard';
 import GradText from './components/GradText/GradText';
@@ -25,6 +26,15 @@ function App() {
     price: "0.555 BBD",
     owner: "0x42f3...aaa5",
   };
+  const data3 = {
+    heading: "Show me what you got",
+    imgLink: nftimg,
+    avatar: link,
+    username: "박기웅",
+    profession: "Arttrainer",
+    totalWork: 28,
+    about: '잘 알려진 작품은 2006년 스카이 휴대폰 CF에서 보여 준 일명 맷돌춤. 춤 출 때의 손의 위치가 돌하르방의 손 의 위치와 비슷해서 돌하르방 춤, 돌하르방 댄스 라고도 하며 배경 음악 가사가 "동충하초 동충하초"로 들린...',
+  };
   return (
     <div className="container">
       <h1 className="heading">
@@ -36,7 +46,9 @@ function App() {
       <Avatar /><br />
       <GradText>Arttrainer</GradText> <br />
       <AuctionCard data={data} /> <br />
-      <MajorWorkCard data={data2}/>
+      <MajorWorkCard data={data2}/> <br />
+      <ArtistCard {...data3}/>
+      <br />
     </div>
   );
 }
