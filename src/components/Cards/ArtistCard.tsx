@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import Button from "../Button/Button";
+import Button, { BtnType } from "../Button/Button";
 import GradText from "../GradText/GradText";
 
 import styles from "./card.module.css";
@@ -37,7 +37,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
           <h3>{username}</h3>
           <GradText>{profession}</GradText>
         </div>
-        <p>{about}</p>
+        <p className={styles.about}>{about}</p>
       </div>
       <div className={classNames(styles.detailsContainer)}>
         <div>
@@ -45,7 +45,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
           <h3 style={{ color: "#666666" }}>작품</h3>
         </div>
         <div>
-          <Button text="작품보기" width="150px" primary={true} />
+          <Button text="작품보기" width="150px" btnType={BtnType.TERTIARY} />
         </div>
       </div>
     </div>

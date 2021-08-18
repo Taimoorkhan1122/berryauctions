@@ -33,7 +33,7 @@
 .bottomContainer .heading {
     font-family: Noto Sans CJK KR;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 15px 0 23px;
 }
 
@@ -42,7 +42,7 @@
     border: none;
     height: 56px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin: 8px 0 0;
 }
@@ -126,3 +126,5 @@
 .infoContainer h3 {
     margin: 0;
 }
+
+

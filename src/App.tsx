@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Avatar from './components/Avatar/Avatar';
-import Button from './components/Button/Button';
+import Button, { BtnType } from './components/Button/Button';
 import ArtistCard from './components/Cards/ArtistCard';
 import AuctionCard from './components/Cards/AuctionCard';
 import MajorWorkCard from './components/Cards/MajorWorkCard';
@@ -40,14 +40,16 @@ function App() {
       <h1 className="heading">
         Starting development <span>hello</span>
       </h1>
-      <Button primary={true} width="285px" text="경매 참여하기" />
-      <Button primary={false} width="223px" text="작품보기" />
+      <Button btnType={BtnType.PRIMARY} width="285px" text="경매 참여하기" />
+      <Button btnType={BtnType.SECONDARY} width="223px" text="작품보기" />
+      <Button btnType={BtnType.TERTIARY} width="223px" text="작품보기" />
       <Avatar src={link} username="Taimoor khan" />
-      <Avatar /><br />
+      <Avatar />
+      <br />
       <GradText>Arttrainer</GradText> <br />
       <AuctionCard data={data} /> <br />
-      <MajorWorkCard data={data2}/> <br />
-      <ArtistCard {...data3}/>
+      <MajorWorkCard data={data2} /> <br />
+      <ArtistCard {...data3} />
       <br />
     </div>
   );

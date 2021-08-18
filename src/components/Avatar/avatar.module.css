@@ -3,7 +3,7 @@
     border: 1px solid #e6e6e6;
     height: 56px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px  12px;
 }
