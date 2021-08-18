@@ -1,0 +1,38 @@
+.headerContainer {
+  width: 100%;
+}
+
+.navbar {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  padding: 36px 0;
+}
+
+.linksContainer {
+  display: flex;
+}
+
+.linksContainer > button {
+  margin-left: 120px;
+}
+
+.linklist {
+  display: flex;
+  list-style-type: none;
+}
+
+.linklist a {
+  margin-left: 46px;
+
+  font-family: Noto Sans CJK KR;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+}
+
+.linklist a.active {
+    color: rgb(0, 0, 0);
+}

@@ -21,9 +21,9 @@
 .footerBottom {
   padding-top: 25px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .footerBottom p {
-  margin: 0 30px;
+  margin: 5px 30px 0;
 }
