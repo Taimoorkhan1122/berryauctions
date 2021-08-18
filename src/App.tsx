@@ -5,6 +5,7 @@ import Button, { BtnType } from './components/Button/Button';
 import ArtistCard from './components/Cards/ArtistCard';
 import AuctionCard from './components/Cards/AuctionCard';
 import MajorWorkCard from './components/Cards/MajorWorkCard';
+import Footer from './components/Footer/Footer';
 import GradText from './components/GradText/GradText';
 import  nftimg from './images/nft.png';
 
@@ -49,7 +50,8 @@ function App() {
       <GradText>Arttrainer</GradText> <br />
       <AuctionCard data={data} /> <br />
       <MajorWorkCard data={data2} /> <br />
-      <ArtistCard {...data3} />
+      <ArtistCard {...data3} /> <br />
+      <Footer />
       <br />
     </div>
   );

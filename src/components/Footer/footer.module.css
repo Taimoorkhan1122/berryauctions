@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  background: #000;
+}
+
+.footerContainer {
+  padding: 56px 0;
+  margin: auto;
+  max-width: 80%;
+
+  @media (min-width: 1500px) {
+    max-width: 1440px;
+  }
+}
+
+.footerDetails {
+  border-bottom: 1px solid #333333;
+  padding-bottom: 56px;
+}
+
+.footerBottom {
+  padding-top: 25px;
+  display: flex;
+  align-items: baseline;
+}
+
+.footerBottom p {
+  margin: 0 30px;
+}

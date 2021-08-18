@@ -1,0 +1,9 @@
+.logoContainer {
+    margin: 0;
+}
+
+.logoContainer span {
+    font-family: Song Myung;
+    font-size: 23px;
+    font-weight: normal;
+}
