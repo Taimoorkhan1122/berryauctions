@@ -3,11 +3,16 @@
 }
 
 .navbar {
-  max-width: 1440px;
   display: flex;
   justify-content: space-between;
-  margin: 0 20px;
   padding: 36px 0;
+  width: 95%;
+  margin: auto; 
+
+  @media (min-width: 1440px;) {
+    max-width: 1440px;
+   margin: auto;  
+  }
 }
 
 .linksContainer {

@@ -6,9 +6,9 @@
 .footerContainer {
   padding: 56px 0;
   margin: auto;
-  max-width: 80%;
+  width: 95%;
 
-  @media (min-width: 1500px) {
+  @media (min-width: 1440px) {
     max-width: 1440px;
   }
 }

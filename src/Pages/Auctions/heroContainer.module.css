@@ -1,0 +1,93 @@
+h3 {
+  font-size: 36px;
+  font-family: "Song Myung";
+  color: rgb(0, 0, 0);
+  line-height: 0.667;
+  margin: 21px 0;
+}
+
+.small {
+  font-size: 15px;
+  font-family: "Noto Sans CJK KR";
+  color: rgb(102, 102, 102);
+  line-height: 1.6;
+}
+
+.headerContainer {
+  max-width: 1440px;
+  display: flex;
+  margin: auto;
+}
+
+.imageContainer {
+  padding: 10px 118px;
+}
+
+.imageContainer img {
+  width: 450px;
+}
+
+.contentContainer {
+  padding-right: 113px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 94px 117px 0 16px;
+}
+
+.contentContainer .author {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  & > div {
+    margin-right: 23px;
+  }
+}
+
+.contentContainer .heroHeading {
+  font-size: 60px;
+  font-weight: normal;
+  font-family: "Song Myung";
+  color: rgb(0, 0, 0);
+  line-height: 0.4;
+  margin: 34px 0 50px 0;
+}
+
+.contentContainer .auctionDetails {
+  display: flex;
+}
+
+.contentContainer .auctionDetails .pricing {
+  width: 100%;
+  & > span {
+    font-size: 15px;
+    font-family: "Noto Sans CJK KR";
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+  }
+}
+
+.contentContainer .auctionDetails .timeLeft {
+  width: 100%;
+  & .time {
+    display: flex;
+    width: 100%;
+
+    & h3 {
+      display: flex;
+      flex-direction: column;
+      margin-right: 24px;
+      & .small {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.cta {
+  margin: 34px 0 0;
+  width: 100%;
+  & button {
+    margin-right: 28px;
+  }
+}

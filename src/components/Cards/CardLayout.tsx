@@ -20,7 +20,7 @@ const CardLayout: React.FC<ICardLayoutProps> = ({
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <img src={nftLink} alt="nft" />
+        <img src={nftLink} alt="nft" loading="lazy" />
       </div>
       <div className={styles.bottomContainer}>
         <span className={styles.heading}>{heading}</span>

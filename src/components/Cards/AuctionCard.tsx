@@ -1,18 +1,12 @@
 import classNames from "classnames";
 import React from "react";
+import { AuctionData } from "../../utils/data";
 
 import styles from "./card.module.css";
 import CardLayout from "./CardLayout";
 
 interface IAuctionProps {
-  data: {
-    heading: string;
-    nftLink: string;
-    avatar: string;
-    username: string;
-    timeRemaining: string;
-    currentBid: string;
-  };
+  data: AuctionData;
 }
 
 const AuctionCard: React.FC<IAuctionProps> = ({ data }) => {

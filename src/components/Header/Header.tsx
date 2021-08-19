@@ -18,7 +18,10 @@ const Header: React.FC<IHeaderProps> = ({ links }) => {
         <div className={styles.linksContainer}>
           <ul className={styles.linklist}>
             {links.map((link, index) => (
-              <NavLink activeClassName={styles.active} key={index + "_link"} to={link}>
+              <NavLink
+                activeClassName={styles.active}
+                key={index + "_link"}
+                to={index === 0 ? "/" : link}>
                 {link}
               </NavLink>
             ))}
