@@ -21,7 +21,7 @@ const Header: React.FC<IHeaderProps> = ({ links }) => {
               <NavLink
                 activeClassName={styles.active}
                 key={index + "_link"}
-                to={index === 0 ? "/" : link}>
+                to={link}>
                 {link}
               </NavLink>
             ))}

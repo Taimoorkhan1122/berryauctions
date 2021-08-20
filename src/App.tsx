@@ -6,8 +6,9 @@ import nftimg from "./images/nft.png";
 import nftimg2 from "./images/content_images/park_04.png";
 import About from "./Pages/About/About";
 import Artists from "./Pages/Artists/Artists";
-import Auctions from "./Pages/Auctions/Auctions";
+import Home from "./Pages/Home/Home";
 import MajorWorks from "./Pages/MajorWorks/MajorWorks";
+import InProgress from "./Pages/Auctions/InProgress";
 
 const link =
   "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg";
@@ -43,23 +44,29 @@ function App() {
   return (
     <Router>
       <Layout>
+      <div className="container">
         <Switch>
-          <Route exact path="/">
-            <Auctions />
-          </Route>
-          {/* major works */}
-          <Route path="/주요작품">
-            <MajorWorks />
-          </Route>
-          {/* artist */}
-          <Route path="/아티스트">
-            <Artists />
-          </Route>
-          {/* about beryauctions */}
-          <Route path="/베리옥션 소개">
-            <About />
-          </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            {/* in progress */}
+            <Route exact path="/진행중인 경매">
+              <InProgress />
+            </Route>
+            {/* major works */}
+            <Route path="/주요작품">
+              <MajorWorks />
+            </Route>
+            {/* artist */}
+            <Route path="/아티스트">
+              <Artists />
+            </Route>
+            {/* about beryauctions */}
+            <Route path="/베리옥션 소개">
+              <About />
+            </Route>
         </Switch>
+          </div>
       </Layout>
     </Router>
   );

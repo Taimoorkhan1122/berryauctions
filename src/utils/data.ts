@@ -61,6 +61,56 @@ export const auctionData: AuctionData[] = [
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
   },
+  {
+    id: "03",
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    heading: "Show me what you got",
+    nftLink: nftImg3,
+    currentBid: "0.532 BBR",
+    username: "박기웅",
+    timeRemaining: "4일 18시 12분 27초",
+  },
+  {
+    id: "01",
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    heading: "ego",
+    nftLink: nftImg1,
+    currentBid: "0.532 BBR",
+    username: "박기웅",
+    timeRemaining: "4일 18시 12분 27초",
+  },
+  {
+    id: "04",
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    heading: "ELON lettering",
+    nftLink: nftImg4,
+    currentBid: "0.528 BBR",
+    username: "박기웅",
+    timeRemaining: "4일 18시 12분 27초",
+  },
+  {
+    id: "01",
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    heading: "ego",
+    nftLink: nftImg1,
+    currentBid: "0.532 BBR",
+    username: "박기웅",
+    timeRemaining: "4일 18시 12분 27초",
+  },
+  {
+    id: "02",
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    heading: "슈퍼카우3",
+    nftLink: nftImg2,
+    currentBid: "0.532 BBR",
+    username: "박기웅",
+    timeRemaining: "4일 18시 12분 27초",
+  },
 ];
 
 
@@ -103,5 +153,149 @@ export const artistData: IArtistData[] = [
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
+  },
+  {
+    imgLink: artist1,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "오승환",
+    profession: "Arttrainer",
+    about:
+      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+    totalWork: 25,
+  },
+
+  {
+    imgLink: artist2,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "하지원",
+    profession: "Sport Star",
+    about:
+      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+    totalWork: 5,
+  },
+  {
+    imgLink: artist2,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "하지원",
+    profession: "Sport Star",
+    about:
+      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+    totalWork: 5,
+  },
+  {
+    imgLink: artist3,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "오승환",
+    profession: "Arttrainer",
+    about:
+      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+    totalWork: 25,
+  },
+  {
+    imgLink: artist1,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "오승환",
+    profession: "Arttrainer",
+    about:
+      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+    totalWork: 25,
+  },
+];
+
+
+interface IMajorWorks {
+  heading: string;
+  nftLink: string;
+  avatar: string;
+  username: string;
+  price: string;
+  owner: string;
+}
+export const majorWorksData: IMajorWorks[] = [
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg3,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg1,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg4,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg2,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg1,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg4,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.552 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg2,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg2,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
+  },
+  {
+    heading: "Show me what you got",
+    nftLink: nftImg4,
+    avatar:
+      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    username: "박기웅",
+    price: "0.555 BBD",
+    owner: "0x42f3...aaa5",
   },
 ];

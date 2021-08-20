@@ -94,3 +94,12 @@ p {
   color: #666;
   line-height: 1.538;
 }
+
+.container {
+    width: 95%;
+    margin: 0 auto 130px;
+
+    @media (min-width: 1500px) {
+      width: 1440px;
+    }
+}

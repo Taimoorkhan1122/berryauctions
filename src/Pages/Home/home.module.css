@@ -1,0 +1,39 @@
+.sectionsContainer {
+  & > div {
+    margin-top: 84px;
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  & h3 {
+    font-size: 22px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+    margin: 0 0 34px;
+  }
+  & > a {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: NotoSans;
+    color: rgb(102, 102, 102);
+    line-height: 1.6;
+    margin-bottom: 34px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 24px;
+  gap: 30px 10px;
+  & div:nth-child(4n + 0) {
+    margin: 0;
+  }
+}

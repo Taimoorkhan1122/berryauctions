@@ -1,14 +1,27 @@
 .container {
-      /* max-width: 335px; */
-    width: calc((100% / 4 ));
-    background: #fff;
-    border-radius: 10px;
-    margin: 0 30px;
-    margin-left: 0;
-    overflow: hidden;
+  width: 350px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  margin-left: 0;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 32%;
+  }
+  @media (min-width: 1280px) {
+    width: 23%;
+  }
+
+  @media (min-width: 1500px) {
+    width: 23.4%;
+  }
 }
 .imgContainer {
-  height: 335px;
+  height: 250px;
+  @media (min-width: 1024px) {
+      height: 335px;
+  }
 }
 
 .imgContainer img {
@@ -37,6 +50,11 @@
   font-size: 22px;
   font-weight: 700;
   margin: 15px 0 23px;
+
+  @media (max-width: 768px) {
+  font-size: 18px;
+    
+  }
 }
 
 .avatarContainer {
