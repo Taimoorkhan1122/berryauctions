@@ -4,7 +4,7 @@ import styles from './avatar.module.css';
 
 interface IAvatarProps {
     src?: string,
-    username?: string,
+    username: string,
     width?: string,
 }
 
@@ -24,6 +24,6 @@ export default Avatar;
 
 Avatar.defaultProps = {
   src: "https://www.seekpng.com/png/small/966-9665317_placeholder-image-person-jpg.png",
-  username: "John Doe",
-  width: "",
+  // username: "Taimoor khan",
+  // width: "",
 };

@@ -14,7 +14,7 @@ const HeroContainer = () => {
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.author}>
-          <Avatar /> <GradText>Arttrainer</GradText>
+          <Avatar username={"Taimoor khan"} /> <GradText>Arttrainer</GradText>
         </div>
         <h2 className={styles.heroHeading}>The other side</h2>
         {/* auction details start */}
