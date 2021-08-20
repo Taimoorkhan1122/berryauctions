@@ -51,9 +51,9 @@ const HeroContainer = () => {
           <Button
             btnType={BtnType.PRIMARY}
             text="경매 참여하기"
-            width="280px"
+            
           />
-          <Button btnType={BtnType.SECONDARY} text="작품보기" width="224px" />
+          <Button btnType={BtnType.SECONDARY} text="작품보기"  />
         </div>
       </div>
     </div>

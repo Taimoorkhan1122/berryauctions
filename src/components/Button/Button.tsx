@@ -10,18 +10,18 @@ export enum BtnType {
 interface IBtnProps  {
     btnType: BtnType,
     text: string,
-    width: string,
+    width?: string,
 
 }
 
-const Button: React.FC<IBtnProps> = ({ btnType, text, width }) => {
+const Button: React.FC<IBtnProps> = ({ btnType, text, width = "" }) => {
   const classname = classNames(
     styles.btn,
     btnType === BtnType.PRIMARY ? styles.PRIMARY : btnType === BtnType.SECONDARY ? styles.SECONDARY : styles.TERTIARY
   );
   
   return (
-    <button className={classname} style={{ width: width }}>
+    <button className={classname} style={{ width: width}}>
       {text}
     </button>
   );

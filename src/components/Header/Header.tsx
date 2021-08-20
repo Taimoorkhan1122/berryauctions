@@ -27,7 +27,7 @@ const Header: React.FC<IHeaderProps> = ({ links }) => {
             ))}
           </ul>
           <Button
-            btnType={BtnType.PRIMARY}
+            btnType={BtnType.SECONDARY}
             text="월렛 연결하기"
             width="196px"
           />

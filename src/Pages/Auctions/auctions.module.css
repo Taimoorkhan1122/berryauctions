@@ -2,7 +2,7 @@
     width: 95%;
     margin: 0 auto 130px;
 
-    @media (min-width: 1440px;) {
+    @media (min-width: 1440px) {
         max-width: 1440px;
     }
 }
@@ -17,8 +17,8 @@
     & h3 {
         
   font-size: 22px;
-  font-weight: 500;
-  font-family: "Noto Sans CJK KR";
+  font-family: NotoSans;
+  font-weight: 700;
   color: rgb(0, 0, 0);
   line-height: 1.091;
   margin: 0 0 34px;

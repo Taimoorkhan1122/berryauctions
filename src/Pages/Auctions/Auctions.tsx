@@ -12,9 +12,15 @@ import ArtistCard from "../../components/Cards/ArtistCard";
 const Auctions = () => {
   const arr = [1, 2, 3, 4];
 
-  const AuctionInProgress = auctionData.map((item) => <AuctionCard data={item} />);
-  const MajorWork = arr.map(item => <MajorWorkCard data={data2}/>)
-  const Artists = artistData.map(item => <ArtistCard {...item} />)
+  const AuctionInProgress = auctionData.map((item, index) => (
+    <AuctionCard key={index + "_01"} data={item} />
+  ));
+  const MajorWork = arr.map((item, index) => (
+    <MajorWorkCard key={index + "_01"} data={data2} />
+  ));
+  const Artists = artistData.map((item, index) => (
+    <ArtistCard key={index + "_01"} {...item} />
+  ));
   return (
     <div className={styles.container}>
       <HeroContainer />

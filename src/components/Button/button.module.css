@@ -1,7 +1,8 @@
 .btn {
     height: 60px;
     border-radius: 50px;
-    font-family: Noto Sans CJK KR;
+    font-family: NotoSans;
+    font-weight: 700;
     cursor: pointer;
 }
 

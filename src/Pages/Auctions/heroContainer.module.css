@@ -1,38 +1,72 @@
 h3 {
-  font-size: 36px;
-  font-family: "Song Myung";
+  font-size: 28px;
+  font-family: SongMyung;
+  font-weight: 400;
   color: rgb(0, 0, 0);
   line-height: 0.667;
-  margin: 21px 0;
+  margin: 16px 0;
+
+  @media (min-width: 1280px) {
+    font-size: 36px;
+    margin: 21px 0;
+  }
 }
 
 .small {
-  font-size: 15px;
-  font-family: "Noto Sans CJK KR";
+  font-size: 13px;
+  font-family: NotoSans;
+  font-weight: 700;
   color: rgb(102, 102, 102);
   line-height: 1.6;
+
+  @media (min-width: 1280px) {
+    font-size: 15px;
+  }
 }
 
 .headerContainer {
   max-width: 1440px;
   display: flex;
   margin: auto;
+  justify-content: center;
+  margin-top: 3rem;
+
+  @media (min-width: 1280px) {
+    justify-content: unset;
+    margin-top: 4rem;
+  }
 }
 
 .imageContainer {
-  padding: 10px 118px;
+  max-width: 450px;
+
+  @media (min-width: 1024px) {
+    max-width: 350px;
+    margin: 10px 20px 0;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 450px;
+    margin: 10px 108px;
+  }
 }
 
-.imageContainer img {
-  width: 450px;
+.imageContainer > img {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  padding: 10px;
+  max-width: 100%;
 }
 
 .contentContainer {
-  padding-right: 113px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 94px 117px 0 16px;
+  padding: 10px 16px 0;
+
+  @media (min-width: 1280px) {
+    padding: 94px 16px 0;
+  }
 }
 
 .contentContainer .author {
@@ -40,17 +74,27 @@ h3 {
   width: 100%;
   align-items: center;
   & > div {
+    background: #fff;
     margin-right: 23px;
+    width: 130px;
+    padding: 5px 12px;
+    @media (min-width: 1280px) {
+      width: 135px;
+    }
   }
 }
 
 .contentContainer .heroHeading {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: normal;
-  font-family: "Song Myung";
+  font-family: SongMyung;
   color: rgb(0, 0, 0);
   line-height: 0.4;
   margin: 34px 0 50px 0;
+
+  @media (min-width: 1280px) {
+    font-size: 60px;
+  }
 }
 
 .contentContainer .auctionDetails {
@@ -58,17 +102,32 @@ h3 {
 }
 
 .contentContainer .auctionDetails .pricing {
-  width: 100%;
+  border-right: 1px solid #e6e6e6;
+  margin-right: 48px;
+  padding-right: 48px;
+
+  @media (min-width: 1440px) {
+    margin-right: 58px;
+    padding-right: 58px;
+  }
+
   & > span {
     font-size: 15px;
-    font-family: "Noto Sans CJK KR";
+    font-family: NotoSans;
+    font-weight: 700;
     color: rgb(0, 0, 0);
     line-height: 1.6;
   }
 }
 
 .contentContainer .auctionDetails .timeLeft {
-  width: 100%;
+  & > span {
+    font-size: 15px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;   
+  }
   & .time {
     display: flex;
     width: 100%;
@@ -89,5 +148,21 @@ h3 {
   width: 100%;
   & button {
     margin-right: 28px;
+  }
+
+  & button:first-child {
+    width: 240px;
+  }
+  & button:last-child {
+    width: 184px;
+  }
+
+  @media (min-width: 1440px) {
+    & button:first-child {
+      width: 280px;
+    }
+    & button:last-child {
+      width: 224px;
+    }
   }
 }

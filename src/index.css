@@ -1,6 +1,80 @@
+// NotoSans Mono
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 900;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Black.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 800;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Bold.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 700;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Medium.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 600;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Regular.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 500;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-DemiLight.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 400;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Light.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSans";
+   font-weight: 300;
+   font-style: normal;
+   src: url("./fonts/NotoSansCJKkr-Thin.otf")   format("opentype")
+}
+
+// NotoSans Mono
+@font-face {
+   font-family: "NotoSansMono";
+   font-weight: 800;
+   font-style: normal;
+   src: url("./fonts/NotoSansMonoCJKkr-Bold.otf")   format("opentype")
+}
+
+@font-face {
+   font-family: "NotoSansMono";
+   font-weight: 400;
+   font-style: normal;
+   src: url("./fonts/NotoSansMonoCJKkr-Regular.otf")   format("opentype")
+}
+
+
+
+@font-face {
+   font-family: "SongMyung";
+   font-weight: 400;
+   font-style: normal;
+   src: url("./fonts/SongMyung-Regular.ttf")   format("truetype")
+}
+
 body {
   margin: 0;
-  font-family: Song Myung, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: SongMyung, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -14,8 +88,8 @@ body {
 }
 
 p {
-  font-family: Noto Sans CJK KR;
-  font-weight: 500;
+  font-family: NotoSans;
+  font-weight: 700;
   font-size: 13px;
   color: #666;
   line-height: 1.538;

@@ -33,9 +33,9 @@
 }
 
 .bottomContainer .heading {
-  font-family: Noto Sans CJK KR;
+  font-family: NotoSans;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   margin: 15px 0 23px;
 }
 
@@ -108,7 +108,8 @@
 }
 
 .detailsContainer > div h3 {
-  font-family: Noto Sans CJK KR;
+  font-family: NotoSans;
+  font-weight: 700;
   font-size: 15px;
   margin: 0 0 13px 0;
 }
@@ -125,9 +126,9 @@
   margin: 10px 0 20px;
 }
 .infoContainer h3 {
- 
   font-size: 22px;
-  font-family: "Noto Sans CJK KR";
+  font-weight: 700;
+  font-family: NotoSans;
   color: rgb(0, 0, 0);
   line-height: 1.091;
   margin: 0 0 6px;
