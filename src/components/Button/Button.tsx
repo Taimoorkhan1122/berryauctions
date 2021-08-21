@@ -7,22 +7,33 @@ export enum BtnType {
   SECONDARY,
   TERTIARY,
 }
-interface IBtnProps  {
-    btnType: BtnType,
-    text: string,
-    width?: string,
-
+interface IBtnProps {
+  disabled?: boolean;
+  btnType: BtnType;
+  children: React.ReactNode;
+  width?: string;
+  onClick?: React.MouseEventHandler;
 }
 
-const Button: React.FC<IBtnProps> = ({ btnType, text, width = "" }) => {
+const Button: React.FC<IBtnProps> = ({
+  disabled,
+  btnType,
+  children,
+  width = "",
+  onClick,
+}) => {
   const classname = classNames(
     styles.btn,
-    btnType === BtnType.PRIMARY ? styles.PRIMARY : btnType === BtnType.SECONDARY ? styles.SECONDARY : styles.TERTIARY
+    btnType === BtnType.PRIMARY
+      ? styles.PRIMARY
+      : btnType === BtnType.SECONDARY
+      ? styles.SECONDARY
+      : styles.TERTIARY
   );
-  
+
   return (
-    <button className={classname} style={{ width: width}}>
-      {text}
+    <button className={classname} style={{ width: width }} onClick={onClick} disabled={disabled}>
+      {children}
     </button>
   );
 };

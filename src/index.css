@@ -103,3 +103,12 @@ p {
       width: 1440px;
     }
 }
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }

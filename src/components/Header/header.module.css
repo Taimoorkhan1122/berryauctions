@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.linksContainer > button {
+.linksContainer button {
   margin-left: 120px;
 }
 

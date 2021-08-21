@@ -48,12 +48,8 @@ const HeroContainer = () => {
         </div>
         {/* auction details end */}
         <div className={styles.cta}>
-          <Button
-            btnType={BtnType.PRIMARY}
-            text="경매 참여하기"
-            
-          />
-          <Button btnType={BtnType.SECONDARY} text="작품보기"  />
+          <Button btnType={BtnType.PRIMARY} children="경매 참여하기" />
+          <Button btnType={BtnType.SECONDARY} children="작품보기" />
         </div>
       </div>
     </div>

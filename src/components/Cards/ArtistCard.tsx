@@ -45,7 +45,11 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
           <h3 style={{ color: "#666666" }}>작품</h3>
         </div>
         <div>
-          <Button text="작품보기" width="150px" btnType={BtnType.TERTIARY} />
+          <Button
+            children="작품보기"
+            width="150px"
+            btnType={BtnType.TERTIARY}
+          />
         </div>
       </div>
     </div>

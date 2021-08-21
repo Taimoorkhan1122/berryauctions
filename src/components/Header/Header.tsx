@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import Button, { BtnType } from "../Button/Button";
 import { LogoDark } from "../Logo/Logo";
 import { Link, NavLink } from "react-router-dom";
+import ConnectWallet from "../../containers/ConnectWallet/ConnectWallet";
 
 type IHeaderProps = {
   links: string[];
@@ -26,11 +27,12 @@ const Header: React.FC<IHeaderProps> = ({ links }) => {
               </NavLink>
             ))}
           </ul>
-          <Button
+          {/* <Button
             btnType={BtnType.SECONDARY}
             text="월렛 연결하기"
             width="196px"
-          />
+          /> */}
+          <ConnectWallet />
         </div>
       </nav>
     </header>
