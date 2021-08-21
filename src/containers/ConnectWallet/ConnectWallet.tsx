@@ -11,6 +11,7 @@ import metamask from "../../images/metamask.png";
 import walletConnect from "../../images/walletConnect.png";
 import { GlobalContext } from "../../Context/GlobalProvider";
 import { ActionTypes } from "../../Context/Reducer";
+import MyAuctions from "../../components/MyAuctions/MyAuctions";
 
 enum Wallet {
   metamask,
@@ -51,28 +52,32 @@ const ConnectWallet: React.FC = () => {
           isLoggedIn: true,
         },
       });
-      // setLoading([
-      //   { walletType: Wallet.metamask, isActive: false },
-      //   { walletType: Wallet.walletConnect, isActive: false },
-      // ]);
+      
        tmp[key].isActive = !tmp[key].isActive;
        setLoading(tmp);
       setIsOpen(false);
     }, 1500);
   };
+  console.log(loading);
+  
 
   return (
-    <div>
-      <Button
-        btnType={BtnType.SECONDARY}
-        children={user.username ? user.username : "월렛 연결하기"}
-        width="196px"
-        onClick={handleClick}
-      />
+    <div className={isloggedIn ? styles.container : ""}>
+      {isloggedIn ? (
+        <MyAuctions count={2} />
+      ) : (
+        <Button
+          btnType={BtnType.SECONDARY}
+          children={user.username ? user.username : "월렛 연결하기"}
+          width="196px"
+          onClick={handleClick}
+        />
+      )}
+
       {/* modal start */}
       {!isloggedIn && isOpen && (
         <Modal isOpen={isOpen} handleClick={handleClick}>
-          <div className={styles.container}>
+          <div className={styles.modal}>
             <div className={styles.close} onClick={handleClick}>
               <img src={close} alt="modal close button" />
             </div>
