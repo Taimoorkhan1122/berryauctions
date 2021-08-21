@@ -1,6 +1,14 @@
-import React from 'react'
-import { ClipLoader } from 'react-spinners';
+import React from "react";
+import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/react";
+
+interface ILoaderProps {
+  children: React.ReactNode;
+  props: {
+    size: number;
+    color: string;
+  };
+}
 
 const override = css`
   display: block;
@@ -8,12 +16,15 @@ const override = css`
   border-width: 3px;
 `;
 
-const Loader: React.FC = () => (
+const Loader: React.FC<ILoaderProps> = ({
+  children,
+  props: { size, color },
+}) => (
   <>
     {" "}
-    <ClipLoader loading={true} color={"#fff"} css={override} size={30} />{" "}
-    <span>연결중...</span>
+    <ClipLoader size={size} color={color} loading={true} css={override} />{" "}
+    <span>{children}</span>
   </>
 );
 
-export default Loader
+export default Loader;

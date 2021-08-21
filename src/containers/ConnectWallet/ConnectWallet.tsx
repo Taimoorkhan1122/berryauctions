@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Button, { BtnType } from "../../components/Button/Button";
 import Modal from "../Modal/Modal";
 
@@ -18,12 +19,17 @@ interface ILoadingState {
   isActive: boolean;
 }
 
+
+
 const ConnectWallet: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
     { walletType: Wallet.metamask, isActive: false },
     { walletType: Wallet.walletConnect, isActive: false },
   ]);
+  
+  const connectingWallet =
+    loading[Wallet.walletConnect].isActive || loading[Wallet.metamask].isActive;
 
   const handleClick = () => {
     setIsOpen((prevState) => !prevState);
@@ -68,10 +74,7 @@ const ConnectWallet: React.FC = () => {
             <div className={styles.walletOptions}>
               <Button
                 onClick={() => handleConnect(Wallet.metamask)}
-                disabled={
-                  loading[Wallet.walletConnect].isActive ||
-                  loading[Wallet.metamask].isActive
-                }
+                disabled={connectingWallet}
                 btnType={
                   loading[Wallet.metamask].isActive
                     ? BtnType.PRIMARY
@@ -79,7 +82,10 @@ const ConnectWallet: React.FC = () => {
                 }>
                 <div className={styles.loading}>
                   {loading[Wallet.metamask].isActive ? (
-                    <Loader />
+                    <Loader
+                      children={"연결중..."}
+                      props={{ color: "#f0e3e3", size: 30 }}
+                    />
                   ) : (
                     <h4>Metamask</h4>
                   )}
@@ -87,10 +93,7 @@ const ConnectWallet: React.FC = () => {
                 <img src={metamask} alt="metamask icon" />
               </Button>
               <Button
-                disabled={
-                  loading[Wallet.walletConnect].isActive ||
-                  loading[Wallet.metamask].isActive
-                }
+                disabled={connectingWallet}
                 onClick={() => handleConnect(Wallet.walletConnect)}
                 btnType={
                   loading[Wallet.walletConnect].isActive
@@ -99,13 +102,23 @@ const ConnectWallet: React.FC = () => {
                 }>
                 <div className={styles.loading}>
                   {loading[Wallet.walletConnect].isActive ? (
-                    <Loader />
+                    <Loader
+                      children={"연결중..."}
+                      props={{ color: "#f0e3e3", size: 30 }}
+                    />
                   ) : (
                     <h4>WalletConnect</h4>
                   )}
                 </div>
                 <img src={walletConnect} alt="metamask icon" />
               </Button>
+              {/* <Loader
+                children={""}
+                props={{
+                  size: 54,
+                  color: "#000",
+                }}
+              /> */}
             </div>
           </div>
         </Modal>
