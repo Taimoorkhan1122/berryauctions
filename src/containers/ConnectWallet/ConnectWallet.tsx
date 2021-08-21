@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Button, { BtnType } from "../../components/Button/Button";
@@ -9,6 +9,8 @@ import Loader from "../../components/Loader/Loader";
 import close from "../../images/close.png";
 import metamask from "../../images/metamask.png";
 import walletConnect from "../../images/walletConnect.png";
+import { GlobalContext } from "../../Context/GlobalProvider";
+import { ActionTypes } from "../../Context/Reducer";
 
 enum Wallet {
   metamask,
@@ -22,6 +24,7 @@ interface ILoadingState {
 
 
 const ConnectWallet: React.FC = () => {
+  const {state: {isloggedIn, user}, appDispatch} = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
     { walletType: Wallet.metamask, isActive: false },
@@ -41,10 +44,20 @@ const ConnectWallet: React.FC = () => {
     setLoading(tmp);
 
     setTimeout(() => {
-      setLoading([
-        { walletType: Wallet.metamask, isActive: false },
-        { walletType: Wallet.walletConnect, isActive: false },
-      ]);
+      appDispatch({
+        type: ActionTypes.SIGNIN,
+        payload: {
+          username: "Taimoor",
+          isLoggedIn: true,
+        },
+      });
+      // setLoading([
+      //   { walletType: Wallet.metamask, isActive: false },
+      //   { walletType: Wallet.walletConnect, isActive: false },
+      // ]);
+       tmp[key].isActive = !tmp[key].isActive;
+       setLoading(tmp);
+      setIsOpen(false);
     }, 1500);
   };
 
@@ -52,12 +65,12 @@ const ConnectWallet: React.FC = () => {
     <div>
       <Button
         btnType={BtnType.SECONDARY}
-        children="월렛 연결하기"
+        children={user.username ? user.username : "월렛 연결하기"}
         width="196px"
         onClick={handleClick}
       />
       {/* modal start */}
-      {isOpen && (
+      {!isloggedIn && isOpen && (
         <Modal isOpen={isOpen} handleClick={handleClick}>
           <div className={styles.container}>
             <div className={styles.close} onClick={handleClick}>
