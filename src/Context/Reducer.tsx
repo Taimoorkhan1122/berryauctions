@@ -1,4 +1,4 @@
-import { IGlobalState } from "./GlobalProvider";
+import { IGlobalState, User } from "./GlobalProvider";
 
 export enum ActionTypes {
   SIGNIN = "SIGN_IN",
@@ -7,8 +7,8 @@ export enum ActionTypes {
 }
 
 export interface IPayloadType {
-  username: string;
   isLoggedIn: boolean;
+  user: User
 }
 
 export interface IActionType {
@@ -22,21 +22,21 @@ export const reducer = (state: IGlobalState, action: IActionType) => {
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
-        user: {username: action.payload.username}
+        user: {...action.payload.user}
       };
 
     case ActionTypes.SIGNIN:
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
-        user: { username: action.payload.username },
+        user: { ...action.payload.user },
       };
 
     case ActionTypes.SINGOUT:
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
-        user: { username: action.payload.username },
+        user: { ...action.payload.user },
       };
 
     default:

@@ -1,0 +1,68 @@
+.menuButton {
+  outline: none;
+  background: none;
+}
+
+:global(.szh-menu-button) {
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:global(.szh-menu-button) {
+  & > div {
+      padding: 0 12px;
+  }
+}
+:global(.szh-menu) {
+  width: 300px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 0;
+  background: #fafafa;
+}
+
+:global(.szh-menu__item) {
+  margin: 0;
+
+  &:first-child {
+    margin: 0;  
+    border-bottom: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background: #fff;
+     &:hover {
+    background: #ebebeb;
+  }
+
+    & > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 0;
+      width: auto;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
+  }
+  &:not(:first-child) {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 26px;
+  }
+}
+
+.balance {
+  font-size: 20px;
+  font-family: SongMyung;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+}
+
+.address {
+  font-size: 16px;
+  font-family: "Song Myung";
+  color: rgb(102, 102, 102);
+  line-height: 1.5;
+}
+

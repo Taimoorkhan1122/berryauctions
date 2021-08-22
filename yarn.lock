@@ -1736,6 +1736,14 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@szhsin/react-menu@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-2.0.0.tgz#6ff2065af3ad1cfca39039c0c92adcb90f8519e4"
+  integrity sha512-nH+EjnLNqp/Tm/4/ZUkR/CQGSWf3BvdgJSAbEd5EKzutqNgYu78RmFLv/JUsjhu0ACMqkx1s1VJICVxXnK2CLQ==
+  dependencies:
+    prop-types "^15.7.2"
+    react-transition-state "^0.2.0"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -9295,6 +9303,11 @@ react-spinners@^0.11.0:
   integrity sha512-rDZc0ABWn/M1OryboGsWVmIPg8uYWl0L35jPUhr40+Yg+syVPjeHwvnB7XWaRpaKus3M0cG9BiJA+ZB0dAwWyw==
   dependencies:
     "@emotion/react" "^11.1.4"
+
+react-transition-state@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-0.2.0.tgz#b2897c9435b82f3d2fec4b02b62237c1c8783e9e"
+  integrity sha512-ktGE+fXa6dxLK2DcztiS5hkS5TdSro9xHz8IeSUpwK5FlAhPKW84EFEB2smMGbUBs1++Osq+XP6qbAY5BsmsTA==
 
 react@^17.0.2:
   version "17.0.2"

@@ -12,17 +12,17 @@ import walletConnect from "../../images/walletConnect.png";
 import { GlobalContext } from "../../Context/GlobalProvider";
 import { ActionTypes } from "../../Context/Reducer";
 import MyAuctions from "../../components/MyAuctions/MyAuctions";
+import ProfileBtn from "../../components/ProfileBtn/ProfileBtn";
 
 enum Wallet {
   metamask,
   walletConnect,
 }
+
 interface ILoadingState {
   walletType: Wallet;
   isActive: boolean;
 }
-
-
 
 const ConnectWallet: React.FC = () => {
   const {state: {isloggedIn, user}, appDispatch} = useContext(GlobalContext);
@@ -48,7 +48,11 @@ const ConnectWallet: React.FC = () => {
       appDispatch({
         type: ActionTypes.SIGNIN,
         payload: {
-          username: "Taimoor",
+          user: {
+            username: "Taimoor",
+            walletAmount: "0x42f3...aaa5",
+            walletAddress: "4.16123 BBR",
+          },
           isLoggedIn: true,
         },
       });
@@ -58,17 +62,18 @@ const ConnectWallet: React.FC = () => {
       setIsOpen(false);
     }, 1500);
   };
-  console.log(loading);
   
-
   return (
     <div className={isloggedIn ? styles.container : ""}>
       {isloggedIn ? (
-        <MyAuctions count={2} />
+        <div className={styles.userProfiler}>
+          <MyAuctions count={2} />
+          <ProfileBtn user={user} />
+        </div>
       ) : (
         <Button
           btnType={BtnType.SECONDARY}
-          children={user.username ? user.username : "월렛 연결하기"}
+          children={"월렛 연결하기"}
           width="196px"
           onClick={handleClick}
         />

@@ -4,18 +4,18 @@ import styles from './avatar.module.css';
 
 interface IAvatarProps {
     src?: string,
-    username: string,
+    children: React.ReactNode,
     width?: string,
 }
 
-const Avatar: React.FC<IAvatarProps> = ({src, username, width=""}) => {
+const Avatar: React.FC<IAvatarProps> = ({src, children, width=""}) => {
     
     return (
       <div
         className={styles.container}
         style={{ width: width && width }}>
         <img src={src} alt="user avatar" />
-        <span>{username}</span>
+        <span>{children}</span>
       </div>
     );
 }

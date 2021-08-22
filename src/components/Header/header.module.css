@@ -19,13 +19,14 @@
   display: flex;
 }
 
-.linksContainer button {
+.linksContainer > button {
   margin-left: 120px;
 }
 
 .linklist {
   display: flex;
   list-style-type: none;
+  margin-right: 46px;
 }
 
 .linklist a {

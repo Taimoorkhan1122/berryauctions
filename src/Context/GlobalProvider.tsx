@@ -1,21 +1,27 @@
 import React, { createContext, useReducer } from "react";
-import { ActionTypes, IActionType, IPayloadType, reducer } from "./Reducer";
+import { IActionType, reducer } from "./Reducer";
 
 type Props = {
     children: React.ReactNode;
 }
 
+export interface User {
+  username: string | undefined,
+  walletAddress: string | undefined,
+  walletAmount: string | undefined,
+}
+
 export interface IGlobalState {
   isloggedIn: boolean;
-  user: {
-    username: string | undefined;
-  };
+  user:  User;
 }
 
 const initialState: IGlobalState = {
   isloggedIn: false,
   user: {
     username: undefined,
+    walletAmount: undefined,
+    walletAddress: undefined,
   },
 };
 
@@ -25,7 +31,7 @@ export const GlobalContext = createContext({
 });
 
 export const GlobalProvider: React.FC<Props> = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     const appDispatch = (action: IActionType) => {
       dispatch({
