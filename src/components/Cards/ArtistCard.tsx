@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { useHistory } from "react-router";
 import Button, { BtnType } from "../Button/Button";
 import GradText from "../GradText/GradText";
 
@@ -22,6 +23,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
   about,
   totalWork,
 }) => {
+  const history = useHistory();
   return (
     <div className={styles.container}>
       <div className={classNames(styles.imgContainer, styles.artistImg)}>
@@ -49,6 +51,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
             children="작품보기"
             width="150px"
             btnType={BtnType.TERTIARY}
+            onClick={() => history.push(`/${username}`)}
           />
         </div>
       </div>

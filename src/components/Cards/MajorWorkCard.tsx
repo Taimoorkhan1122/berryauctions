@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { useHistory } from "react-router";
 
 import styles from "./card.module.css";
 import CardLayout from "./CardLayout";
@@ -16,12 +17,14 @@ interface IMajorWorkCardProps {
 }
 
 const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
+  const history = useHistory();
   return (
     <CardLayout
       heading={data.heading}
       nftLink={data.nftLink}
       avatar={data.avatar}
-      username={data.username}>
+      username={data.username}
+      onClick={() => history.push(`/${data.username}/${data.nftLink}`)}>
       {/* details container */}
       <div className={classNames(styles.detailsContainer)}>
         <div>
@@ -30,7 +33,9 @@ const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
         </div>
         <div>
           <h3 style={{ color: "#666666" }}>소유자</h3>
-          <span style={{ color: "#000" }}><div className={styles.circle}></div> {data.owner}</span>
+          <span style={{ color: "#000" }}>
+            <div className={styles.circle}></div> {data.owner}
+          </span>
         </div>
       </div>
     </CardLayout>

@@ -8,6 +8,7 @@ interface ICardLayoutProps {
   nftLink: string;
   avatar: string;
   username: string;
+  onClick: React.MouseEventHandler,
 }
 
 const CardLayout: React.FC<ICardLayoutProps> = ({
@@ -16,9 +17,10 @@ const CardLayout: React.FC<ICardLayoutProps> = ({
   nftLink,
   avatar,
   username,
+  onClick, 
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={onClick}>
       <div className={styles.imgContainer}>
         <img src={nftLink} alt="nft" loading="lazy" />
       </div>

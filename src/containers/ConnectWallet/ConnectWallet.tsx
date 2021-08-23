@@ -135,13 +135,6 @@ const ConnectWallet: React.FC = () => {
                 </div>
                 <img src={walletConnect} alt="metamask icon" />
               </Button>
-              {/* <Loader
-                children={""}
-                props={{
-                  size: 54,
-                  color: "#000",
-                }}
-              /> */}
             </div>
           </div>
         </Modal>

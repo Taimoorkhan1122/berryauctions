@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { useHistory, useRouteMatch } from "react-router";
 import { AuctionData } from "../../utils/data";
 
 import styles from "./card.module.css";
@@ -10,12 +11,15 @@ interface IAuctionProps {
 }
 
 const AuctionCard: React.FC<IAuctionProps> = ({ data }) => {
+  const history = useHistory();
+  const {path} = useRouteMatch();
   return (
     <CardLayout
       heading={data.heading}
       nftLink={data.nftLink}
       avatar={data.avatar}
-      username={data.username}>
+      username={data.username}
+      onClick={() => history.push(`${path}/${data.username}_${data.id}`)}>
       {/* details container */}
       <div className={classNames(styles.detailsContainer, styles.dark)}>
         <div>
