@@ -13,6 +13,7 @@ const AuctionInProgress = auctionData.map((item, index) => (
 ));
 const InProgress = () => {
   const { path } = useRouteMatch();
+  
   return (
     <div className={styles.container}>
       <Switch>

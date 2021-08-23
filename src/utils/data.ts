@@ -62,7 +62,7 @@ export const auctionData: AuctionData[] = [
     timeRemaining: "4일 18시 12분 27초",
   },
   {
-    id: "03",
+    id: "05",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "Show me what you got",
@@ -72,7 +72,7 @@ export const auctionData: AuctionData[] = [
     timeRemaining: "4일 18시 12분 27초",
   },
   {
-    id: "01",
+    id: "06",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "ego",
@@ -82,7 +82,7 @@ export const auctionData: AuctionData[] = [
     timeRemaining: "4일 18시 12분 27초",
   },
   {
-    id: "04",
+    id: "07",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "ELON lettering",
@@ -92,7 +92,7 @@ export const auctionData: AuctionData[] = [
     timeRemaining: "4일 18시 12분 27초",
   },
   {
-    id: "01",
+    id: "08",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "ego",
@@ -102,7 +102,7 @@ export const auctionData: AuctionData[] = [
     timeRemaining: "4일 18시 12분 27초",
   },
   {
-    id: "02",
+    id: "09",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "슈퍼카우3",
@@ -208,7 +208,8 @@ export const artistData: IArtistData[] = [
 ];
 
 
-interface IMajorWorks {
+export interface IMajorWorks {
+  id: string;
   heading: string;
   nftLink: string;
   avatar: string;
@@ -218,6 +219,7 @@ interface IMajorWorks {
 }
 export const majorWorksData: IMajorWorks[] = [
   {
+    id: "01",
     heading: "Show me what you got",
     nftLink: nftImg3,
     avatar:
@@ -227,6 +229,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "02",
     heading: "Show me what you got",
     nftLink: nftImg1,
     avatar:
@@ -236,6 +239,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "03",
     heading: "Show me what you got",
     nftLink: nftImg4,
     avatar:
@@ -245,6 +249,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "04",
     heading: "Show me what you got",
     nftLink: nftImg2,
     avatar:
@@ -254,6 +259,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "05",
     heading: "Show me what you got",
     nftLink: nftImg1,
     avatar:
@@ -263,6 +269,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "06",
     heading: "Show me what you got",
     nftLink: nftImg4,
     avatar:
@@ -272,6 +279,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "07",
     heading: "Show me what you got",
     nftLink: nftImg2,
     avatar:
@@ -281,6 +289,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "08",
     heading: "Show me what you got",
     nftLink: nftImg2,
     avatar:
@@ -290,6 +299,7 @@ export const majorWorksData: IMajorWorks[] = [
     owner: "0x42f3...aaa5",
   },
   {
+    id: "09",
     heading: "Show me what you got",
     nftLink: nftImg4,
     avatar:

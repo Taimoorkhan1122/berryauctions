@@ -24,7 +24,7 @@ const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
       nftLink={data.nftLink}
       avatar={data.avatar}
       username={data.username}
-      onClick={() => history.push(`/${data.username}/${data.nftLink}`)}>
+      onClick={() => history.push(`주요작품/${data.username}_${data.price}`)}>
       {/* details container */}
       <div className={classNames(styles.detailsContainer)}>
         <div>

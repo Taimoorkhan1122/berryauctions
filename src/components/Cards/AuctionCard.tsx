@@ -13,13 +13,17 @@ interface IAuctionProps {
 const AuctionCard: React.FC<IAuctionProps> = ({ data }) => {
   const history = useHistory();
   const {path} = useRouteMatch();
+  console.log(path);
+  
+  const route = `진행중인 경매/${data.username}_${data.id}`;
+  
   return (
     <CardLayout
       heading={data.heading}
       nftLink={data.nftLink}
       avatar={data.avatar}
       username={data.username}
-      onClick={() => history.push(`${path}/${data.username}_${data.id}`)}>
+      onClick={() => history.push(route)}>
       {/* details container */}
       <div className={classNames(styles.detailsContainer, styles.dark)}>
         <div>
