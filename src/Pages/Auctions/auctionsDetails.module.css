@@ -1,0 +1,339 @@
+
+
+.container {
+  width: 100%;
+}
+
+.imgContainer {
+  display: flex;
+  position: relative;
+
+  & .expand {
+    position: absolute;
+    width: 32px;
+    bottom: 0%;
+    right: 10px;
+  }
+
+  & .aspectContainer {
+    /* width: auto; */
+    width: 450px;
+    display: flex;
+    margin: auto;
+    border: 10px solid #fff;
+
+    & img {
+      max-width: 100%;
+      object-fit: contain;
+      object-position: top;
+      background: #fff;
+      /* padding: 10px; */
+    }
+  }
+}
+
+.authorInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 36px;
+  & .author {
+    display: flex;
+    & > div {
+      margin: 0 20px 0px 0;
+    }
+  }
+
+  & > button {
+    border: 1px solid #dedede;
+  }
+}
+
+.details {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 52px;
+
+  & .first {
+    flex: 1;
+    flex-basis: 60%;
+  }
+  & .second {
+    flex: 1;
+    flex-basis: 40%;
+  }
+}
+
+/* first container */
+
+.headingContainer {
+  border-bottom: 1px solid #dedede;
+  & > h3 {
+    font-size: 60px;
+    font-family: SongMyung;
+    color: rgb(0, 0, 0);
+    line-height: 0.4;
+    font-weight: 400;
+  }
+
+  & > p {
+    margin: 58px 0 30px;
+    font-size: 22px;
+    font-family: NotoSans;
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+    font-weight: 700;
+  }
+}
+
+p.description {
+  font-size: 15px;
+  font-family: NotoSans;
+  color: rgb(102, 102, 102);
+  line-height: 1.6;
+  margin: 30v`px 0 0 0;
+}
+
+.linksContainer {
+  margin-top: 52px;
+  & .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    background: #fff;
+    padding: 15px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      & .linkIcon {
+        margin-right: 18px;
+      }
+
+      & span {
+        font-size: 15px;
+        font-weight: 700;
+        font-family: NotoSans;
+        color: rgb(0, 0, 0);
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+/* second container */
+
+.auctionDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  & > button {
+    width: auto;
+    margin: 1.5rem 2rem 2rem;
+  }
+}
+
+.auctionDetailsContainer {
+  display: flex;
+  border-bottom: 1px solid #dedede;
+  padding: 2rem 0 2rem;
+  & > div {
+    flex: 50%;
+    padding: 0 2rem;
+  }
+}
+
+.small {
+  font-size: 13px;
+  font-family: NotoSans;
+  font-weight: 700;
+  color: rgb(102, 102, 102);
+  line-height: 1.6;
+
+  @media (min-width: 1280px) {
+    font-size: 15px;
+  }
+}
+
+.pricing {
+  border-right: 1px solid #e6e6e6;
+  & h3 {
+    margin: 1rem 0;
+    white-space: nowrap;
+  }
+  & > span {
+    font-size: 15px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+  }
+}
+
+.timeLeft {
+  & > span {
+    font-size: 15px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+  }
+  & .time {
+    display: flex;
+    width: 100%;
+
+    & h3 {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 24px 0 0;
+      & span {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.status {
+  margin: 32px 0 28px;
+  font-size: 22px;
+  font-family: NotoSans;
+  color: rgb(0, 0, 0);
+  line-height: 1.091;
+}
+
+.bids {
+  & .lastBids {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    padding: 20px 22px;
+    margin: 0 0 10px;
+
+    & > button > div {
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+    }
+    & .bidAmount {
+      display: flex;
+
+      & > img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        & .cryptoValue {
+          font-size: 20px;
+          font-family: SongMyung;
+          color: rgb(0, 0, 0);
+          line-height: 1.2;
+        }
+
+        & .currencyValue {
+          font-size: 15px;
+          font-family: "Noto Sans CJK KR";
+          color: rgb(102, 102, 102);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+/* bottom container */
+
+.bottomContainer {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 6rem;
+
+  & > h3 {
+    margin: 0 0 3rem;
+  }
+}
+
+.artistDetails {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+  width: 100%;
+  border-top: 1px solid #dedede;
+  padding-top: 2rem;
+
+  & .about {
+    font-size: 22px;
+    font-family: NotoSans;
+    color: rgb(0, 0, 0);
+    line-height: 1.546;
+    font-weight: 400;
+  }
+
+  & .artistNameAvatar {
+    display: flex;
+    align-items: center;
+    margin-right: 200px;
+
+    & .avatarContainer {
+      border-radius: 50px;
+      border: none;
+      height: 56px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 8px 2rem 0 0;
+    }
+
+    & .avatarContainer img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #eeeded;
+    }
+
+    & .artistAvatar {
+      width: 120px;
+      height: 120px;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .artistAvatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & .infoContainer {
+      & > h3:first-child {
+        font-size: 36px;
+        font-family: "Noto Sans CJK KR";
+        color: rgb(0, 0, 0);
+        line-height: 1.138;
+        font-weight: 700;
+      }
+
+      & h3:nth-child(2) {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
