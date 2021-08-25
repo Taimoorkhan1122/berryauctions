@@ -111,3 +111,12 @@ a {
     text-decoration: none;
   }
 
+  .ft-15-md-ns {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: NotoSans;
+  color: rgb(0, 0, 0);
+  line-height: 1.6;
+  margin: 0;
+  }
+

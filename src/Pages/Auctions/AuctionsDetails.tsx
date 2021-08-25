@@ -29,6 +29,10 @@ const AuctionsDetails = () => {
     (data) => data.id === _id[1]
   );
 
+  const [winner] = data?.bids.filter(
+    (bid) => bid.isWinner && Object.keys(bid.walletAddress)
+  );
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -127,27 +131,38 @@ const AuctionsDetails = () => {
                   <h3>0.61 BBR</h3>
                   <small className={styles.small}>1,584,302원</small>
                 </div>
-                <div className={styles.timeLeft}>
-                  <span>남은시간</span>
-                  <div className={styles.time}>
-                    {/* day */}
-                    <h3>
-                      13 <span className={styles.small}>일</span>
-                    </h3>
-                    {/* hour */}
-                    <h3>
-                      15 <span className={styles.small}>시</span>
-                    </h3>
-                    {/* minutes */}
-                    <h3>
-                      27 <span className={styles.small}>분</span>
-                    </h3>
-                    {/* seconds */}
-                    <h3>
-                      19 <span className={styles.small}>초</span>
-                    </h3>
+                {data.bidingStatus ? (
+                  <div className={styles.timeLeft}>
+                    <span>남은시간</span>
+                    <div className={styles.time}>
+                      {/* day */}
+                      <h3>
+                        13 <span className={styles.small}>일</span>
+                      </h3>
+                      {/* hour */}
+                      <h3>
+                        15 <span className={styles.small}>시</span>
+                      </h3>
+                      {/* minutes */}
+                      <h3>
+                        27 <span className={styles.small}>분</span>
+                      </h3>
+                      {/* seconds */}
+                      <h3>
+                        19 <span className={styles.small}>초</span>
+                      </h3>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className={styles.winnerContainer}>
+                    <h3 className="ft-15-md-ns">소유자</h3>
+                    <Avatar width={"196px"}>
+                      <span className={styles.address}>
+                        {winner["walletAddress"]}
+                      </span>
+                    </Avatar>
+                  </div>
+                )}
               </div>
               {/* if biding is end button will  not show */}
               {data.bidingStatus && (
@@ -158,10 +173,9 @@ const AuctionsDetails = () => {
             {/* details section end */}
             <h3 className={styles.status}>입찰 현황</h3>
             <div className={styles.bids}>
-             {
-               data.bids.map((bids) => (<Bids bidingStatus={data.bidingStatus} data={bids} />))
-             }
-              
+              {data.bids.map((bids) => (
+                <Bids bidingStatus={data.bidingStatus} data={bids} />
+              ))}
             </div>
           </div>
         </div>
