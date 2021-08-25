@@ -29,6 +29,7 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, handleClick }) => {
       transform: "translate(-50%, -50%)",
       padding: 0,
       borderRadius: "20px",
+
     },
   };
 
@@ -38,7 +39,9 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, handleClick }) => {
       onRequestClose={handleClick}
       shouldCloseOnOverlayClick={false}
       style={customStyles}
-      shouldReturnFocusAfterClose={false}>
+      shouldReturnFocusAfterClose={false}
+      >
+      
       {children}
     </ReactModal>
   );
