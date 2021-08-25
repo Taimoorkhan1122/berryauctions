@@ -18,10 +18,11 @@ import ipfs from "../../images/ipfs.png";
 import ipfsMeta from "../../images/metadata.png";
 import expndIcon from "../../images/expand.png";
 import Lightbox from "react-image-lightbox";
+import Bids from "./Bids";
 
 const AuctionsDetails = () => {
   const { state } = useContext(GlobalContext);
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
   const [data]: AuctionData[] = auctionData.filter(
@@ -116,7 +117,11 @@ const AuctionsDetails = () => {
           <div className={styles.second}>
             {/* details section start */}
             <div className={styles.auctionDetails}>
-              <div className={styles.auctionDetailsContainer}>
+              <div
+                className={classNames(
+                  styles.auctionDetailsContainer,
+                  !data.bidingStatus && styles.auctionDetailsContainerEnded
+                )}>
                 <div className={styles.pricing}>
                   <span>현재 입찰가</span>
                   <h3>0.61 BBR</h3>
@@ -144,54 +149,19 @@ const AuctionsDetails = () => {
                   </div>
                 </div>
               </div>
-              <Button btnType={BtnType.PRIMARY}>{"경매 입찰하기"}</Button>
+              {/* if biding is end button will  not show */}
+              {data.bidingStatus && (
+                <Button btnType={BtnType.PRIMARY}>{"경매 입찰하기"}</Button>
+              )}
             </div>
+
             {/* details section end */}
             <h3 className={styles.status}>입찰 현황</h3>
             <div className={styles.bids}>
-              <div className={styles.lastBids}>
-                <ProfileBtn user={state.user} />
-                <div className={styles.bidAmount}>
-                  <div>
-                    <span className={styles.cryptoValue}>0.524 BBR</span>
-                    <span className={styles.currencyValue}>1,585,302원</span>
-                  </div>
-                  <img src={linkIcon} alt="bid link" />
-                </div>
-              </div>
-
-              <div className={styles.lastBids}>
-                <ProfileBtn user={state.user} />
-                <div className={styles.bidAmount}>
-                  <div>
-                    <span className={styles.cryptoValue}>0.524 BBR</span>
-                    <span className={styles.currencyValue}>1,585,302원</span>
-                  </div>
-                  <img src={linkIcon} alt="bid link" />
-                </div>
-              </div>
-
-              <div className={styles.lastBids}>
-                <ProfileBtn user={state.user} />
-                <div className={styles.bidAmount}>
-                  <div>
-                    <span className={styles.cryptoValue}>0.524 BBR</span>
-                    <span className={styles.currencyValue}>1,585,302원</span>
-                  </div>
-                  <img src={linkIcon} alt="bid link" />
-                </div>
-              </div>
-
-              <div className={styles.lastBids}>
-                <ProfileBtn user={state.user} />
-                <div className={styles.bidAmount}>
-                  <div>
-                    <span className={styles.cryptoValue}>0.524 BBR</span>
-                    <span className={styles.currencyValue}>1,585,302원</span>
-                  </div>
-                  <img src={linkIcon} alt="bid link" />
-                </div>
-              </div>
+             {
+               data.bids.map((bids) => (<Bids bidingStatus={data.bidingStatus} data={bids} />))
+             }
+              
             </div>
           </div>
         </div>

@@ -50,8 +50,8 @@ const ConnectWallet: React.FC = () => {
         payload: {
           user: {
             username: "Taimoor",
-            walletAmount: "0x42f3...aaa5",
-            walletAddress: "4.16123 BBR",
+            walletAddress: "0x42f3...aaa5",
+            walletAmount: "4.16123 BBR",
           },
           isLoggedIn: true,
         },

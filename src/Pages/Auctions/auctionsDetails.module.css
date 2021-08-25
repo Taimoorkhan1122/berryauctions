@@ -1,4 +1,22 @@
+.light {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: NotoSans;
+  color: rgb(102, 102, 102);
+  line-height: 1.6;
+}
 
+h4.light {
+  margin: 0;
+}
+
+.heavy {
+  font-size: 20px;
+  font-family: SongMyung;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+}
 
 .container {
   width: 100%;
@@ -7,27 +25,36 @@
 .imgContainer {
   display: flex;
   position: relative;
+  margin-bottom: 36px;
 
   & .expand {
+    cursor: pointer;
     position: absolute;
     width: 32px;
     bottom: 0%;
     right: 10px;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   & .aspectContainer {
-    /* width: auto; */
-    width: 450px;
+    width: 410px;
+    height: 0;
+    padding-top: calc(410px * 268 / 225);
     display: flex;
     margin: auto;
+    position: relative;
     border: 10px solid #fff;
 
     & img {
-      max-width: 100%;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       object-position: top;
       background: #fff;
-      /* padding: 10px; */
+      position: absolute;
+      top: 0;
     }
   }
 }
@@ -46,7 +73,7 @@
   }
 
   & > button {
-    border: 1px solid #dedede;
+    border: 1px solid #f2f2f2;
   }
 }
 
@@ -68,7 +95,7 @@
 /* first container */
 
 .headingContainer {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #e6e6e6;
   & > h3 {
     font-size: 60px;
     font-family: SongMyung;
@@ -106,6 +133,7 @@ p.description {
     padding: 15px 18px;
     border-radius: 10px;
     margin-bottom: 10px;
+    border: 1px solid #f2f2f2;
 
     & > div {
       display: flex;
@@ -113,6 +141,7 @@ p.description {
 
       & .linkIcon {
         margin-right: 18px;
+        cursor: pointer;
       }
 
       & span {
@@ -134,15 +163,99 @@ p.description {
   flex-direction: column;
   background: #fff;
   border-radius: 10px;
+  border: 1px solid #f2f2f2;
   & > button {
     width: auto;
     margin: 1.5rem 2rem 2rem;
   }
 }
 
+.auctionDetailsContainerEnded {
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+}
+.bidlink {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.successfulBid {
+  margin: 2.3rem 0 1.3rem;
+
+  & > h3 {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: NotoSans;
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+  }
+
+  & .pseudo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-self: space-between;
+    &:before,
+    &:after {
+      flex: 2;
+      content: "";
+      width: auto;
+      height: 1px;
+      background: #e6e6e6;
+      top: 10px;
+    }
+  }
+
+  & .winnerStatus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: 0 25px;
+
+    & .winningBidAmount {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 49px;
+      & > div {
+        margin: 10px 0;
+        & span {
+          margin-right: 10px;
+        }
+      }
+    }
+    & > div:first-child {
+      display: flex;
+      flex-direction: column;
+      border-radius: 0;
+      border: none;
+      background: none;
+      width: auto !important;
+      flex: 1;
+
+      & > span {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 12px;
+
+        & h4 {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
 .auctionDetailsContainer {
   display: flex;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #f2f2f2;
   padding: 2rem 0 2rem;
   & > div {
     flex: 50%;
@@ -201,7 +314,8 @@ p.description {
 }
 
 .status {
-  margin: 32px 0 28px;
+  margin: 4rem 0 28px;
+  font-weight: 700;
   font-size: 22px;
   font-family: NotoSans;
   color: rgb(0, 0, 0);
@@ -215,11 +329,11 @@ p.description {
     align-items: center;
     background: #fff;
     border-radius: 10px;
-    border: 1px solid #dedede;
+    border: 1px solid #f2f2f2;
     padding: 20px 22px;
     margin: 0 0 10px;
 
-    & > button > div {
+    & > div:first-child {
       border: none;
       border-radius: 0;
       margin: 0;
@@ -274,7 +388,7 @@ p.description {
   align-items: center;
   margin: 20px 0 0 0;
   width: 100%;
-  border-top: 1px solid #dedede;
+  border-top: 1px solid #f2f2f2;
   padding-top: 2rem;
 
   & .about {

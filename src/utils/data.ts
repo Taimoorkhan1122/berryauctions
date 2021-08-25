@@ -18,6 +18,12 @@ export type AuctionData = {
   username: string;
   timeRemaining: string;
   currentBid: string;
+  bidingStatus: boolean;
+  bids: {
+    isWinner: boolean;
+    walletAddress: string;
+    bidingAmount: string;
+  }[];
 };
 
 export const auctionData: AuctionData[] = [
@@ -28,8 +34,36 @@ export const auctionData: AuctionData[] = [
     heading: "ego",
     nftLink: nftImg1,
     currentBid: "0.532 BBR",
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "1.00 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+    ],
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: false,
   },
   {
     id: "02",
@@ -40,6 +74,24 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+    ],
   },
   {
     id: "03",
@@ -50,6 +102,24 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+    ],
   },
   {
     id: "04",
@@ -60,6 +130,29 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.528 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+    ],
   },
   {
     id: "05",
@@ -70,6 +163,29 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: false,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+    ],
   },
   {
     id: "06",
@@ -80,6 +196,29 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+    ],
   },
   {
     id: "07",
@@ -90,6 +229,19 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.528 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+    ],
   },
   {
     id: "08",
@@ -100,6 +252,19 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+    ],
   },
   {
     id: "09",
@@ -110,9 +275,21 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
+    bidingStatus: true,
+    bids: [
+      {
+        isWinner: true,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.728 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.528 BBR",
+      },
+    ],
   },
 ];
-
 
 interface IArtistData {
   imgLink: string;
@@ -206,7 +383,6 @@ export const artistData: IArtistData[] = [
     totalWork: 25,
   },
 ];
-
 
 export interface IMajorWorks {
   id: string;
