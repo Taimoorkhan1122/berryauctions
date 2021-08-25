@@ -22,6 +22,7 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
       }
       className={styles.menuButton}
       align={"end"}
+      transition
       offsetX={-10}
       offsetY={20}>
       <MenuItem>

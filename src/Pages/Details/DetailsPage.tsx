@@ -36,12 +36,12 @@ const CurrencySelect = () => (
   offsetY={10}
     direction='top'
     className={styles.currencySlect}
+    transition={true}
     menuButton={
       <MenuButton>
         <img src={dropdownArrow} alt="select arrow" />
       </MenuButton>
-    }
-    transition>
+    }>
     <MenuItem className={styles.currencyItem}>ETH</MenuItem>
     <MenuItem className={styles.currencyItem}>BBR</MenuItem>
   </Menu>
