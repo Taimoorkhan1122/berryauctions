@@ -6,18 +6,17 @@ import HeroContainer from "./HeroContainer";
 import styles from "./home.module.css";
 import SectionLayout from "./SectionLayout";
 import MajorWorkCard from "../../components/Cards/MajorWorkCard";
-import { artistData, auctionData, majorWorksData } from "../../utils/data";
+import { artistData, auctionData } from "../../utils/data";
 import ArtistCard from "../../components/Cards/ArtistCard";
 import GoToTop from "../../utils/GoToTop";
 import { Route, Switch } from "react-router";
-import AuctionsDetails from "../Auctions/AuctionsDetails";
 
 const arr = [1, 2, 3, 4];
 
 const AuctionInProgress = auctionData
   .slice(0, 4)
   .map((item, index) => <AuctionCard key={index + "_01"} data={item} />);
-const MajorWork = majorWorksData
+const MajorWork = auctionData
   .slice(0, 4)
   .map((item, index) => <MajorWorkCard key={index + "_02"} data={item} />);
 const Artists = artistData

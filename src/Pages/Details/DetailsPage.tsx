@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import "react-image-lightbox/style.css";
 
+
 import Avatar from "../../components/Avatar/Avatar";
 import Button, { BtnType } from "../../components/Button/Button";
 import GradText from "../../components/GradText/GradText";
@@ -11,23 +12,47 @@ import { GlobalContext } from "../../Context/GlobalProvider";
 
 import { artistData, AuctionData, auctionData } from "../../utils/data";
 import styles from "./auctionsDetails.module.css";
+
+import Lightbox from "react-image-lightbox";
+import Bids from "./Bids";
+
+// icons 
 import linkIcon from "../../images/link.png";
 import shareIcon from "../../images/share.png";
 import etherscan from "../../images/etherscan.png";
 import ipfs from "../../images/ipfs.png";
 import ipfsMeta from "../../images/metadata.png";
 import expndIcon from "../../images/expand.png";
-import Lightbox from "react-image-lightbox";
-import Bids from "./Bids";
+import dropdownArrow from "../../images/dropdown-arrow.png";
+import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 
-const AuctionsDetails = () => {
+interface IDetailsPageProps {
+  pageData: AuctionData[];
+}
+
+const CurrencySelect = () => (
+  <Menu
+  offsetX={-135}
+  offsetY={10}
+    direction='top'
+    className={styles.currencySlect}
+    menuButton={
+      <MenuButton>
+        <img src={dropdownArrow} alt="select arrow" />
+      </MenuButton>
+    }
+    transition>
+    <MenuItem className={styles.currencyItem}>ETH</MenuItem>
+    <MenuItem className={styles.currencyItem}>BBR</MenuItem>
+  </Menu>
+);
+
+const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
   const { state } = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState(false);
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
-  const [data]: AuctionData[] = auctionData.filter(
-    (data) => data.id === _id[1]
-  );
+  const [data] = pageData.filter((data) => data.id === _id[1]);
 
   const [winner] = data?.bids.filter(
     (bid) => bid.isWinner && Object.keys(bid.walletAddress)
@@ -43,7 +68,6 @@ const AuctionsDetails = () => {
               mainSrc={data.nftLink}
               onCloseRequest={() => setIsOpen(false)}
               wrapperClassName="wrapper"
-              // toolbarButtons={[""]}
             />
           )}
         </div>
@@ -171,9 +195,27 @@ const AuctionsDetails = () => {
             </div>
 
             {/* details section end */}
+
+            {/* --- instant buy --- */}
+            <div className={styles.instantBuy}>
+              <div className={styles.pricing}>
+                <div>
+                  <span>현재 입찰가</span>
+                  <h3>2,000,000 BBR</h3>
+                  <small className={styles.small}>1,584,302원</small>
+                </div>
+                <span className={styles.dropdown}><CurrencySelect /></span>
+              </div>
+
+              <Button width="100%" btnType={BtnType.PRIMARY}>
+                {"경매 입찰하기"}
+              </Button>
+            </div>
+            {/* --- intant buy end --- */}
+
             <h3 className={styles.status}>입찰 현황</h3>
             <div className={styles.bids}>
-              {data.bids.map((bids) => (
+              {data.bids.map((bids: any) => (
                 <Bids bidingStatus={data.bidingStatus} data={bids} />
               ))}
             </div>
@@ -205,4 +247,4 @@ const AuctionsDetails = () => {
   );
 };
 
-export default AuctionsDetails;
+export default DetailsPage;

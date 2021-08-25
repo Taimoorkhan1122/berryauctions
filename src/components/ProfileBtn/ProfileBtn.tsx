@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Menu, MenuButton, MenuItem, SubMenu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
+import "@szhsin/react-menu/dist/transitions/slide.css";
+
 
 import { User } from "../../Context/GlobalProvider";
 import Avatar from "../Avatar/Avatar";
 import styles from "./profileBtn.module.css"
 
 const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
-  const [showProfileOptions, setShowProfileOptions] = useState<boolean>(false);
+  // const [showProfileOptions, setShowProfileOptions] = useState<boolean>(false);
   return (
     <Menu
       menuButton={

@@ -1,19 +1,13 @@
 import classNames from "classnames";
 import React from "react";
 import { useHistory } from "react-router";
+import { AuctionData } from "../../utils/data";
 
 import styles from "./card.module.css";
 import CardLayout from "./CardLayout";
 
 interface IMajorWorkCardProps {
-  data: {
-    heading: string;
-    nftLink: string;
-    avatar: string;
-    username: string;
-    price: string;
-    owner: string;
-  };
+  data: AuctionData;
 }
 
 const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
@@ -24,7 +18,7 @@ const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
       nftLink={data.nftLink}
       avatar={data.avatar}
       username={data.username}
-      onClick={() => history.push(`주요작품/${data.username}_${data.price}`)}>
+      onClick={() => history.push(`주요작품/${data.username}_${data.id}`)}>
       {/* details container */}
       <div className={classNames(styles.detailsContainer)}>
         <div>

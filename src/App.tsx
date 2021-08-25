@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "@szhsin/react-menu/dist/transitions/slide.css";
 
 import Layout from "./components/Layout/Layout";
 import nftimg from "./images/nft.png";
@@ -10,7 +11,7 @@ import Home from "./Pages/Home/Home";
 import MajorWorks from "./Pages/MajorWorks/MajorWorks";
 import InProgress from "./Pages/Auctions/InProgress";
 import { GlobalProvider } from "./Context/GlobalProvider";
-import AuctionsDetails from "./Pages/Auctions/AuctionsDetails";
+
 
 const link =
   "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg";

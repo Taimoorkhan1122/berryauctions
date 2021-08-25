@@ -4,6 +4,7 @@
     font-family: NotoSans;
     font-weight: 700;
     cursor: pointer;
+    min-width: 110px;
 }
 
 .PRIMARY {

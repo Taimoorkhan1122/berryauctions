@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Switch, useParams, useRouteMatch } from 'react-router';
 import MajorWorkCard from '../../components/Cards/MajorWorkCard';
-import { IMajorWorks, majorWorksData } from '../../utils/data';
+import { AuctionData, auctionData } from '../../utils/data';
 import GoToTop from '../../utils/GoToTop';
-import AuctionsDetails from '../Auctions/AuctionsDetails';
+import DetailsPage from '../Details/DetailsPage';
 import SectionLayout from '../Home/SectionLayout';
 
 
-const MajorWork = majorWorksData.map((item, index) => (
+const MajorWork = auctionData.map((item, index) => (
   <MajorWorkCard key={index + "_01"} data={item} />
 ));
 
@@ -28,9 +28,8 @@ const MajorWorks = () => {
             />
           }
         />
-        <Route path={`${path}/:id`} children={"major work details"} />
+        <Route path={`${path}/:id`} children={<DetailsPage pageData={auctionData} />} />
       </Switch>
-
       <GoToTop />
     </div>
   );

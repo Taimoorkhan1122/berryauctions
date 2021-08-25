@@ -16,8 +16,10 @@ export type AuctionData = {
   nftLink: string;
   avatar: string;
   username: string;
+  owner: string,
   timeRemaining: string;
   currentBid: string;
+  price: string;
   bidingStatus: boolean;
   bids: {
     isWinner: boolean;
@@ -28,6 +30,7 @@ export type AuctionData = {
 
 export const auctionData: AuctionData[] = [
   {
+    owner: "Taimoor khan",
     id: "01",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -64,8 +67,10 @@ export const auctionData: AuctionData[] = [
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
     bidingStatus: false,
+    price: "2,000,000",
   },
   {
+    owner: "Taimoor khan",
     id: "02",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -92,8 +97,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.728 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "03",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -120,8 +128,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.728 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "04",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -153,8 +164,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.728 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "05",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -186,8 +200,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.528 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "06",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -219,8 +236,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.728 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "07",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -242,8 +262,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.728 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "08",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -265,8 +288,11 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.528 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
   {
+    owner: "Taimoor khan",
     id: "09",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -288,6 +314,8 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.528 BBR",
       },
     ],
+    price: "2,000,000",
+
   },
 ];
 
@@ -384,104 +412,3 @@ export const artistData: IArtistData[] = [
   },
 ];
 
-export interface IMajorWorks {
-  id: string;
-  heading: string;
-  nftLink: string;
-  avatar: string;
-  username: string;
-  price: string;
-  owner: string;
-}
-export const majorWorksData: IMajorWorks[] = [
-  {
-    id: "01",
-    heading: "Show me what you got",
-    nftLink: nftImg3,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "02",
-    heading: "Show me what you got",
-    nftLink: nftImg1,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "03",
-    heading: "Show me what you got",
-    nftLink: nftImg4,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "04",
-    heading: "Show me what you got",
-    nftLink: nftImg2,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "05",
-    heading: "Show me what you got",
-    nftLink: nftImg1,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "06",
-    heading: "Show me what you got",
-    nftLink: nftImg4,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.552 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "07",
-    heading: "Show me what you got",
-    nftLink: nftImg2,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "08",
-    heading: "Show me what you got",
-    nftLink: nftImg2,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-  {
-    id: "09",
-    heading: "Show me what you got",
-    nftLink: nftImg4,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "박기웅",
-    price: "0.555 BBD",
-    owner: "0x42f3...aaa5",
-  },
-];

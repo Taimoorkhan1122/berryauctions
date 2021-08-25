@@ -3,10 +3,10 @@ import { Route, Switch, useRouteMatch } from "react-router";
 import AuctionCard from "../../components/Cards/AuctionCard";
 import { auctionData } from "../../utils/data";
 import GoToTop from "../../utils/GoToTop";
+import DetailsPage from "../Details/DetailsPage";
 import SectionLayout from "../Home/SectionLayout";
 
 import styles from "./auctions.module.css";
-import AuctionsDetails from "./AuctionsDetails";
 
 const AuctionInProgress = auctionData.map((item, index) => (
   <AuctionCard key={index + "_01"} data={item} />
@@ -28,7 +28,7 @@ const InProgress = () => {
             />
           }
         />
-        <Route path={`${path}/:id`} children={<AuctionsDetails />} />
+        <Route path={`${path}/:id`} children={<DetailsPage pageData={auctionData} />} />
       </Switch>
 
       <GoToTop />
