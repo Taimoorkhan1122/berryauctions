@@ -24,7 +24,7 @@ interface ILoadingState {
   isActive: boolean;
 }
 
-const ConnectWallet: React.FC = () => {
+const ConnectWallet: React.FC<{dark: boolean}> = ({dark}) => {
   const {state: {isloggedIn, user}, appDispatch} = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
@@ -67,7 +67,7 @@ const ConnectWallet: React.FC = () => {
     <div className={isloggedIn ? styles.container : ""}>
       {isloggedIn ? (
         <div className={styles.userProfiler}>
-          <MyAuctions count={2} />
+          <MyAuctions count={2} dark={dark} />
           <ProfileBtn user={user} />
         </div>
       ) : (

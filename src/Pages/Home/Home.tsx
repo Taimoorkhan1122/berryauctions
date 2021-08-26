@@ -83,6 +83,7 @@ const Auctions = () => {
             legendKorean="아티스트"
             children={Artists}
             link="아티스트"
+            parentClassName={styles.artistSection}
           />
         </div>
       </div>

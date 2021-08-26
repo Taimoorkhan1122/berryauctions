@@ -24,6 +24,8 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
   totalWork,
 }) => {
   const history = useHistory();
+  const route = `아티스트/${username}`;
+
   return (
     <div className={styles.container}>
       <div className={classNames(styles.imgContainer, styles.artistImg)}>
@@ -51,7 +53,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
             children="작품보기"
             width="150px"
             btnType={BtnType.TERTIARY}
-            onClick={() => history.push(`/${username}`)}
+            onClick={() => history.push(route)}
           />
         </div>
       </div>

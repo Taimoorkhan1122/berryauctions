@@ -4,6 +4,12 @@
   }
 }
 
+.artistSection {
+    & > div {
+        cursor: default;
+    }
+}
+
 .legend {
   display: flex;
   justify-content: space-between;

@@ -1,17 +1,19 @@
 .headerContainer {
   width: 100%;
+  z-index: 999;
+  min-height: 88px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 26px 0;
   width: 95%;
-  margin: auto; 
+  margin: 0 auto;
 
   @media (min-width: 1440px) {
     max-width: 1440px;
-   margin: auto;  
   }
 }
 
@@ -29,16 +31,27 @@
   margin-right: 46px;
 }
 
-.linklist a {
+.linklist > a {
   margin-left: 46px;
 
   font-family: NotoSans;
   font-size: 16px;
   font-weight: 700;
-  color: #666;
   text-decoration: none;
+
+  &.dark {
+    color: #666;
+  }
+
+  &.light {
+    color: #ffffff;
+  }
 }
 
-.linklist a.active {
-    color: rgb(0, 0, 0);
+.linklist a.dark.active {
+  color: rgb(0, 0, 0);
+}
+
+.linklist a.light.active {
+  color: rgb(200, 200, 200);
 }

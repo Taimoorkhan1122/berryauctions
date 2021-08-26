@@ -7,9 +7,10 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 import { User } from "../../Context/GlobalProvider";
 import Avatar from "../Avatar/Avatar";
 import styles from "./profileBtn.module.css"
+import { useHistory } from "react-router";
 
 const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
-  // const [showProfileOptions, setShowProfileOptions] = useState<boolean>(false);
+  const history = useHistory();
   return (
     <Menu
       menuButton={
@@ -25,7 +26,7 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
       transition
       offsetX={-10}
       offsetY={20}>
-      <MenuItem>
+      <MenuItem onClick={() => history.push("/프로필")}>
         {" "}
         <Avatar width={"196px"}>내 프로필 보기</Avatar>
       </MenuItem>
