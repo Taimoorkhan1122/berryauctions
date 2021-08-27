@@ -1,27 +1,29 @@
 .container {
   cursor: pointer;
-  width: 350px;
+  width: 96%;
   background: #fff;
   border-radius: 10px;
-  margin: 0px 0px;
-  margin-left: 0;
+  margin: 2%;
+  margin-bottom: 25px;
+  float: left;
   overflow: hidden;
 
   @media (min-width: 768px) {
-    width: 32%;
+    width: 48%;
+    margin: 1%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 31.3333%;
   }
   @media (min-width: 1280px) {
     width: 23%;
-  }
-
-  @media (min-width: 1500px) {
-    width: 23.4%;
   }
 }
 .imgContainer {
   height: 250px;
   @media (min-width: 1024px) {
-      height: 335px;
+    height: 335px;
   }
 }
 
@@ -53,8 +55,7 @@
   margin: 15px 0 23px;
 
   @media (max-width: 768px) {
-  font-size: 18px;
-    
+    font-size: 18px;
   }
 }
 

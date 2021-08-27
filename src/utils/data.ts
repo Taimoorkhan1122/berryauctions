@@ -16,7 +16,7 @@ export type AuctionData = {
   nftLink: string;
   avatar: string;
   username: string;
-  owner: string,
+  owner: string;
   timeRemaining: string;
   currentBid: string;
   price: string;
@@ -30,7 +30,7 @@ export type AuctionData = {
 
 export const auctionData: AuctionData[] = [
   {
-    owner: "Taimoor khan",
+    owner: "오승환",
     id: "01",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -64,7 +64,7 @@ export const auctionData: AuctionData[] = [
         bidingAmount: "0.528 BBR",
       },
     ],
-    username: "박기웅",
+    username: "하지원",
     timeRemaining: "4일 18시 12분 27초",
     bidingStatus: false,
     price: "2,000,000",
@@ -98,7 +98,6 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
     owner: "Taimoor khan",
@@ -129,10 +128,9 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
-    owner: "Taimoor khan",
+    owner: "Nawaz",
     id: "04",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -165,10 +163,9 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
-    owner: "Taimoor khan",
+    owner: "Nawaz",
     id: "05",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -201,7 +198,6 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
     owner: "Taimoor khan",
@@ -237,10 +233,9 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
-    owner: "Taimoor khan",
+    owner: "오승환",
     id: "07",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -263,10 +258,9 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
-    owner: "Taimoor khan",
+    owner: "오승환",
     id: "08",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -289,10 +283,9 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
   {
-    owner: "Taimoor khan",
+    owner: "박기웅",
     id: "09",
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
@@ -315,17 +308,17 @@ export const auctionData: AuctionData[] = [
       },
     ],
     price: "2,000,000",
-
   },
 ];
 
-interface IArtistData {
+export interface IArtistData {
   imgLink: string;
   avatar: string;
   username: string;
   profession: string;
   about: string;
   totalWork: number;
+  walletAddress: string;
 }
 
 export const artistData: IArtistData[] = [
@@ -338,16 +331,18 @@ export const artistData: IArtistData[] = [
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 15,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist2,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "하지원",
+    username: "Taimoor khan",
     profession: "Sport Star",
     about:
-      "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, exercitationem? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, exercitationem?",
     totalWork: 5,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist3,
@@ -358,57 +353,62 @@ export const artistData: IArtistData[] = [
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist1,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "오승환",
+    username: "Ilyas Afridi",
     profession: "Arttrainer",
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
+    walletAddress: " 0x42f3...aaa5",
   },
 
   {
     imgLink: artist2,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "하지원",
+    username: "Umair khan",
     profession: "Sport Star",
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 5,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist2,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "하지원",
+    username: "Nawaz",
     profession: "Sport Star",
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 5,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist3,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "오승환",
+    username: "some other guy",
     profession: "Arttrainer",
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
+    walletAddress: " 0x42f3...aaa5",
   },
   {
     imgLink: artist1,
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
-    username: "오승환",
+    username: "Robert Junior",
     profession: "Arttrainer",
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
+    walletAddress: " 0x42f3...aaa5",
   },
 ];
-

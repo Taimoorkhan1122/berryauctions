@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { AuctionData, IArtistData } from "../utils/data";
 import { IActionType, reducer } from "./Reducer";
 
 type Props = {
@@ -9,6 +10,8 @@ export interface User {
   username: string | undefined,
   walletAddress: string | undefined,
   walletAmount: string | undefined,
+  listings: AuctionData[] | undefined,
+  artistData : IArtistData | undefined,
 }
 
 export interface IGlobalState {
@@ -22,6 +25,8 @@ const initialState: IGlobalState = {
     username: undefined,
     walletAmount: undefined,
     walletAddress: undefined,
+    listings: undefined,
+    artistData: undefined,
   },
 };
 

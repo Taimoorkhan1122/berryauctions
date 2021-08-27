@@ -35,10 +35,86 @@
 
 .asid {
   flex-basis: 28%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & .addressContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 260px;
+    background: #fff;
+    border-radius: 50px;
+    padding-right: 10px;
+    & > button {
+      max-height: 35px;
+      margin: 0 1rem 0 0;
+    }
+    & > span {
+      margin: 0 0.5rem 0 0;
+      font-size: 20px;
+      font-family: SongMyung;
+      font-weight: 400;
+      color: rgb(0, 0, 0);
+      line-height: 1.2;
+    }
+
+    & .copyBtn {
+      cursor: pointer;
+    }
+  }
+
+  & .artistDetails {
+    & .infoContainer {
+      margin-top: 3rem;
+      & > h3:first-of-type {
+        font-size: 42px;
+        font-family: NotoSans;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        line-height: 0.976;
+        margin: 0 0 30px;
+      }
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+    }
+
+    & .aboutContainer { 
+      & > h3 {
+        font-size: 20px;
+        font-family: NotoSans;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        line-height: 2.049;
+        padding-bottom: 1.2rem;
+        margin-bottom: 1.2rem;
+        border-bottom: 1px solid #e6e6e6;
+      }
+
+      & .about {
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 .listings {
   flex-basis: 72%;
+
+  & > h3 {
+    font-size: 22px;
+    font-family: "Noto Sans CJK KR";
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+    font-size: 22px;
+    margin: 0 0 25px;
+  }
 }
 
 .avatarContainer {
@@ -51,18 +127,17 @@
   height: 180px;
   background: #ffffff;
   margin-top: -200px;
-  position: relative;
+  position: absolute;
 }
 
 .avatarContainer img {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: #eeeded;
 }
 
 .linksContainer {
-  margin-top: 52px;
+  margin-top: 3rem;
   width: 77%;
   & .link {
     display: flex;
@@ -97,11 +172,8 @@
 
 .work {
   & section > div {
-    @media (min-width: 768px) {
-      width: 49%;
-    }
     @media (min-width: 1280px) {
-      width: 32%;
+      width: 31.333%;
     }
   }
 }

@@ -5,9 +5,9 @@
 }
 
 .artistSection {
-    & > div {
-        cursor: default;
-    }
+  & > div {
+    cursor: default;
+  }
 }
 
 .legend {
@@ -33,13 +33,14 @@
 }
 
 .section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-top: 1px solid #e6e6e6;
   padding-top: 24px;
-  gap: 30px 10px;
-  & div:nth-child(4n + 0) {
-    margin: 0;
+  margin: 0 -1%;
+
+  & > .borderTop {
+    width: 98%;
+    height: 0;
+    border-top: 1px solid #e6e6e6;
+    margin: 0 1% 25px;
+    padding: 0;;
   }
 }

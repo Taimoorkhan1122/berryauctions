@@ -13,18 +13,19 @@ import { GlobalContext } from "../../Context/GlobalProvider";
 import { ActionTypes } from "../../Context/Reducer";
 import MyAuctions from "../../components/MyAuctions/MyAuctions";
 import ProfileBtn from "../../components/ProfileBtn/ProfileBtn";
+import { artistData, auctionData } from "../../utils/data";
 
-enum Wallet {
-  metamask,
-  walletConnect,
-}
+  enum Wallet {
+    metamask,
+    walletConnect,
+  }
 
 interface ILoadingState {
   walletType: Wallet;
   isActive: boolean;
 }
 
-const ConnectWallet: React.FC<{dark: boolean}> = ({dark}) => {
+const ConnectWallet: React.FC<{dark: boolean, forcedOpen? : boolean}> = ({dark, forcedOpen}) => {
   const {state: {isloggedIn, user}, appDispatch} = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
@@ -35,6 +36,11 @@ const ConnectWallet: React.FC<{dark: boolean}> = ({dark}) => {
   const connectingWallet =
     loading[Wallet.walletConnect].isActive || loading[Wallet.metamask].isActive;
 
+  const listings = auctionData.filter((data) => (data.owner === "Taimoor khan") && data);
+  const artist = artistData.filter(
+    (artist) => artist.username === "Taimoor khan"
+  )[0];
+   
   const handleClick = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -49,9 +55,11 @@ const ConnectWallet: React.FC<{dark: boolean}> = ({dark}) => {
         type: ActionTypes.SIGNIN,
         payload: {
           user: {
-            username: "Taimoor",
+            username: "Taimoor khan",
             walletAddress: "0x42f3...aaa5",
             walletAmount: "4.16123 BBR",
+            artistData: artist,
+            listings,
           },
           isLoggedIn: true,
         },
@@ -80,8 +88,8 @@ const ConnectWallet: React.FC<{dark: boolean}> = ({dark}) => {
       )}
 
       {/* modal start */}
-      {!isloggedIn && isOpen && (
-        <Modal isOpen={isOpen} handleClick={handleClick}>
+      {!isloggedIn && forcedOpen ? forcedOpen : isOpen  && (
+        <Modal isOpen={true} handleClick={handleClick}>
           <div className={styles.modal}>
             <div className={styles.close} onClick={handleClick}>
               <img src={close} alt="modal close button" />

@@ -1,13 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import styles from "./profile.module.css";
-import Avatar from "../../components/Avatar/Avatar";
-import classNames from "classnames";
-import { GlobalContext } from "../../Context/GlobalProvider";
-import { stat, Stats } from "fs";
-import { artistData, auctionData } from "../../utils/data";
 import Button, { BtnType } from "../../components/Button/Button";
 import GradText from "../../components/GradText/GradText";
+import SectionLayout from "../Home/SectionLayout";
+import useProfile from "./useProfile";
 
 import coverImage from "../../images/coverimages/user1.cover.png";
 import facebook from "../../images/facebook.png";
@@ -15,18 +12,10 @@ import twitter from "../../images/twitter.png";
 import instagram from "../../images/instagram.png";
 import vlive from "../../images/vlive.png";
 import copyIcon from "../../images/copyIcon.png";
-import MajorWorkCard from "../../components/Cards/MajorWorkCard";
-import { useParams } from "react-router";
-import SectionLayout from "../Home/SectionLayout";
+import copyIconDark from "../../images/copyIconDark.png";
 
 const ProfilePage = () => {
-  const { state } = useContext(GlobalContext);
-
-  const user = useParams();
-
-  const Works = auctionData.map((item, index) => (
-    <MajorWorkCard key={index + "_01"} data={item} />
-  ));
+  const { currentPath, user, listings, Works } = useProfile();
 
   const imgStyles = {
     backgroundRepeat: "no-repeat",
@@ -55,68 +44,102 @@ const ProfilePage = () => {
         <div className={styles.asid}>
           {/* avatar container */}
           <div className={styles.avatarContainer}>
-            <img src={artistData[3].imgLink} alt="user avatar" />
+            <img src={user.artistData?.avatar} alt="user avatar" />
           </div>
-          <div className="addressContainer">
-            <Button btnType={BtnType.PRIMARY}>월렛주소</Button>
-            <span className="address">{state.user.walletAddress}</span>
+          <div className={styles.addressContainer}>
+            <Button width="35%" btnType={BtnType.PRIMARY}>
+              월렛주소
+            </Button>
+            <span>{user.artistData?.walletAddress}</span>
+            <img
+              className={styles.copyBtn}
+              src={copyIconDark}
+              alt="copy wallet address icon"
+            />
           </div>
           <div className={styles.artistDetails}>
             <div className={styles.infoContainer}>
-              <h3>{artistData[0].username}</h3>
-              <GradText>{artistData[0].profession}</GradText>
-            </div>
-            <p className={styles.about}>{artistData[0].about}</p>
-          </div>
-          <div className={styles.linksContainer}>
-            {/* social media links */}
-
-            <div className={styles.link}>
               <div>
-                <img
-                  className={styles.linkIcon}
-                  src={instagram}
-                  alt="instgram icon"
-                />
-                <span>Instagram</span>
+                <h3>{user.artistData?.username}</h3>
+                {currentPath === "/프로필" && (
+                  <Button
+                    width="35%"
+                    fontSize="15px"
+                    btnType={BtnType.TERTIARY}>
+                    프로필 수정
+                  </Button>
+                )}
               </div>
-              <img src={copyIcon} alt="bid link" />
+              <GradText propStyles={{ fontSize: "36px", margin: 0 }}>
+                {user.artistData?.profession}
+              </GradText>
             </div>
+            <div className={styles.aboutContainer}>
+              <h3>아티스트 소개</h3>
 
-            <div className={styles.link}>
-              <div>
-                <img
-                  className={styles.linkIcon}
-                  src={facebook}
-                  alt="instgram icon"
-                />
-                <span>Instagram</span>
-              </div>
-              <img src={copyIcon} alt="bid link" />
-            </div>
+              {user.artistData ? (
+                <>
+                  <p className={styles.about}>
+                    {user.artistData?.about
+                      ? user.artistData?.about
+                      : "소개말이 없습니다."}
+                  </p>
 
-            <div className={styles.link}>
-              <div>
-                <img
-                  className={styles.linkIcon}
-                  src={twitter}
-                  alt="instgram icon"
-                />
-                <span>Instagram</span>
-              </div>
-              <img src={copyIcon} alt="bid link" />
-            </div>
+                  <div className={styles.linksContainer}>
+                    {/* social media links */}
 
-            <div className={styles.link}>
-              <div>
-                <img
-                  className={styles.linkIcon}
-                  src={vlive}
-                  alt="instgram icon"
-                />
-                <span>Instagram</span>
-              </div>
-              <img src={copyIcon} alt="bid link" />
+                    <div className={styles.link}>
+                      <div>
+                        <img
+                          className={styles.linkIcon}
+                          src={instagram}
+                          alt="instgram icon"
+                        />
+                        <span>Instagram</span>
+                      </div>
+                      <img src={copyIcon} alt="bid link" />
+                    </div>
+
+                    <div className={styles.link}>
+                      <div>
+                        <img
+                          className={styles.linkIcon}
+                          src={facebook}
+                          alt="instgram icon"
+                        />
+                        <span>Instagram</span>
+                      </div>
+                      <img src={copyIcon} alt="bid link" />
+                    </div>
+
+                    <div className={styles.link}>
+                      <div>
+                        <img
+                          className={styles.linkIcon}
+                          src={twitter}
+                          alt="instgram icon"
+                        />
+                        <span>Instagram</span>
+                      </div>
+                      <img src={copyIcon} alt="bid link" />
+                    </div>
+
+                    <div className={styles.link}>
+                      <div>
+                        <img
+                          className={styles.linkIcon}
+                          src={vlive}
+                          alt="instgram icon"
+                        />
+                        <span>Instagram</span>
+                      </div>
+                      <img src={copyIcon} alt="bid link" />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className={styles.about}>소개말이 없습니다.</p>
+              )}
             </div>
           </div>
         </div>
@@ -124,7 +147,7 @@ const ProfilePage = () => {
 
         <div className={styles.listings}>
           <h3>
-            등록된 작품 <span>{artistData[0].totalWork}</span>
+            등록된 작품 <span>{listings}</span>
           </h3>
           <div className={styles.work}>
             <SectionLayout

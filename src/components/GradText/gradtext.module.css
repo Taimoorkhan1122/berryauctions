@@ -1,12 +1,10 @@
 .h3 {
   font-family: SongMyung !important;
   font-weight: 400 !important;
-  font-size: 24px !important;
+  /* font-size: 24px !important; */
   background: #a46ffe;
   background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
-  background: -webkit-linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
-  background: -moz-linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
   background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1;
 }

@@ -33,6 +33,7 @@ const SectionLayout: React.FC<ISectionLayoutProps> = ({
         </div>
       )}
       <section className={classNames(styles.section, parentClassName)}>
+        <div className={styles.borderTop}></div>
         {children}
       </section>
     </div>

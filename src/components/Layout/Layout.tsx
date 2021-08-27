@@ -20,9 +20,6 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
     ? false
     : true;
 
-    console.log(match2);
-    
-
   return (
     <main className={styles.container}>
       <Header links={links} dark={isDark} />
