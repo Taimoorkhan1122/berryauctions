@@ -36,21 +36,21 @@ export const auctionData: AuctionData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "ego",
     nftLink: nftImg1,
-    currentBid: "0.532 BBR",
+    currentBid: "0.932 BBR",
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: "0x45f6...aaa5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x42f33...aba5",
         bidingAmount: "1.00 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x42f3...aca5",
         bidingAmount: "0.528 BBR",
       },
       {
@@ -60,7 +60,7 @@ export const auctionData: AuctionData[] = [
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x53f3...abd5",
         bidingAmount: "0.528 BBR",
       },
     ],
@@ -83,17 +83,17 @@ export const auctionData: AuctionData[] = [
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x452f3...baa5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x42f3...avs5",
         bidingAmount: "0.328 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x4ef3...a555",
         bidingAmount: "0.728 BBR",
       },
     ],
@@ -113,17 +113,17 @@ export const auctionData: AuctionData[] = [
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xeef3...43aa5",
         bidingAmount: "0.328 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xerdf3...a3435",
         bidingAmount: "0.728 BBR",
       },
     ],
@@ -136,7 +136,7 @@ export const auctionData: AuctionData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "ELON lettering",
     nftLink: nftImg4,
-    currentBid: "0.528 BBR",
+    currentBid: "0.328 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
     bidingStatus: true,
@@ -144,21 +144,21 @@ export const auctionData: AuctionData[] = [
       {
         isWinner: false,
         walletAddress: " 0x42f3...aaa5",
+        bidingAmount: "0.628 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
-        bidingAmount: "0.528 BBR",
-      },
-      {
-        isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xeef3...43aa5",
         bidingAmount: "0.328 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xerdf3...a3435",
         bidingAmount: "0.728 BBR",
       },
     ],
@@ -171,24 +171,24 @@ export const auctionData: AuctionData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     heading: "Show me what you got",
     nftLink: nftImg3,
-    currentBid: "0.532 BBR",
+    currentBid: "0.332 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
     bidingStatus: false,
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xeef3...43aa5",
         bidingAmount: "0.328 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xerdf3...a3435",
         bidingAmount: "0.728 BBR",
       },
       {
@@ -213,22 +213,17 @@ export const auctionData: AuctionData[] = [
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
-        bidingAmount: "0.528 BBR",
-      },
-      {
-        isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xeef3...43aa5",
         bidingAmount: "0.328 BBR",
       },
       {
         isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0xerdf3...a3435",
         bidingAmount: "0.728 BBR",
       },
     ],
@@ -248,13 +243,23 @@ export const auctionData: AuctionData[] = [
     bids: [
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: "0x42f3...aaa5",
+        bidingAmount: "0.7028 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
       },
       {
-        isWinner: true,
-        walletAddress: " 0x42f3...aaa5",
-        bidingAmount: "0.728 BBR",
+        isWinner: false,
+        walletAddress: " 0xeef3...43aa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0xerdf3...a3435",
+        bidingAmount: "0.28 BBR",
       },
     ],
     price: "2,000,000",
@@ -269,7 +274,7 @@ export const auctionData: AuctionData[] = [
     currentBid: "0.532 BBR",
     username: "박기웅",
     timeRemaining: "4일 18시 12분 27초",
-    bidingStatus: true,
+    bidingStatus: false,
     bids: [
       {
         isWinner: true,
@@ -278,8 +283,18 @@ export const auctionData: AuctionData[] = [
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0xeef3...43aa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0xerdf3...a3435",
+        bidingAmount: "0.728 BBR",
       },
     ],
     price: "2,000,000",
@@ -303,8 +318,18 @@ export const auctionData: AuctionData[] = [
       },
       {
         isWinner: false,
-        walletAddress: " 0x42f3...aaa5",
+        walletAddress: " 0x43f3...bba5",
         bidingAmount: "0.528 BBR",
+      },
+      {
+        isWinner: false,
+        walletAddress: " 0xeef3...43aa5",
+        bidingAmount: "0.328 BBR",
+      },
+      {
+        isWinner: true,
+        walletAddress: " 0xerdf3...a3435",
+        bidingAmount: "0.728 BBR",
       },
     ],
     price: "2,000,000",

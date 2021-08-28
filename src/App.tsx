@@ -20,6 +20,7 @@ import ProfilePage from "./Pages/Profile/ProfilePage";
 import ConnectWallet from "./containers/ConnectWallet/ConnectWallet";
 import LoginFirstPage from "./Pages/Helpers/LoginFirstPage";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import MyAuctionsPage from "./Pages/MyAuctionsPage/MyAuctionsPage";
 
 const link =
   "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg";
@@ -79,6 +80,13 @@ function App() {
               <Route path="/아티스트">
                 <Artists />
               </Route>
+
+              {/* my auctions */}
+              <ProtectedRoute
+                exact={false}
+                path="/나의경매"
+                component={MyAuctionsPage}
+              />
 
               {/* Profile Page */}
               <ProtectedRoute exact path="/프로필" component={ProfilePage} />

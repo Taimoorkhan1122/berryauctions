@@ -8,7 +8,8 @@ export enum ActionTypes {
 
 export interface IPayloadType {
   isLoggedIn: boolean;
-  user: User
+  user: User;
+  redirectPath?: string;
 }
 
 export interface IActionType {
@@ -22,13 +23,15 @@ export const reducer = (state: IGlobalState, action: IActionType) => {
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
-        user: {...action.payload.user}
+        redirectPath: action.payload?.redirectPath,
+        user: { ...action.payload.user },
       };
 
     case ActionTypes.SIGNIN:
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
+        redirectPath: action.payload?.redirectPath,
         user: { ...action.payload.user },
       };
 
@@ -36,6 +39,7 @@ export const reducer = (state: IGlobalState, action: IActionType) => {
       return {
         ...state,
         isloggedIn: action.payload.isLoggedIn,
+        redirectPath: action.payload?.redirectPath,
         user: { ...action.payload.user },
       };
 

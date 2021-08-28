@@ -12,21 +12,25 @@ export interface User {
   walletAmount: string | undefined,
   listings: AuctionData[] | undefined,
   artistData : IArtistData | undefined,
+  bids: AuctionData[]
 }
 
 export interface IGlobalState {
   isloggedIn: boolean;
+  redirectPath?: string;
   user:  User;
 }
 
 const initialState: IGlobalState = {
   isloggedIn: false,
+  redirectPath: '',
   user: {
     username: undefined,
     walletAmount: undefined,
     walletAddress: undefined,
     listings: undefined,
     artistData: undefined,
+    bids: [],
   },
 };
 
