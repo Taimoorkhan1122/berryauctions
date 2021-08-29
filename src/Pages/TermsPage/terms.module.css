@@ -1,0 +1,57 @@
+.container {
+    margin: 4% 0 0;
+}
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  & h3 {
+    font-size: 22px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+    margin: 0;
+  }
+}
+
+.section {
+  padding-top: 24px;
+  margin: 0 ;
+    /* min-height: 50vh; */
+
+
+  & > .borderTop {
+    width: 98%;
+    height: 0;
+    border-top: 1px solid #e6e6e6;
+    margin: 0 0 25px;
+    padding: 0;;
+  }
+  & p{
+      font-size: 15px;
+      font-weight: 600 !important;
+      color: #000;
+  }
+  & p.heading {
+      font-weight: 700 !important;
+  }
+  & a {
+      font-family: NotoSans;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+  }
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 8% auto 12%;
+    width: fit-content;
+    & > p {
+        font-weight: 700 !important;
+        margin: 0;
+    }
+}

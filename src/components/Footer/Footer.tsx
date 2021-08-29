@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./footer.module.css";
 import monstercube from '../../images/monsterCube.png';
 import { LogoWhite } from "../Logo/Logo";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,7 +21,8 @@ const Footer = () => {
           </div>
         </section>
         <section className={styles.footerBottom}>
-          <LogoWhite /> <p>이용약관</p> <p>개인정보보호정책</p>
+          <LogoWhite /> <Link to="/이용약관">이용약관</Link>{" "}
+          <Link to="/개인정보보호정책">개인정보보호정책</Link>
         </section>
       </div>
     </footer>
