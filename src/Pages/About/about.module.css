@@ -1,0 +1,122 @@
+.container {
+  margin-top: 7vw;
+  & h1 {
+    font-size: 82px;
+    margin: 0;
+    font-weight: 400;
+    font-family: SongMyung;
+    color: rgb(0, 0, 0);
+    line-height: 0.878;
+    text-transform: uppercase;
+
+    & > h3 {
+      margin: 0;
+    }
+  }
+
+  & p {
+    font-size: 1.25em;
+    margin: 30px 0;
+    font-weight: 600;
+    font-family: NotoSans;
+    color: rgb(0, 0, 0);
+    line-height: 1.455;
+  }
+}
+
+.topContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+  & .details {
+    flex: 1;
+    padding-right: 4rem;
+    & .aboutBerry {
+      padding-bottom: 10%;
+    }
+    & .tokenEco {
+      & > h1 {
+        text-transform: capitalize;
+        line-height: 0.6;
+      }
+      & .bitberryToken {
+        display: flex;
+        gap: 2rem;
+        margin: 6% 0;
+        & .aboutBbr {
+          & > h3 {
+            font-size: 42px;
+            font-family: SongMyung;
+            color: rgb(0, 0, 0);
+            line-height: 0.762;
+          }
+          & button {
+            height: 40px;
+            padding: 0;
+          }
+        }
+      }
+
+      & > button {
+        height: 60px;
+      }
+    }
+  }
+
+  & .mainImageContainer {
+    flex: 1;
+    display: flex;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top;
+      border: 10px solid #fff;
+    }
+  }
+}
+
+.BottomContainer {
+  margin: 40px 0 100px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  padding-right: 2%;
+
+  & .aboutNft {
+    & > h1 {
+      display: flex;
+      align-items: center;
+      & > h3 {
+        margin-left: 1rem;
+      }
+    }
+    & > p {
+      display: flex;
+      flex-direction: column;
+      & > span {
+        margin: 0 0 1%;
+      }
+    }
+  }
+}
+
+.economy {
+  font-size: 82px;
+  background: linear-gradient(
+    120deg,
+    rgb(255, 109, 138) 120px,
+    rgb(237, 213, 104) 250px
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  line-height: initial !important;
+}
+
+.nft {
+  font-size: 82px;
+  background: linear-gradient(120deg, #6fd7fe 30px, #8868ef 120px) !important;
+
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
