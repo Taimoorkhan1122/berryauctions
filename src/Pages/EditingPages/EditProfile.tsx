@@ -312,6 +312,7 @@ const EditProfile = () => {
           </div>
 
           <Button
+          fontSize="16px"
             onClick={(e) => (e.type = "submit")}
             btnType={BtnType.PRIMARY}>
             저장하기
