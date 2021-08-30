@@ -207,9 +207,9 @@ export const emailPattern =
                       <span>Twitter 인증하기</span>
                     </Button>
                   )}
-                  name="moreInfo.socialLinks.twitter"
-                  control={control}
-                  defaultValue=""
+                    name="moreInfo.socialLinks.twitter"
+                    control={control}
+                    defaultValue=""
                 />
 
                 <label className={styles.hidden} htmlFor="instagram">

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "react-image-lightbox/style.css";
 
 
@@ -53,6 +53,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
   const [data] = pageData.filter((data) => data.id === _id[1]);
+  const history  = useHistory();
 
   const [winner] = data?.bids.filter(
     (bid) => bid.isWinner && Object.keys(bid.walletAddress)
@@ -190,7 +191,11 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               </div>
               {/* if biding is end button will  not show */}
               {data.bidingStatus && (
-                <Button btnType={BtnType.PRIMARY}>{"경매 입찰하기"}</Button>
+                <Button
+                  onClick={() => history.push(`/입찰하기/${id}`)}
+                  btnType={BtnType.PRIMARY}>
+                  {"경매 입찰하기"}
+                </Button>
               )}
             </div>
 
@@ -204,7 +209,9 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <h3>2,000,000 BBR</h3>
                   <small className={styles.small}>1,584,302원</small>
                 </div>
-                <span className={styles.dropdown}><CurrencySelect /></span>
+                <span className={styles.dropdown}>
+                  <CurrencySelect />
+                </span>
               </div>
 
               <Button width="100%" btnType={BtnType.PRIMARY}>
@@ -215,8 +222,8 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
 
             <h3 className={styles.status}>입찰 현황</h3>
             <div className={styles.bids}>
-              {data.bids.map((bids: any) => (
-                <Bids bidingStatus={data.bidingStatus} data={bids} />
+              {data.bids.map((bids: any, index) => (
+                <Bids key={index} bidingStatus={data.bidingStatus} data={bids} />
               ))}
             </div>
           </div>
