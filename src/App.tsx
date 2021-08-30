@@ -23,6 +23,7 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import MyAuctionsPage from "./Pages/MyAuctionsPage/MyAuctionsPage";
 import Terms from "./Pages/TermsPage/Terms";
 import EditProfile from "./Pages/EditingPages/EditProfile";
+import Notifications from "./Pages/EditingPages/Notifications";
 
 const link =
   "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg";
@@ -98,6 +99,13 @@ function App() {
                 exact
                 path="/프로필 수정"
                 component={EditProfile}
+              />
+
+              {/* Notification Page */}
+              <ProtectedRoute
+                exact
+                path="/이메일 알림 설정"
+                component={Notifications}
               />
 
               <Route path="/signin">

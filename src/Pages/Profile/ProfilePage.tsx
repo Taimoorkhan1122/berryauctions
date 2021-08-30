@@ -13,9 +13,12 @@ import instagram from "../../images/instagram.png";
 import vlive from "../../images/vlive.png";
 import copyIcon from "../../images/copyIcon.png";
 import copyIconDark from "../../images/copyIconDark.png";
+import { useHistory } from "react-router";
 
 const ProfilePage = () => {
   const { currentPath, user, listings, Works } = useProfile();
+
+  const history = useHistory();
 
   const imgStyles = {
     backgroundRepeat: "no-repeat",
@@ -65,6 +68,7 @@ const ProfilePage = () => {
                   <Button
                     width="35%"
                     fontSize="15px"
+                    onClick={() => history.push("/프로필 수정")}
                     btnType={BtnType.TERTIARY}>
                     프로필 수정
                   </Button>

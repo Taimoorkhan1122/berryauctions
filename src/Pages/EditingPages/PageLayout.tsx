@@ -11,7 +11,7 @@ interface ILayoutProps {
 const PageLayout: React.FC<ILayoutProps> = ({children, heading, className}) => {
     return (
       <div className={classNames(styles.layoutContainer, className)}>
-        <h2>{heading}</h2>
+        <h2 className={styles.heading}>{heading}</h2>
         <div className={styles.formContainer}>{children}</div>
       </div>
     );
