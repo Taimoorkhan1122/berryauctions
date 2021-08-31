@@ -1,10 +1,5 @@
-import React, {
-  EventHandler,
-  FormEventHandler,
-  useContext,
-  useState,
-} from "react";
-import { useParams } from "react-router";
+import React, { EventHandler, useContext, useEffect, useState } from "react";
+import { useParams, useRouteMatch } from "react-router";
 import { ClickEvent, Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 
 import Button, { BtnType } from "../../components/Button/Button";
@@ -13,38 +8,49 @@ import { auctionData } from "../../utils/data";
 
 import dropdownArrow from "../../images/dropdownW.png";
 import bbrIcon from "../../images/bbrWicon.png";
-import styles from "./biding.module.css";
+import EthIcon from "../../images/ethW.png";
+import close from "../../images/close.png";
+
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { GlobalContext } from "../../Context/GlobalProvider";
+import useIsDisabled from "./useIsDisabled";
+import Modal from "../../containers/Modal/Modal";
+import styles from "./biding.module.css";
+import BidingPage from "./BidingPage";
+import InstantBuyPage from "./InstantBuyPage";
 
 type Inputs = {
   bidAmount: number;
   currency: string;
 };
 
-const CurrencySelect: React.FC<{
+export const CurrencySelect: React.FC<{
   currency: string;
   handleClick: EventHandler<any>;
 }> = ({ currency, handleClick }) => (
   <Menu
     onClick={(e) => e.preventDefault()}
-    offsetX={-10}
+    offsetX={-30}
     offsetY={25}
-    direction="bottom"
+    direction="top"
     className={styles.currencySlect}
     transition={true}
     menuButton={
       <MenuButton onClick={(e) => e.preventDefault()}>
-        {currency.includes("BBR") && <img src={bbrIcon} alt="bbr icon" />}
+        {currency.includes("BBR") ? (
+          <img src={bbrIcon} alt="bbr icon" />
+        ) : (
+          <img src={EthIcon} alt="ether icon" />
+        )}
         <h3>{currency}</h3>
         <img src={dropdownArrow} alt="select arrow" />
       </MenuButton>
     }>
     <MenuItem value="ETH" onClick={handleClick} className={styles.currencyItem}>
-      ETH
+      <img src={EthIcon} alt="bbr icon" /> ETH
     </MenuItem>
     <MenuItem value="BBR" onClick={handleClick} className={styles.currencyItem}>
-      BBR
+      <img src={bbrIcon} alt="bbr icon" /> BBR
     </MenuItem>
   </Menu>
 );
@@ -52,6 +58,8 @@ const CurrencySelect: React.FC<{
 const Biding = () => {
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
+
+  const match = useRouteMatch();
 
   const [data] = auctionData.filter((data) => data.id === _id[1]);
   const {
@@ -67,100 +75,88 @@ const Biding = () => {
     formState: { errors, isSubmitSuccessful },
   } = useForm<Inputs>({
     mode: "onBlur",
+    defaultValues: {
+      bidAmount: 0,
+      currency: "BBR",
+    },
   });
 
   const [currency, setCurrency] = useState("BBR");
+
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const currentValue = watch("bidAmount");
+  const { isDisabled, message } = useIsDisabled(
+    user.walletAmount,
+    data.currentBid,
+    currentValue
+  );
 
-  const disabled = () => {
-    const walletAmount =
-      user?.walletAmount && parseFloat(user?.walletAmount.split(" BBR")[0]);
-    const currentBid = parseFloat(data.currentBid.split(" BBR")[0]);
-    if (walletAmount && walletAmount < currentBid)
-      return {
-        isDisabled: true,
-        message: "잔고가 부족합니다.",
-      };
-    else if (walletAmount && currentValue < currentBid)
-      return {
-        isDisabled: true,
-        message: "현재 입찰가 이상의 금액을 입력해주세요.",
-      };
-    else return {
-      isDisabled: true,
-      message: "입찰하기",
-    };
-  };
-
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
-    console.log("submiting form", data);
+  const handleClick = () => setIsOpen(!isOpen);
 
   return (
     <div className={styles.container}>
+      <Modal isOpen={isOpen} handleClick={handleClick}>
+        <div className={styles.modal}>
+          <div className={styles.close} onClick={handleClick}>
+            <img src={close} alt="modal close button" />
+          </div>
+          <div className={styles.details}>
+            {match.path.includes("즉시구매하기") ? (
+              <>
+                <h3>즉시구매가 완료되었습니다.</h3>
+                <p>나의 경매에서 해당 NFT를 요청하세요.</p>
+              </>
+            ) : (
+              <>
+                <h3>입찰이 완료되었습니다.</h3>
+                <p>경매종료까지 남은시간은 아래와 같습니다.</p>
+              </>
+            )}
+          </div>
+          {match.path.includes("즉시구매하기") ? (
+            <div className={styles.instantBuy}>
+              <h3>
+                <span className={styles.small}>즉시구매가</span> 385.24 BBR
+              </h3>
+            </div>
+          ) : (
+            <div className={styles.time}>
+              {/* day */}
+              <h3>
+                13 <span className={styles.small}>일</span>
+              </h3>
+              {/* hour */}
+              <h3>
+                15 <span className={styles.small}>시</span>
+              </h3>
+              {/* minutes */}
+              <h3>
+                27 <span className={styles.small}>분</span>
+              </h3>
+              {/* seconds */}
+              <h3>
+                19 <span className={styles.small}>초</span>
+              </h3>
+            </div>
+          )}
+
+          {/* buttons container */}
+          <div className={styles.walletOptions}>
+            <Button onClick={handleClick} btnType={BtnType.PRIMARY}>
+              확 인
+            </Button>
+          </div>
+        </div>
+      </Modal>
       <div className={styles.cardContainer}>
         <AuctionCard data={data} />
       </div>
-      <div className={styles.bidContainer}>
-        <div className={styles.pricing}>
-          <h2>입찰하기</h2>
-          <span>현재 입찰가</span>
-          <span>{data.currentBid}</span>
-        </div>
-
-        <div className={styles.inputContainer}>
-          <form
-            id="hook-form"
-            onSubmit={handleSubmit(onSubmit)}
-            className={styles.pricingForm}>
-            <input
-              {...register("bidAmount", {
-                required: {
-                  value: true,
-                  message: "This is field cannot be empty",
-                },
-              })}
-              type="number"
-            />
-            <span className={styles.dropdown}>
-              <Controller
-                render={({ field }) => (
-                  <CurrencySelect
-                    currency={currency}
-                    handleClick={(e) => {
-                      console.log("inside controller ", field.value);
-                      setCurrency(e.value);
-                      setValue("currency", currency);
-                    }}
-                  />
-                )}
-                name="currency"
-                control={control}
-                defaultValue=""
-              />
-            </span>
-          </form>
-          <small className={styles.small}>1,584,302원</small>
-          <div className={styles.yourBalance}>
-            <span className={styles.balance}>Your Balance</span>
-            <span className={styles.amount}>0 BBR</span>
-          </div>
-
-          <p className={styles.info}>
-            입찰 후에는 다시 회수하실 수 없습니다. <br />
-            단, 낙찰되지 않으면 해당 입찰금액은 자동으로 입찰자의 월렛으로
-            회수됩니다.
-          </p>
-        </div>
-
-        <Button
-          form="hook-form"
-          type="submit"
-          disabled={disabled().isDisabled}
-          width="100%"
-          btnType={BtnType.PRIMARY}>
-          {disabled().isDisabled && disabled().message}
-        </Button>
-      </div>
+      {/* <BidingPage data={data} user={user} /> */}
+      {match.path.includes("즉시구매하기") ? (
+        <InstantBuyPage handleClcik={handleClick} data={data} user={user} />
+      ) : (
+        <BidingPage handleClcik={handleClick} data={data} user={user} />
+      )}
     </div>
   );
 };

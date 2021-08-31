@@ -6,7 +6,7 @@ import ReactModal from "react-modal";
 interface IModalProps {
   children: React.ReactNode;
   isOpen: boolean;
-  handleClick: React.MouseEventHandler;
+  handleClick?: React.MouseEventHandler;
 }
 
 ReactModal.setAppElement("#root");

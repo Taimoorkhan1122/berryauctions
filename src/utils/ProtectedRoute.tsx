@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Redirect, Route } from "react-router";
+import { Redirect, Route, useRouteMatch } from "react-router";
 import { GlobalContext } from "../Context/GlobalProvider";
 import { ActionTypes } from "../Context/Reducer";
 
@@ -8,13 +8,16 @@ const ProtectedRoute: React.FC<{
   exact: boolean;
   path: string;
 }> = ({ component: Component, ...rest }) => {
+  const match = useRouteMatch(`${rest.path}`);
+  console.log(match);
+  
     const {state, appDispatch} = useContext(GlobalContext);
     !state.isloggedIn &&  appDispatch({
       type: ActionTypes.SIGNIN,
       payload: {
         isLoggedIn: state.isloggedIn,
         user: {...state.user},
-        redirectPath: rest.path
+        redirectPath: match?.url
       }
     })
   return (

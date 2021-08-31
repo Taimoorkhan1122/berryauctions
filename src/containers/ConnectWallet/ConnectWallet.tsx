@@ -73,7 +73,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
           user: {
             username: "Taimoor khan",
             walletAddress: "0x42f3...aaa5",
-            walletAmount: "4.16123 BBR",
+            walletAmount: "0.328 BBR",
             artistData: artist,
             listings,
             bids,

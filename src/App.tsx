@@ -96,7 +96,18 @@ function App() {
               <ProtectedRoute exact path="/프로필" component={ProfilePage} />
 
               {/* biding Page */}
-              <ProtectedRoute exact={false} path="/입찰하기/:id" component={Biding} />
+              <ProtectedRoute
+                exact={false}
+                path="/입찰하기/:id"
+                component={Biding}
+              />
+
+              {/* instant buy Page */}
+              <ProtectedRoute
+                exact={false}
+                path="/즉시구매하기/:id"
+                component={Biding}
+              />
 
               {/* Edit Profile Page */}
               <ProtectedRoute

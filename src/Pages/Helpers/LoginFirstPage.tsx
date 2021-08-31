@@ -25,6 +25,7 @@ const LoginFirstPage = () => {
   const { state, appDispatch } = useContext(GlobalContext);
   const shouldRedirect = state.redirectPath && state.redirectPath.length > 0;
   const history = useHistory();
+  
 
   const [loading, setLoading] = useState<ILoadingState[]>([
     { walletType: Wallet.metamask, isActive: false },

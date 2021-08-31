@@ -137,7 +137,7 @@ a {
 .ReactModal__Overlay--before-close{
     opacity: 0;
 }
-
+/* 
 h3 {
   font-size: 22px;
   font-weight: 700;
@@ -145,4 +145,5 @@ h3 {
   color: rgb(0, 0, 0);
   line-height: 1.091;
 
-}
+} */
+

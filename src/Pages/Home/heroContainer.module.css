@@ -1,16 +1,4 @@
-h3 {
-  font-size: 28px;
-  font-family: SongMyung;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
-  line-height: 0.667;
-  margin: 16px 0;
 
-  @media (min-width: 1280px) {
-    font-size: 36px;
-    margin: 21px 0;
-  }
-}
 
 .small {
   font-size: 13px;
@@ -31,6 +19,19 @@ h3 {
   justify-content: center;
   margin-top: 3rem;
   gap: 30px;
+  & h3 {
+  font-size: 28px;
+  font-family: SongMyung;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  line-height: 0.667;
+  margin: 16px 0;
+
+  @media (min-width: 1280px) {
+    font-size: 36px;
+    margin: 21px 0;
+  }
+}
 
   @media (min-width: 1280px) {
     justify-content: unset;

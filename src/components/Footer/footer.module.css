@@ -16,6 +16,12 @@
 .footerDetails {
   border-bottom: 1px solid #333333;
   padding-bottom: 56px;
+
+  & .insideContainer {
+    display: flex;
+    justify-content: space-between;
+    
+  }
 }
 
 .footerBottom {
@@ -26,4 +32,12 @@
 
 .footerBottom a {
   margin: 5px 30px 0;
+}
+
+.linklist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0;
 }

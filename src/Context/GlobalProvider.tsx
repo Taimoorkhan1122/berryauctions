@@ -7,9 +7,9 @@ type Props = {
 }
 
 export interface User {
-  username: string | undefined,
-  walletAddress: string | undefined,
-  walletAmount: string | undefined,
+  username: string ,
+  walletAddress: string ,
+  walletAmount: string ,
   listings: AuctionData[] | undefined,
   artistData : IArtistData | undefined,
   bids: AuctionData[]
@@ -25,9 +25,9 @@ const initialState: IGlobalState = {
   isloggedIn: false,
   redirectPath: '',
   user: {
-    username: undefined,
-    walletAmount: undefined,
-    walletAddress: undefined,
+    username: "",
+    walletAmount: "",
+    walletAddress: "",
     listings: undefined,
     artistData: undefined,
     bids: [],

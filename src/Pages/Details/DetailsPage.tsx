@@ -214,8 +214,11 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                 </span>
               </div>
 
-              <Button width="100%" btnType={BtnType.PRIMARY}>
-                {"경매 입찰하기"}
+              <Button
+                onClick={() => history.push(`/즉시구매하기/${id}`)}
+                width="100%"
+                btnType={BtnType.PRIMARY}>
+                {"즉시구매하기"}
               </Button>
             </div>
             {/* --- intant buy end --- */}
@@ -223,7 +226,11 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
             <h3 className={styles.status}>입찰 현황</h3>
             <div className={styles.bids}>
               {data.bids.map((bids: any, index) => (
-                <Bids key={index} bidingStatus={data.bidingStatus} data={bids} />
+                <Bids
+                  key={index}
+                  bidingStatus={data.bidingStatus}
+                  data={bids}
+                />
               ))}
             </div>
           </div>
