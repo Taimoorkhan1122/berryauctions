@@ -23,19 +23,23 @@
     color: rgb(0, 0, 0);
     line-height: 1.091;
     margin: 0 0 34px;
+    &:not(:first-child) {
+    margin: 0 0 24px;
+    }
   }
   & > a {
     text-decoration: none;
     font-size: 15px;
     font-family: NotoSans;
+    font-weight: 700;
     color: rgb(102, 102, 102);
     line-height: 1.6;
-    margin-bottom: 34px;
+    margin-bottom: 24px;
+
   }
 }
 
 .section {
-  padding-top: 24px;
   margin: 0 -1%;
 
   & > .borderTop {

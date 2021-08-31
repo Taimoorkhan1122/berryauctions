@@ -32,7 +32,26 @@ const AuctionCard: React.FC<IAuctionProps> = ({ data }) => {
         </div>
         <div>
           <h3 style={{ color: "#cccccc" }}>남은시간</h3>
-          <span style={{ color: "#cccccc" }}>{data.timeRemaining}</span>
+          <span style={{ color: "#cccccc" }}>
+            <div className={styles.time}>
+              {/* day */}
+              <h3>
+                13 <span className={styles.small}>일</span>
+              </h3>
+              {/* hour */}
+              <h3>
+                15 <span className={styles.small}>시</span>
+              </h3>
+              {/* minutes */}
+              <h3>
+                27 <span className={styles.small}>분</span>
+              </h3>
+              {/* seconds */}
+              <h3>
+                19 <span className={styles.small}>초</span>
+              </h3>
+            </div>
+          </span>
         </div>
       </div>
     </CardLayout>

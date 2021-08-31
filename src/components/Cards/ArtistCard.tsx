@@ -45,13 +45,13 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
       </div>
       <div className={classNames(styles.detailsContainer)}>
         <div>
-          <span style={{ color: "#000" }}>{totalWork}</span>
+          <span className={styles.totalWorks} style={{ color: "#000" }}>{totalWork}</span>
           <h3 style={{ color: "#666666" }}>작품</h3>
         </div>
         <div>
           <Button
             children="작품보기"
-            width="150px"
+            width="123px"
             btnType={BtnType.TERTIARY}
             onClick={() => history.push(route)}
           />

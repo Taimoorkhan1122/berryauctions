@@ -100,6 +100,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
           btnType={BtnType.SECONDARY}
           children={"월렛 연결하기"}
           width="196px"
+          fontSize="16px"
           onClick={handleClick}
         />
       )}

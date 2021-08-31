@@ -6,5 +6,21 @@
   background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1;
+  line-height: 1 !important;
 }
+
+/* 
+.artTrainer {
+  background: #a46ffe;
+  background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sportsStar {
+  background: #a46ffe;
+  background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1 !important;
+} */

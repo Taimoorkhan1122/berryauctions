@@ -1,10 +1,11 @@
 .btn {
-    height: 60px;
+    height: 54px;
     border-radius: 50px;
     font-family: NotoSans;
     font-weight: 700;
     cursor: pointer;
     min-width: 60px;
+    font-size: 16px;
 }
 
 .PRIMARY {

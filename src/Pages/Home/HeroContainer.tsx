@@ -10,11 +10,13 @@ const HeroContainer = () => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.imageContainer}>
+        <div className={styles.insideContainer}>
         <img src={heroImage} alt="hero section nft" />
+        </div>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.author}>
-          <Avatar children={"Taimoor khan"} /> <GradText>Arttrainer</GradText>
+          <Avatar children={"Taimoor khan"} /> <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
         </div>
         <h2 className={styles.heroHeading}>The other side</h2>
         {/* auction details start */}

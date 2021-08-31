@@ -7,6 +7,7 @@
   margin-bottom: 25px;
   float: left;
   overflow: hidden;
+  border: 1px solid #f2f2f2;
 
   @media (min-width: 768px) {
     width: 48%;
@@ -79,6 +80,12 @@
 .avatarContainer span {
   padding-left: 12px;
   color: #666666;
+
+  font-size: 15px;
+  font-family: NotoSans;
+  font-weight: 700;
+  color: rgb(102, 102, 102);
+  line-height: 1.6;
 }
 
 .artistAvatar {
@@ -104,6 +111,13 @@
   padding: 22px;
   background: #fff;
   border-top: 1px solid #f2f2f2;
+
+  & .totalWorks {
+    font-size: 26px;
+    font-family: SongMyung;
+    color: rgb(0, 0, 0);
+    line-height: 0.923;
+  }
 }
 
 .dark {
@@ -125,6 +139,7 @@
 .detailsContainer > div > span {
   font-size: 20px;
   display: flex;
+  line-height: 1;
 }
 
 .detailsContainer > div h3 {
@@ -152,4 +167,32 @@
   color: rgb(0, 0, 0);
   line-height: 1.091;
   margin: 0 0 6px;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+
+  & > h3 {
+    font-family: SongMyung;
+    font-weight: 400;
+    font-size: 1em !important;
+    margin: 0 !important;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    margin-right: 12px;
+    align-items: baseline;
+    margin-right: 12px;
+
+    & .small {
+      font-family: NotoSans;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 2px;
+      color: #cccccc;
+    }
+  }
 }

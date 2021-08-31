@@ -20,7 +20,15 @@
   & .insideContainer {
     display: flex;
     justify-content: space-between;
-    
+
+    &  p {
+      font-size: 13px;
+      font-family: NotoSans;
+      font-weight: 600;
+      color: rgb(102, 102, 102);
+      line-height: 1.846;
+      margin: 0;
+    }
   }
 }
 
@@ -28,10 +36,13 @@
   padding-top: 25px;
   display: flex;
   align-items: center;
-}
 
-.footerBottom a {
-  margin: 5px 30px 0;
+  & > div {
+    margin-right: 2rem;
+  }
+  & a {
+  margin: 5px 20px 0 0;
+}
 }
 
 .linklist {
