@@ -1,8 +1,7 @@
 import classNames from "classnames";
 import React, { useContext, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, useLocation } from "react-router-dom";
 import "react-image-lightbox/style.css";
-
 
 import Avatar from "../../components/Avatar/Avatar";
 import Button, { BtnType } from "../../components/Button/Button";
@@ -16,7 +15,7 @@ import styles from "./auctionsDetails.module.css";
 import Lightbox from "react-image-lightbox";
 import Bids from "./Bids";
 
-// icons 
+// icons
 import linkIcon from "../../images/link.png";
 import shareIcon from "../../images/share.png";
 import etherscan from "../../images/etherscan.png";
@@ -32,9 +31,9 @@ interface IDetailsPageProps {
 
 const CurrencySelect = () => (
   <Menu
-  offsetX={-135}
-  offsetY={10}
-    direction='top'
+    offsetX={-135}
+    offsetY={10}
+    direction="top"
     className={styles.currencySlect}
     transition={true}
     menuButton={
@@ -53,7 +52,9 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
   const [data] = pageData.filter((data) => data.id === _id[1]);
-  const history  = useHistory();
+
+  const location = useLocation();
+  const history = useHistory();
 
   const [winner] = data?.bids.filter(
     (bid) => bid.isWinner && Object.keys(bid.walletAddress)
@@ -119,10 +120,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
 
               <div className={styles.link}>
                 <div>
-                  <img
-                    src={ipfs}
-                    alt="etherscan icon"
-                  />
+                  <img src={ipfs} alt="etherscan icon" />
                   <span>IPFS 보기</span>
                 </div>
                 <img
@@ -134,10 +132,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
 
               <div className={styles.link}>
                 <div>
-                  <img
-                    src={ipfsMeta}
-                    alt="etherscan icon"
-                  />
+                  <img src={ipfsMeta} alt="etherscan icon" />
                   <span>IPFS 메타데이터 보기</span>
                 </div>
                 <img
@@ -198,7 +193,12 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               {/* if biding is end button will  not show */}
               {data.bidingStatus && (
                 <Button
-                  onClick={() => history.push(`/입찰하기/${id}`)}
+                  onClick={() =>
+                    history.push({
+                      pathname: `/입찰하기/${id}`,
+                      state: location.pathname,
+                    })
+                  }
                   btnType={BtnType.PRIMARY}>
                   {"경매 입찰하기"}
                 </Button>
@@ -221,7 +221,12 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               </div>
 
               <Button
-                onClick={() => history.push(`/즉시구매하기/${id}`)}
+                onClick={() =>
+                  history.push({
+                    pathname: `/즉시구매하기/${id}`,
+                    state: location.pathname,
+                  })
+                }
                 width="100%"
                 btnType={BtnType.PRIMARY}>
                 {"즉시구매하기"}
@@ -255,7 +260,9 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               </div>
               <div className={styles.infoContainer}>
                 <h3>{artistData[0].username}</h3>
-                <GradText parentClassName={styles.gradText}>{artistData[0].profession}</GradText>
+                <GradText parentClassName={styles.gradText}>
+                  {artistData[0].profession}
+                </GradText>
               </div>
             </div>
             <p className={styles.about}>{artistData[0].about}</p>

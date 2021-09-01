@@ -13,7 +13,7 @@ const useProfile = () => {
   let listings = 0;
 
   // if id matches the user id in data array show those lisings
-  if (state.isloggedIn && match.path === "/프로필") {
+  if (state.isLoggedIn && match.path === "/프로필") {
     user = {
       artistData: state.user.artistData,
       otherDetails: state.user.listings,

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Button, { BtnType } from "../../components/Button/Button";
 import Modal from "../Modal/Modal";
@@ -31,10 +31,10 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
   forcedOpen,
 }) => {
   const {
-    state: { isloggedIn, user },
+    state,
     appDispatch,
   } = useContext(GlobalContext);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
   const [signContract, setSignContract] = useState(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
     { walletType: Wallet.metamask, isActive: false },
@@ -58,8 +58,16 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
     return false;
   });
 
+  const history = useHistory();
+
   const handleClick = () => {
-    setIsOpen((prevState) => !prevState);
+    appDispatch({
+      type: ActionTypes.SIGNIN,
+      payload: {
+        ...state,
+        showModal: !state.showModal,
+      }
+    })
   };
 
   const handleConnect = (key: Wallet) => {
@@ -68,8 +76,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
     setLoading(tmp);
 
     setTimeout(() => {
-     
-
+    
       setSignContract(true);
       setTimeout(() => {
          appDispatch({
@@ -84,21 +91,22 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
                bids,
              },
              isLoggedIn: true,
+             showModal: false,
            },
          });
         tmp[key].isActive = !tmp[key].isActive;
-        setIsOpen(false);
+        history.push(state.redirectPath);
         setLoading(tmp);
       }, 1500);
     }, 1500);
   };
 
   return (
-    <div className={isloggedIn ? styles.container : ""}>
-      {isloggedIn ? (
+    <div className={state.isLoggedIn ? styles.container : ""}>
+      {state.isLoggedIn ? (
         <div className={styles.userProfiler}>
-          <MyAuctions count={user.bids.length} dark={dark} />
-          <ProfileBtn user={user} />
+          <MyAuctions count={state.user.bids.length} dark={dark} />
+          <ProfileBtn user={state.user} />
         </div>
       ) : (
         <Button
@@ -111,9 +119,9 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
       )}
 
       {/* modal start */}
-      {!isloggedIn && forcedOpen
+      {!state.isLoggedIn && forcedOpen
         ? forcedOpen
-        : isOpen && (
+        : state.showModal && (
             <Modal isOpen={true} handleClick={handleClick}>
               <div className={styles.modal}>
                 <div className={styles.close} onClick={handleClick}>

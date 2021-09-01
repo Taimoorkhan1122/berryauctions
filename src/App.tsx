@@ -58,7 +58,7 @@ export const data3 = {
 
 function App() {
   const { state } = useContext(GlobalContext);
-  console.log("from app.tsx -> ", state.isloggedIn);
+  console.log("from app.tsx -> ", state.isLoggedIn);
 
   return (
     <Router>

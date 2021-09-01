@@ -7,8 +7,9 @@ export enum ActionTypes {
 }
 
 export interface IPayloadType {
-  isLoggedIn: boolean;
-  user: User;
+  isLoggedIn?: boolean;
+  user?: User;
+  showModal?: boolean;
   redirectPath?: string;
 }
 
@@ -22,25 +23,19 @@ export const reducer = (state: IGlobalState, action: IActionType) => {
     case ActionTypes.REGISTER:
       return {
         ...state,
-        isloggedIn: action.payload.isLoggedIn,
-        redirectPath: action.payload?.redirectPath,
-        user: { ...action.payload.user },
+        ...action.payload,
       };
 
     case ActionTypes.SIGNIN:
       return {
         ...state,
-        isloggedIn: action.payload.isLoggedIn,
-        redirectPath: action.payload?.redirectPath,
-        user: { ...action.payload.user },
+       ...action.payload,
       };
 
     case ActionTypes.SINGOUT:
       return {
         ...state,
-        isloggedIn: action.payload.isLoggedIn,
-        redirectPath: action.payload?.redirectPath,
-        user: { ...action.payload.user },
+        ...action.payload,
       };
 
     default:

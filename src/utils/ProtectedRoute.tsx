@@ -1,5 +1,12 @@
 import React, { useContext } from "react";
-import { Redirect, Route, useRouteMatch } from "react-router";
+import {
+  Redirect,
+  Route,
+  useHistory,
+  useLocation,
+  useRouteMatch,
+} from "react-router";
+import ConnectWallet from "../containers/ConnectWallet/ConnectWallet";
 import { GlobalContext } from "../Context/GlobalProvider";
 import { ActionTypes } from "../Context/Reducer";
 
@@ -9,23 +16,26 @@ const ProtectedRoute: React.FC<{
   path: string;
 }> = ({ component: Component, ...rest }) => {
   const match = useRouteMatch(`${rest.path}`);
-  console.log(match);
-  
-    const {state, appDispatch} = useContext(GlobalContext);
-    !state.isloggedIn &&  appDispatch({
+  const history = useHistory();
+  console.log("inside protected route ", history.location, rest.path);
+
+  const { state, appDispatch } = useContext(GlobalContext);
+  const prevLocation = history.location.state as string
+  !state.isLoggedIn &&
+    appDispatch({
       type: ActionTypes.SIGNIN,
       payload: {
-        isLoggedIn: state.isloggedIn,
-        user: {...state.user},
-        redirectPath: match?.url
-      }
-    })
+        ...state,
+        redirectPath: match?.url,
+        showModal: true,
+      },
+    });
   return (
     <Route
       exact
       path={rest.path}
       render={() =>
-        state.isloggedIn ? <Component /> : <Redirect to="/signin" />
+        state.isLoggedIn ? <Component /> : <Redirect to={prevLocation} />
       }
     />
   );

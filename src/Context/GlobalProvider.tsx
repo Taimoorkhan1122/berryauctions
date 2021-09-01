@@ -16,13 +16,15 @@ export interface User {
 }
 
 export interface IGlobalState {
-  isloggedIn: boolean;
-  redirectPath?: string;
+  isLoggedIn: boolean;
+  showModal: boolean;
+  redirectPath: string;
   user:  User;
 }
 
 const initialState: IGlobalState = {
-  isloggedIn: false,
+  isLoggedIn: false,
+  showModal: false,
   redirectPath: '',
   user: {
     username: "",

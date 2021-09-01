@@ -14,7 +14,7 @@ const MyAuctionsPage = () => {
   const history = useHistory();
   
   const {
-    state: { user, isloggedIn },
+    state: { user, isLoggedIn },
     appDispatch
   } = useContext(GlobalContext);
 
