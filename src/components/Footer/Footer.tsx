@@ -23,13 +23,13 @@ const Footer = () => {
               </p>
               <p>Copyright © MONSTER CUBE Corporation. All Rights Reserved.</p>
             </div>
-            <ul className={styles.linklist}>
+            {/* <ul className={styles.linklist}>
               {links.map((link, index) => (
                 <Link key={index + "_link"} to={`/${link}`}>
                   {link}
                 </Link>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </section>
         <section className={styles.footerBottom}>

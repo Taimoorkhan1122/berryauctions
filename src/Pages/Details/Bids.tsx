@@ -42,9 +42,13 @@ const Bids: React.FC<IBidsProps> = ({ data, bidingStatus }) => {
   );
   return (
     <div className={styles.lastBids}>
-      <Avatar width={"196px"}>
+      <Avatar width={"230px"}>
+        <div className={styles.bidinfo}>
+          
         <h4 className={styles.light}>낙찰자</h4>
         <span className={styles.address}>{data?.walletAddress}</span>
+        </div>
+          <span className={styles.bidDate}>2021.08.31 18:04:01</span>
       </Avatar>
       <div className={styles.bidAmount}>
         <div>

@@ -81,7 +81,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
         <div className={styles.authorInfo}>
           <div className={styles.author}>
             <Avatar width="136px" children={data.username} />{" "}
-            <GradText>Arttrainer</GradText>
+            <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
           </div>
           <Button btnType={BtnType.SECONDARY} width="136px">
             <img src={shareIcon} alt="share icon" /> 공유하기{" "}
@@ -107,38 +107,44 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               {/* links */}
               <div className={styles.link}>
                 <div>
-                  <img
-                    className={styles.linkIcon}
-                    src={etherscan}
-                    alt="etherscan icon"
-                  />
+                  <img src={etherscan} alt="etherscan icon" />
                   <span>이더스캔 보기</span>
                 </div>
-                <img src={linkIcon} alt="bid link" />
+                <img
+                  className={styles.linkIcon}
+                  src={linkIcon}
+                  alt="bid link"
+                />
               </div>
 
               <div className={styles.link}>
                 <div>
                   <img
-                    className={styles.linkIcon}
                     src={ipfs}
                     alt="etherscan icon"
                   />
                   <span>IPFS 보기</span>
                 </div>
-                <img src={linkIcon} alt="bid link" />
+                <img
+                  className={styles.linkIcon}
+                  src={linkIcon}
+                  alt="bid link"
+                />
               </div>
 
               <div className={styles.link}>
                 <div>
                   <img
-                    className={styles.linkIcon}
                     src={ipfsMeta}
                     alt="etherscan icon"
                   />
                   <span>IPFS 메타데이터 보기</span>
                 </div>
-                <img src={linkIcon} alt="bid link" />
+                <img
+                  className={styles.linkIcon}
+                  src={linkIcon}
+                  alt="bid link"
+                />
               </div>
             </div>
           </div>
@@ -249,7 +255,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               </div>
               <div className={styles.infoContainer}>
                 <h3>{artistData[0].username}</h3>
-                <GradText>{artistData[0].profession}</GradText>
+                <GradText parentClassName={styles.gradText}>{artistData[0].profession}</GradText>
               </div>
             </div>
             <p className={styles.about}>{artistData[0].about}</p>

@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .small {
   font-size: 13px;
   font-family: NotoSans;
@@ -15,61 +23,110 @@
   display: flex;
   margin: auto;
   justify-content: center;
+  align-items: center;
   margin-top: 3rem;
-  gap: 9%;
+  /* gap: 96px; */
+
+  @media (--viewportLarge) {
+    margin-top: 2em;
+    gap: 3%;
+  }
+
+  @media (--viewportXLarge) {
+    margin-top: 2em;
+    gap: 5%;
+  }
+
+  @media (--viewportLargeWithPaddings) {
+    gap: 117px;
+  }
+
   & h3 {
     font-size: 28px;
     font-family: SongMyung;
     font-weight: 400;
     color: rgb(0, 0, 0);
     line-height: 0.667;
-    margin: 16px 0;
+    margin: 12px 0;
 
     @media (min-width: 1280px) {
       font-size: 36px;
-      margin: 21px 0;
+      margin: 12px 0;
     }
   }
-
-  @media (min-width: 1280px) {
-    margin-top: 4rem;
-  }
-}
-
-.gradText {
-  margin: 0 !important;
 }
 
 .imageContainer {
-  /* max-width: 640px; */
+  max-width: 660px;
   flex: 1;
   text-align: center;
 
   & .insideContainer {
-    max-width: 560px;
     height: 558px;
-    margin: auto;
+    width: 558px;
+    margin: 0 0 0 102px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @media (min-width: 1024px) {
-      /* max-width: 350px;
-      margin: 10px 20px 0; */
-    }
-
-    @media (min-width: 1280px) {
-      /* max-width: 450px; */
-      /* margin: 10px 108px; */
-    }
 
     & img {
       border: 1px solid #e6e6e6;
       background: #fff;
       padding: 10px;
-      max-height: 558px;
-      max-width: 560px;
-      object-fit: contain;  
+      max-height: 500px;
+      max-width: 500px;
+      object-fit: contain;
+    }
+
+    @media (--viewportMedium) {
+      height: 450px;
+      width: 450px;
+      margin: auto;
+
+      & img {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        padding: 10px;
+        max-height: 450px;
+        max-width: 450px;
+        object-fit: contain;
+      }
+    }
+
+    @media (--viewportLarge) {
+      height: 500px;
+      width: 500px;
+      margin: auto;
+
+      & img {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        padding: 10px;
+        max-height: 500px;
+        max-width: 500px;
+        object-fit: contain;
+      }
+    }
+
+    @media (--viewportXLarge) {
+      height: 558px;
+      width: 558px;
+      margin: 0 0 0 20px;
+
+      & img {
+        border: 1px solid #e6e6e6;
+        background: #fff;
+        padding: 10px;
+        max-width: 558px;
+        max-height: 558px;
+        object-fit: contain;
+      }
+    }
+    @media (--viewportLargeWithPaddings) {
+      margin: 0 0 0 102px;
+
+      /* max-width: 450px; */
+      /* margin: 10px 108px; */
     }
   }
 }
@@ -77,9 +134,10 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 10px 16px 0;
-  flex: 1;
+  justify-content: space-between;
+  max-width: 648px;
+  height: 370px;
+  flex: 1 1;
 
   @media (min-width: 1280px) {
     padding: 0;
@@ -94,6 +152,10 @@
     background: #fff;
     margin-right: 23px;
   }
+  & .gradText {
+    margin: 0 !important;
+    font-size: 24px;
+  }
 }
 
 .contentContainer .heroHeading {
@@ -101,8 +163,8 @@
   font-weight: normal;
   font-family: SongMyung;
   color: rgb(0, 0, 0);
-  line-height: 0.4;
-  margin: 34px 0 50px 0;
+  line-height: 0.7;
+  margin: 34px 0 50px;
 
   @media (min-width: 1280px) {
     font-size: 60px;
@@ -111,6 +173,13 @@
 
 .contentContainer .auctionDetails {
   display: flex;
+  max-height: 94px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .contentContainer .auctionDetails .pricing {
@@ -128,7 +197,7 @@
     font-family: NotoSans;
     font-weight: 700;
     color: rgb(0, 0, 0);
-    line-height: 1.6;
+    line-height: 1;
   }
 }
 
@@ -138,7 +207,7 @@
     font-family: NotoSans;
     font-weight: 700;
     color: rgb(0, 0, 0);
-    line-height: 1.6;
+    line-height: 1;
   }
   & .time {
     display: flex;
@@ -147,9 +216,9 @@
     & h3 {
       display: flex;
       flex-direction: column;
-      margin-right: 24px;
+      margin: 0 24px 0 0;
       & .small {
-        margin-top: 20px;
+        margin-top: 12px;
       }
     }
   }
@@ -157,27 +226,21 @@
 
 .cta {
   margin: 34px 0 0;
-  width: 100%;
-  max-width: 500px;
+  width: 450px;
   display: flex;
   & button {
-    margin-right: 28px;
+    height: 60px;
+    margin-right: 20px;
     width: 100%;
   }
 
-  & button:first-child {
-    flex-basis: 286px;
-  }
-  & button:last-child {
-    flex-basis: 233px;
-  }
+  @media (--viewportLarge) {
+    width: 100%;
 
-  /* @media (min-width: 1440px) {
-    & button:first-child {
-      width: 280px;
+    & button {
+      height: 60px;
+      margin-right: 28px;
+      width: 100%;
     }
-    & button:last-child {
-      width: 224px;
-    }
-  } */
+  }
 }

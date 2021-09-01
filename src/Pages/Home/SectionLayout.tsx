@@ -26,7 +26,7 @@ const SectionLayout: React.FC<ISectionLayoutProps> = ({
       {!hideLegend && (
         <div className={styles.legend}>
           <div>
-            <h3>{legendEnglish}</h3>
+            {/* <h3>{legendEnglish}</h3> */}
             <h3>{legendKorean}</h3>
           </div>
           {link && <Link to={link}>{link}</Link>}

@@ -28,7 +28,7 @@ const AuctionCard: React.FC<IAuctionProps> = ({ data }) => {
       <div className={classNames(styles.detailsContainer, styles.dark)}>
         <div>
           <h3 style={{ color: "#cccccc" }}>현재 입찰 가</h3>
-          <span style={{ color: "#cccccc" }}>{data.currentBid}</span>
+          <span style={{ color: "#fff" }}>{data.currentBid}</span>
         </div>
         <div>
           <h3 style={{ color: "#cccccc" }}>남은시간</h3>

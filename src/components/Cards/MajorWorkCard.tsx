@@ -28,7 +28,7 @@ const MajorWorkCard: React.FC<IMajorWorkCardProps> = ({ data }) => {
         <div>
           <h3 style={{ color: "#666666" }}>소유자</h3>
           <span style={{ color: "#000" }}>
-            <div className={styles.circle}></div> {data.owner}
+            <div className={styles.circle}></div> {data.bids[0].walletAddress}
           </span>
         </div>
       </div>

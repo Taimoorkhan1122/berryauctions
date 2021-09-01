@@ -11,12 +11,13 @@ const HeroContainer = () => {
     <div className={styles.headerContainer}>
       <div className={styles.imageContainer}>
         <div className={styles.insideContainer}>
-        <img src={heroImage} alt="hero section nft" />
+          <img src={heroImage} alt="hero section nft" />
         </div>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.author}>
-          <Avatar children={"Taimoor khan"} /> <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
+          <Avatar children={"Taimoor khan"} />{" "}
+          <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
         </div>
         <h2 className={styles.heroHeading}>The other side</h2>
         {/* auction details start */}
@@ -50,8 +51,16 @@ const HeroContainer = () => {
         </div>
         {/* auction details end */}
         <div className={styles.cta}>
-          <Button btnType={BtnType.PRIMARY} children="경매 참여하기" />
-          <Button btnType={BtnType.SECONDARY} children="작품보기" />
+          <Button
+            width="285px"
+            btnType={BtnType.PRIMARY}
+            children="경매 참여하기"
+          />
+          <Button
+            width="224px"
+            btnType={BtnType.SECONDARY}
+            children="작품보기"
+          />
         </div>
       </div>
     </div>
