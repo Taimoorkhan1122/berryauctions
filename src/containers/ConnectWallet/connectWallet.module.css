@@ -20,24 +20,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.details {
-  text-align: center;
-  width: 245px;
-  margin-bottom: 36px;
-  & > h3 {
+  & h3 {
     margin-bottom: 28px;
     font-size: 22px;
     font-weight: 700;
     font-family: NotoSans;
     color: rgb(0, 0, 0);
-    line-height: 1.091;
+    line-height: 1.5;
   }
 
   & p {
     margin: 0;
   }
+
+  & .walletContainer {
+  }
+
+  & .contractSign {
+    text-align: center;
+    width: 245px;
+    & > span {
+      border-width: 5px;
+      margin: auto;
+      margin-top: 30px;
+    }
+  }
+}
+
+.details {
+  text-align: center;
+  width: 245px;
+  margin: auto;
+  margin-bottom: 36px;
 }
 
 .walletOptions {

@@ -14,7 +14,7 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
   return (
     <Menu
       menuButton={
-        <MenuButton>
+        <MenuButton className={styles.profileBtn}>
           <Avatar width={"196px"}>
             <span className={styles.balance}>{user?.walletAmount} </span>
             <span className={styles.address}>{user?.walletAddress}</span>

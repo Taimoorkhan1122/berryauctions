@@ -22,7 +22,6 @@ const MyBids: React.FC<IMyBidsProps> = ({ data, user }) => {
 
   console.log(parseFloat( bidingAmount.split(" BBR")[0]));
   
-
   return (
     <div className={styles.auctionDetails}>
       {/* image container */}

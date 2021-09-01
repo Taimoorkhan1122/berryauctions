@@ -35,6 +35,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
     appDispatch,
   } = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [signContract, setSignContract] = useState(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
     { walletType: Wallet.metamask, isActive: false },
     { walletType: Wallet.walletConnect, isActive: false },
@@ -67,24 +68,28 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
     setLoading(tmp);
 
     setTimeout(() => {
-      appDispatch({
-        type: ActionTypes.SIGNIN,
-        payload: {
-          user: {
-            username: "Taimoor khan",
-            walletAddress: "0x42f3...aaa5",
-            walletAmount: "0.328 BBR",
-            artistData: artist,
-            listings,
-            bids,
-          },
-          isLoggedIn: true,
-        },
-      });
+     
 
-      tmp[key].isActive = !tmp[key].isActive;
-      setLoading(tmp);
-      setIsOpen(false);
+      setSignContract(true);
+      setTimeout(() => {
+         appDispatch({
+           type: ActionTypes.SIGNIN,
+           payload: {
+             user: {
+               username: "Taimoor khan",
+               walletAddress: "0x42f3...aaa5",
+               walletAmount: "0.328 BBR",
+               artistData: artist,
+               listings,
+               bids,
+             },
+             isLoggedIn: true,
+           },
+         });
+        tmp[key].isActive = !tmp[key].isActive;
+        setIsOpen(false);
+        setLoading(tmp);
+      }, 1500);
     }, 1500);
   };
 
@@ -114,57 +119,68 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
                 <div className={styles.close} onClick={handleClick}>
                   <img src={close} alt="modal close button" />
                 </div>
-                <div className={styles.details}>
-                  <h3>월렛 연결하기</h3>
-                  <p>
-                    월렛을 연결함으로써 귀하는 당사의{" "}
-                    <Link to="/">이용약관</Link> 및<Link to="/">개인정보</Link>{" "}
-                    보호정책에 동의합니다.
-                  </p>
-                </div>
-                {/* buttons container */}
-                <div className={styles.walletOptions}>
-                  <Button
-                    onClick={() => handleConnect(Wallet.metamask)}
-                    disabled={connectingWallet}
-                    btnType={
-                      loading[Wallet.metamask].isActive
-                        ? BtnType.PRIMARY
-                        : BtnType.SECONDARY
-                    }>
-                    <div className={styles.loading}>
-                      {loading[Wallet.metamask].isActive ? (
-                        <Loader
-                          children={"연결중..."}
-                          props={{ color: "#f0e3e3", size: 30 }}
-                        />
-                      ) : (
-                        <h4>Metamask</h4>
-                      )}
+
+                {signContract ? (
+                  //  Contract sign container
+                  <div className={styles.contractSign}>
+                    <h3>월렛을 연결하기 위해서 서명해 주세요.</h3>
+                    <p>
+                      베리옥션은 이 서명을 사용하여 사용자가 해당 이더리움
+                      주소의 소유자인지 확인합니다.
+                    </p>
+                    <Loader children={""} props={{ color: "#000", size: 55 }} />
+                  </div>
+                ) : (
+                  // Wallet container
+                  <div className={styles.walletContainer}>
+                    <div className={styles.details}>
+                      <h3>월렛을 연결하기 위해서 서명해 주세요.</h3>
                     </div>
-                    <img src={metamask} alt="metamask icon" />
-                  </Button>
-                  <Button
-                    disabled={connectingWallet}
-                    onClick={() => handleConnect(Wallet.walletConnect)}
-                    btnType={
-                      loading[Wallet.walletConnect].isActive
-                        ? BtnType.PRIMARY
-                        : BtnType.SECONDARY
-                    }>
-                    <div className={styles.loading}>
-                      {loading[Wallet.walletConnect].isActive ? (
-                        <Loader
-                          children={"연결중..."}
-                          props={{ color: "#f0e3e3", size: 30 }}
-                        />
-                      ) : (
-                        <h4>WalletConnect</h4>
-                      )}
+                    {/* buttons container */}
+                    <div className={styles.walletOptions}>
+                      <Button
+                        onClick={() => handleConnect(Wallet.metamask)}
+                        disabled={connectingWallet}
+                        btnType={
+                          loading[Wallet.metamask].isActive
+                            ? BtnType.PRIMARY
+                            : BtnType.SECONDARY
+                        }>
+                        <div className={styles.loading}>
+                          {loading[Wallet.metamask].isActive ? (
+                            <Loader
+                              children={"연결중..."}
+                              props={{ color: "#f0e3e3", size: 30 }}
+                            />
+                          ) : (
+                            <h4>Metamask</h4>
+                          )}
+                        </div>
+                        <img src={metamask} alt="metamask icon" />
+                      </Button>
+                      <Button
+                        disabled={connectingWallet}
+                        onClick={() => handleConnect(Wallet.walletConnect)}
+                        btnType={
+                          loading[Wallet.walletConnect].isActive
+                            ? BtnType.PRIMARY
+                            : BtnType.SECONDARY
+                        }>
+                        <div className={styles.loading}>
+                          {loading[Wallet.walletConnect].isActive ? (
+                            <Loader
+                              children={"연결중..."}
+                              props={{ color: "#f0e3e3", size: 30 }}
+                            />
+                          ) : (
+                            <h4>WalletConnect</h4>
+                          )}
+                        </div>
+                        <img src={walletConnect} alt="metamask icon" />
+                      </Button>
                     </div>
-                    <img src={walletConnect} alt="metamask icon" />
-                  </Button>
-                </div>
+                  </div>
+                )}
               </div>
             </Modal>
           )}
