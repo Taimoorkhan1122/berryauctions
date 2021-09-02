@@ -66,37 +66,39 @@ const InstantBuyPage: React.FC<IInstantBuyPageProps> = ({ data, user, handleClci
         </div>
 
         <div className={styles.inputContainer}>
-          <form
-            id="hook-form"
-            onSubmit={handleSubmit(onSubmit)}
-            className={styles.pricingForm}>
-            <input
-              {...register("immdiatePrice", {
-                required: {
-                  value: true,
-                  message: "This is field cannot be empty",
-                },
-              })}
-              type="number"
-            />
-            <span className={styles.dropdown}>
-              <Controller
-                render={({ field }) => (
-                  <CurrencySelect
-                    currency={currency}
-                    handleClick={(e) => {
-                      setCurrency(e.value);
-                      setValue("currency", currency);
-                    }}
-                  />
-                )}
-                name="currency"
-                control={control}
-                defaultValue=""
+          <div className={styles.formContainer}>
+            <form
+              id="hook-form"
+              onSubmit={handleSubmit(onSubmit)}
+              className={styles.pricingForm}>
+              <input
+                {...register("immdiatePrice", {
+                  required: {
+                    value: true,
+                    message: "This is field cannot be empty",
+                  },
+                })}
+                type="number"
               />
-            </span>
-          </form>
-          <small className={styles.small}>1,584,302원</small>
+              <span className={styles.dropdown}>
+                <Controller
+                  render={({ field }) => (
+                    <CurrencySelect
+                      currency={currency}
+                      handleClick={(e) => {
+                        setCurrency(e.value);
+                        setValue("currency", currency);
+                      }}
+                    />
+                  )}
+                  name="currency"
+                  control={control}
+                  defaultValue="" 
+                />
+              </span>
+            </form>
+            <small className={styles.small}>1,584,302원</small>
+          </div>
           <div className={styles.yourBalance}>
             <span className={styles.balance}>Your Balance</span>
             <span className={styles.amount}>{user.walletAmount}</span>

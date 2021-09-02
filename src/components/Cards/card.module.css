@@ -46,7 +46,7 @@
 }
 
 .bottomContainer {
-  padding: 18px 22px 12px;
+  padding: 32px 25px 22px;
    & > p {
      padding: 0 0 10px;
    }
@@ -57,6 +57,7 @@
   font-size: 22px;
   font-weight: 700;
   margin: 15px 0 23px;
+  line-height: 1;
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -64,13 +65,13 @@
 }
 
 .avatarContainer {
-  border-radius: 50px;
-  border: none;
-  height: 56px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 8px 0 0;
+     border-radius: 50px;
+    border: none;
+    height: 36px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px 0 0;
 }
 
 .avatarContainer img {
@@ -111,7 +112,7 @@
 .detailsContainer {
   display: flex;
   justify-content: space-between;
-  padding: 27px 22px;
+  padding: 22px 25px;
   background: #fff;
   border-top: 1px solid #f2f2f2;
 
@@ -143,13 +144,15 @@
   font-size: 20px;
   display: flex;
   line-height: 1;
+  margin: 0 0 13px 0;
 }
 
 .detailsContainer > div h3 {
   font-family: NotoSans;
   font-weight: 700;
   font-size: 15px;
-  margin: 0 0 13px 0;
+  line-height: 1;
+  margin: 0;
 }
 
 .circle {

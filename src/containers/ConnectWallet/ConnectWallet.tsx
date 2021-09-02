@@ -102,7 +102,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
   };
 
   return (
-    <div className={state.isLoggedIn ? styles.container : ""}>
+    <div className={state.isLoggedIn ? styles.container : styles.connectWalletBtn}>
       {state.isLoggedIn ? (
         <div className={styles.userProfiler}>
           <MyAuctions count={state.user.bids.length} dark={dark} />

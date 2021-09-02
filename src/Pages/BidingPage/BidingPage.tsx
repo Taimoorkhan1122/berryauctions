@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import Button, { BtnType } from '../../components/Button/Button';
-import { User } from '../../Context/GlobalProvider';
-import { AuctionData, auctionData } from '../../utils/data';
-import { CurrencySelect } from './Biding';
+import React, { useEffect, useState } from "react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import Button, { BtnType } from "../../components/Button/Button";
+import { User } from "../../Context/GlobalProvider";
+import { AuctionData, auctionData } from "../../utils/data";
+import { CurrencySelect } from "./Biding";
 import styles from "./biding.module.css";
-import useIsDisabled from './useIsDisabled';
+import useIsDisabled from "./useIsDisabled";
 
 type Inputs = {
   bidAmount: number;
@@ -17,7 +17,6 @@ interface IBidingPageProps {
   user: User;
   handleClcik: () => void;
 }
-
 
 const BidingPage: React.FC<IBidingPageProps> = ({
   data,
@@ -69,37 +68,39 @@ const BidingPage: React.FC<IBidingPageProps> = ({
       </div>
 
       <div className={styles.inputContainer}>
-        <form
-          id="hook-form"
-          onSubmit={handleSubmit(onSubmit)}
-          className={styles.pricingForm}>
-          <input
-            {...register("bidAmount", {
-              required: {
-                value: true,
-                message: "This is field cannot be empty",
-              },
-            })}
-            type="number"
-          />
-          <span className={styles.dropdown}>
-            <Controller
-              render={({ field }) => (
-                <CurrencySelect
-                  currency={currency}
-                  handleClick={(e) => {
-                    setCurrency(e.value);
-                    setValue("currency", currency);
-                  }}
-                />
-              )}
-              name="currency"
-              control={control}
-              defaultValue=""
+        <div className={styles.formContainer}>
+          <form
+            id="hook-form"
+            onSubmit={handleSubmit(onSubmit)}
+            className={styles.pricingForm}>
+            <input
+              {...register("bidAmount", {
+                required: {
+                  value: true,
+                  message: "This is field cannot be empty",
+                },
+              })}
+              type="number"
             />
-          </span>
-        </form>
-        <small className={styles.small}>1,584,302원</small>
+            <span className={styles.dropdown}>
+              <Controller
+                render={({ field }) => (
+                  <CurrencySelect
+                    currency={currency}
+                    handleClick={(e) => {
+                      setCurrency(e.value);
+                      setValue("currency", currency);
+                    }}
+                  />
+                )}
+                name="currency"
+                control={control}
+                defaultValue=""
+              />
+            </span>
+          </form>
+          <small className={styles.small}>1,584,302원</small>
+        </div>
         <div className={styles.yourBalance}>
           <span className={styles.balance}>Your Balance</span>
           <span className={styles.amount}>{user.walletAmount}</span>
@@ -124,4 +125,4 @@ const BidingPage: React.FC<IBidingPageProps> = ({
   );
 };
 
-export default BidingPage
+export default BidingPage;

@@ -12,10 +12,11 @@ interface IBtnProps {
   btnType: BtnType;
   children: React.ReactNode;
   width?: string;
-  fontSize?: string; 
+  fontSize?: string;
   onClick?: React.MouseEventHandler;
-  form?: string,
+  form?: string;
   type?: any;
+  ref?: React.MutableRefObject<any>;
 }
 
 const Button: React.FC<IBtnProps> = ({
@@ -27,6 +28,8 @@ const Button: React.FC<IBtnProps> = ({
   onClick,
   form,
   type,
+  ref,
+
 }) => {
   const classname = classNames(
     styles.btn,
@@ -38,7 +41,14 @@ const Button: React.FC<IBtnProps> = ({
   );
 
   return (
-    <button form={form} type={type} className={classname} style={{ width: width, fontSize, }} onClick={onClick} disabled={disabled}>
+    <button
+      ref={ref}
+      form={form}
+      type={type}
+      className={classname}
+      style={{ width: width, fontSize }}
+      onClick={onClick}
+      disabled={disabled}>
       {children}
     </button>
   );

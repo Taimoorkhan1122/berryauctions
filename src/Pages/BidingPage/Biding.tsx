@@ -30,7 +30,7 @@ export const CurrencySelect: React.FC<{
 }> = ({ currency, handleClick }) => (
   <Menu
     onClick={(e) => e.preventDefault()}
-    offsetX={-30}
+    offsetX={-15}
     offsetY={25}
     direction="top"
     className={styles.currencySlect}

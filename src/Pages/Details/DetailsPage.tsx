@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import React, { useContext, useState } from "react";
+import React, { MouseEventHandler, useContext, useRef, useState } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
+import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
 import Avatar from "../../components/Avatar/Avatar";
@@ -11,8 +12,6 @@ import { GlobalContext } from "../../Context/GlobalProvider";
 
 import { artistData, AuctionData, auctionData } from "../../utils/data";
 import styles from "./auctionsDetails.module.css";
-
-import Lightbox from "react-image-lightbox";
 import Bids from "./Bids";
 
 // icons
@@ -23,7 +22,15 @@ import ipfs from "../../images/ipfs.png";
 import ipfsMeta from "../../images/metadata.png";
 import expndIcon from "../../images/expand.png";
 import dropdownArrow from "../../images/dropdown-arrow.png";
-import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
+import {
+  ClickEvent,
+  ControlledMenu,
+  Menu,
+  MenuButton,
+  MenuItem,
+  useMenuState,
+} from "@szhsin/react-menu";
+import { LogoWhite } from "../../components/Logo/Logo";
 
 interface IDetailsPageProps {
   pageData: AuctionData[];
@@ -49,6 +56,9 @@ const CurrencySelect = () => (
 const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
   const { state } = useContext(GlobalContext);
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
+  const { toggleMenu, ...menuProps } = useMenuState({ transition: true });
+
   const { id } = useParams<{ id: string }>();
   const _id = id.split("_").map((d) => d);
   const [data] = pageData.filter((data) => data.id === _id[1]);
@@ -84,9 +94,27 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
             <Avatar width="136px" children={data.username} />{" "}
             <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
           </div>
-          <Button btnType={BtnType.SECONDARY} width="136px">
+          <button
+            className={styles.shareLinkButton}
+            disabled={menuProps.state === "open"}
+            onClick={() => {
+              toggleMenu(true);
+              setTimeout(() => {
+                toggleMenu(false);
+              }, 3000);
+            }}
+            ref={ref}>
             <img src={shareIcon} alt="share icon" /> 공유하기{" "}
-          </Button>
+          </button>
+          <ControlledMenu
+            {...menuProps}
+            anchorRef={ref}
+            offsetX={10}
+            offsetY={10}
+            direction="right"
+            className={styles.shareAlert}>
+            <MenuItem>링크가 복사되었습니다.</MenuItem>
+          </ControlledMenu>
         </div>
         {/* flex container - contains auction and bid details*/}
         <div className={styles.details}>
