@@ -26,10 +26,21 @@
   );
 }
 
+.copyBtn {
+  cursor: pointer;
+  background-image: url("../../images/copyIcon.png");
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  &:hover {
+    background-image: url("../../images/copyIconDark.png");
+  }
+}
+
 .bottomContainer {
-  padding: 80px 0 0 0;
+  padding: 5px 0 0;
   display: flex;
-  gap: 30px;
+  gap: 28px;
   min-height: 70vh;
 }
 
@@ -38,7 +49,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-
+  width: 335px;
   & .addressContainer {
     display: flex;
     align-items: center;
@@ -47,9 +58,39 @@
     background: #fff;
     border-radius: 50px;
     padding-right: 10px;
+
+    & .shareAlert > ul {
+      border: none;
+      border-radius: 50px;
+      width: 96px;
+      height: 35px;
+      & li {
+        cursor: default;
+        height: 100%;
+        border: none;
+        border-radius: 50px;
+        background: #000;
+        color: #fff;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        font-size: 15px;
+        font-family: NotoSans;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        line-height: 1;
+
+        &:hover {
+          background: #000;
+        }
+      }
+    }
     & > button {
-      max-height: 35px;
+      height: 35px;
       margin: 0 1rem 0 0;
+      padding: 5px 0 6px;
     }
     & > span {
       margin: 0 0.5rem 0 0;
@@ -59,33 +100,28 @@
       color: rgb(0, 0, 0);
       line-height: 1.2;
     }
-
-    & .copyBtn {
-      cursor: pointer;
-    }
   }
 
   & .artistDetails {
     & .infoContainer {
-      margin-top: 3rem;
-      & > h3:first-of-type {
+      margin: 3rem 0 50px;
+      & h3:first-of-type {
         font-size: 42px;
         font-family: NotoSans;
         font-weight: 700;
         color: rgb(0, 0, 0);
         line-height: 0.976;
-        margin: 0 0 30px;
+        margin: 0 0 20px;
       }
 
       & > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
       }
     }
 
-    & .aboutContainer { 
+    & .aboutContainer {
       & > h3 {
         font-size: 20px;
         font-family: NotoSans;
@@ -98,7 +134,7 @@
       }
 
       & .about {
-        font-size: 20px;
+        font-size: 15px;
       }
     }
   }
@@ -109,7 +145,8 @@
 
   & > h3 {
     font-size: 22px;
-    font-family: "Noto Sans CJK KR";
+    font-family: NotoSans;
+    font-weight: 700;
     color: rgb(0, 0, 0);
     line-height: 1.091;
     font-size: 22px;
@@ -139,13 +176,48 @@
 .linksContainer {
   margin-top: 3rem;
   width: 77%;
+  position: relative;
+
+  & .shareAlert {
+    position: absolute;
+  }
+  
+  & .shareAlert > ul {
+    border: none;
+    border-radius: 50px;
+    width: 96px;
+    height: 35px;
+    & li {
+      cursor: default;
+      height: 100%;
+      border: none;
+      border-radius: 50px;
+      background: #000;
+      color: #fff;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+
+      font-size: 15px;
+      font-family: NotoSans;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      line-height: 1;
+
+      &:hover {
+        background: #000;
+      }
+    }
+  }
   & .link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+    width: 260px;
+    height: 48px;
     background: #fff;
-    padding: 15px 18px;
+    padding: 0 18px;
     border-radius: 10px;
     margin-bottom: 10px;
     border: 1px solid #f2f2f2;

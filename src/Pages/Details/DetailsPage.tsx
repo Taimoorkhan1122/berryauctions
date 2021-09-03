@@ -185,6 +185,8 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <h3>0.61 BBR</h3>
                   <small className={styles.small}>1,584,302원</small>
                 </div>
+                <div className={styles.border}></div>
+
                 {data.bidingStatus ? (
                   <div className={styles.timeLeft}>
                     <span>남은시간</span>
@@ -209,8 +211,8 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   </div>
                 ) : (
                   <div className={styles.winnerContainer}>
-                    <h3 className="ft-15-md-ns">소유자</h3>
-                    <Avatar width={"196px"}>
+                    <span>소유자</span>
+                    <Avatar width={"200px"}>
                       <span className={styles.address}>
                         {winner["walletAddress"]}
                       </span>

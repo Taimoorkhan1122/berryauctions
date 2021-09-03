@@ -1,9 +1,3 @@
 .container {
 
 }
-
-.artistSection {
-    & > div {
-        cursor: default;
-    }
-}
