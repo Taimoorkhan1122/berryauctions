@@ -15,6 +15,7 @@ import MyAuctions from "../../components/MyAuctions/MyAuctions";
 import ProfileBtn from "../../components/ProfileBtn/ProfileBtn";
 import { artistData, auctionData } from "../../utils/data";
 import Bids from "../../Pages/Details/Bids";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 enum Wallet {
   metamask,
@@ -117,7 +118,6 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
           onClick={handleClick}
         />
       )}
-
       {/* modal start */}
       {!state.isLoggedIn && forcedOpen
         ? forcedOpen

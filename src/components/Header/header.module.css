@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .headerContainer {
   width: 100%;
   z-index: 999;
@@ -39,6 +47,10 @@
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  
+  @media (--viewportMedium) {
+    font-size: 14px;
+  }
 
   &.dark {
     color: #666;

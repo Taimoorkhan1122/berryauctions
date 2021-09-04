@@ -10,10 +10,7 @@
   } */
   & > div {
     transition: all 300ms ease-in-out;
-   &:hover {
-      box-shadow: rgb(0 0 0 / 25%) 0px 8px 15px;
-    transform: translateY(-2px);
-   }
+   
   }
 }
 
@@ -58,6 +55,7 @@
   &:hover {
     & > div, & > span {
       transform: translate3d(5px, 0px, 0px);
+      background: none;
     }
   }
 
@@ -66,9 +64,7 @@
     border-bottom: 1px solid #e6e6e6;
     border-radius: 10px;
     background: #fff;
-    &:hover {
-      background: #ebebeb;
-    }
+    
 
     & > div {
       display: flex;
@@ -108,4 +104,13 @@
   font-family: SongMyung;
   color: rgb(102, 102, 102);
   line-height: 1;
+}
+
+
+:global(.szh-menu__item--active) {
+  background: none;
+}
+
+:global(.szh-menu__item--hover) {
+  background: none;
 }

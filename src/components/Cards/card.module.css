@@ -22,10 +22,7 @@
   }
 }
 .imgContainer {
-  height: 250px;
-  @media (min-width: 1024px) {
-    height: 335px;
-  }
+  height: 335px;
 }
 
 .imgContainer img {
@@ -132,6 +129,7 @@
 .detailsContainer > div {
   display: flex;
   flex-direction: column;
+  gap: 13px;
 }
 
 .detailsContainer > div:last-child {
@@ -144,7 +142,7 @@
   font-size: 20px;
   display: flex;
   line-height: 1;
-  margin: 0 0 13px 0;
+  margin: 0;
 }
 
 .detailsContainer > div h3 {

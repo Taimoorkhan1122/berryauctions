@@ -27,7 +27,7 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
   const route = `아티스트/${username}`;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => history.push(route)}>
       <div className={classNames(styles.imgContainer, styles.artistImg)}>
         <img src={imgLink} alt="nft" />
       </div>
@@ -45,7 +45,9 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
       </div>
       <div className={classNames(styles.detailsContainer)}>
         <div>
-          <span className={styles.totalWorks} style={{ color: "#000" }}>{totalWork}</span>
+          <span className={styles.totalWorks} style={{ color: "#000" }}>
+            {totalWork}
+          </span>
           <h3 style={{ color: "#666666" }}>작품</h3>
         </div>
         <div>
@@ -53,7 +55,6 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
             children="작품보기"
             width="123px"
             btnType={BtnType.TERTIARY}
-            onClick={() => history.push(route)}
           />
         </div>
       </div>
