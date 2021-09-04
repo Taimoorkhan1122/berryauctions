@@ -6,8 +6,7 @@ interface Size {
 }
 
 export default function useWindowSize(): Size {
-  
-    const [windowSize, setWindowSize] = useState<Size>({
+  const [windowSize, setWindowSize] = useState<Size>({
     width: 0,
     height: 0,
   });

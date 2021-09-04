@@ -11,9 +11,11 @@ import { useHistory } from "react-router";
 import arrow from "../../images/arrow.png";
 import emailNoti from "../../images/emailNoti.png";
 import endSession from "../../images/endSession.png";
+import useWindowSize from "../../utils/useWindowSize";
 
 const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
   const history = useHistory();
+  const windowWidth = useWindowSize();
   return (
     <Menu
       menuButton={
@@ -27,13 +29,12 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
       className={styles.menuButton}
       align={"end"}
       transition
-      offsetX={-10}
+      offsetX={windowWidth.width <= 768 ? 60 : -10}
       offsetY={20}>
       <MenuItem onClick={() => history.push("/프로필")}>
         {" "}
         <Avatar width={"196px"}>내 프로필 보기</Avatar>
-        
-          <img src={arrow} alt="arrow" />
+        <img src={arrow} alt="arrow" />
       </MenuItem>
       <MenuItem onClick={() => history.push("/이메일 알림 설정")}>
         <span>

@@ -27,7 +27,6 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
   useEffect(() => {
     windowWidth.width < 1024 ? setShowHamburger(true) : setShowHamburger(false);
   }, [windowWidth.width]);
-  console.log(windowWidth.width);
   
   return (
     <main id="outerContainer" className={styles.container}>

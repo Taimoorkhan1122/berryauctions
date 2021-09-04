@@ -33,3 +33,10 @@
     font-weight: 400;
     margin: 0 0 0 9px;
 }
+
+.logoName {
+    display: none;
+    @media (--viewportSmall) {
+        display: inline;
+    }
+}

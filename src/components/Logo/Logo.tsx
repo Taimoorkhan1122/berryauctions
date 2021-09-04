@@ -10,7 +10,9 @@ export const LogoWhite = () => {
     <div className={styles.logoContainer}>
       <Link to="/">
         <img src={logoW} alt="berry auction logo" />{" "}
-        <span style={{ color: "#fff" }}>BerryAuction</span>
+        <span className={styles.logoName} style={{ color: "#fff" }}>
+          BerryAuction
+        </span>
       </Link>
     </div>
   );
@@ -19,10 +21,12 @@ export const LogoWhite = () => {
 export const LogoDark = () => {
   return (
     <div className={styles.logoContainer}>
-        <Link to="/">
+      <Link to="/">
         <img src={logoB} alt="berry auction logo" />{" "}
-        <span style={{ color: "#000" }}>BerryAuction</span>
-    </Link>
-      </div>
+        <span className={styles.logoName} style={{ color: "#000" }}>
+          BerryAuction
+        </span>
+      </Link>
+    </div>
   );
 };

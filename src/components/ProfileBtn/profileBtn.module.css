@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .menuButton {
   outline: none;
   background: none;
@@ -10,7 +18,10 @@
   } */
   & > div {
     transition: all 300ms ease-in-out;
-   
+    width: 56px !important;
+    @media (--viewportLarge) {
+      width: 196px !important;
+    }
   }
 }
 
@@ -104,6 +115,14 @@
   font-family: SongMyung;
   color: rgb(102, 102, 102);
   line-height: 1;
+}
+
+.balance,
+.address {
+  display: none;
+  @media (--viewportLarge) {
+    display: inline;
+  }
 }
 
 
