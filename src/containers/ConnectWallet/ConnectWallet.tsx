@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 
 import styles from "./connectWallet.module.css";
 import Loader from "../../components/Loader/Loader";
-import close from "../../images/close.png";
+import close from "../../images/closeDark.png";
 import metamask from "../../images/metamask.png";
 import walletConnect from "../../images/walletConnect.png";
 import { GlobalContext } from "../../Context/GlobalProvider";

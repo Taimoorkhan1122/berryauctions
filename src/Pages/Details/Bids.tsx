@@ -42,23 +42,23 @@ const Bids: React.FC<IBidsProps> = ({ data, bidingStatus }) => {
   );
   return (
     <div className={styles.lastBids}>
-      <Avatar width={"230px"}>
-        <div className={styles.bidinfo}>
-          
-        <h4 className={styles.light}>낙찰자</h4>
-        <span className={styles.address}>{data?.walletAddress}</span>
-        </div>
+      <Avatar width={"auto"}></Avatar>
+      <div className={styles.flexContainer}>
+        <div className={styles.bidDetails}>
+          <div className={styles.bidinfo}>
+            <h4 className={styles.light}>낙찰자</h4>
+            <span className={styles.address}>{data?.walletAddress}</span>
+          </div>
           <span className={styles.bidDate}>2021.08.31 18:04:01</span>
-      </Avatar>
-      <div className={styles.bidAmount}>
-        <div>
-          <span className={styles.cryptoValue}>0.524 BBR</span>
-          <span className={styles.currencyValue}>1,585,302원</span>
         </div>
-        <Link className={styles.bidlink} to="../">
-          <img src={linkIcon} alt="bid link" />
-        </Link>
+        <div className={styles.bidAmount}>
+            <span className={styles.cryptoValue}>0.524 BBR</span>
+            <span className={styles.currencyValue}>1,585,302원</span>
+        </div>
       </div>
+      <Link className={styles.bidlink} to="../">
+        <img src={linkIcon} alt="bid link" />
+      </Link>
     </div>
   );
 };

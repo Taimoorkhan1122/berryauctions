@@ -7,16 +7,20 @@
 @custom-media --viewportFHD (min-width: 1921px);
 
 .light {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   font-family: NotoSans;
   color: rgb(102, 102, 102);
   line-height: 1.6;
+
+  @media (--viewportSmall) {
+    font-size: 15px;
+  }
 }
 
 h4.light {
   margin: 0;
-  line-height: 1;
+  line-height: 1.2;
   margin-right: 10px;
 }
 
@@ -35,7 +39,9 @@ h4.light {
 .imgContainer {
   display: flex;
   position: relative;
-  margin-bottom: 36px;
+
+  margin-bottom: 18px;
+  min-height: 66vh;
 
   & .expand {
     cursor: pointer;
@@ -49,8 +55,8 @@ h4.light {
   }
 
   & .aspectContainer {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,22 +72,32 @@ h4.light {
       border: 1px solid #e6e6e6;
       background: #fff;
       padding: 10px;
-      max-height: 500px;
-      max-width: 500px;
+      max-width: 100%;
+      max-height: 400px;
       object-fit: contain;
     }
+  }
 
-    @media (--viewportMedium) {
+  @media (--viewportSmall) {
+    margin-bottom: 36px;
+    min-height: unset;
+    & .aspectContainer {
+      height: 500px;
+      width: 500px;
+      & img {
+        max-height: 500px;
+        max-width: 500px;
+      }
+    }
+  }
+  @media (--viewportMedium) {
+    & .aspectContainer {
       height: 558px;
       width: 558px;
 
       & img {
-        border: 1px solid #e6e6e6;
-        background: #fff;
-        padding: 10px;
         max-width: 558px;
         max-height: 558px;
-        object-fit: contain;
       }
     }
   }
@@ -92,7 +108,7 @@ h4.light {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0 42px;
+  margin: 10px 0 32px;
   position: relative;
 
   & .shareLinkButton {
@@ -101,7 +117,8 @@ h4.light {
     right: 0;
 
     height: 56px;
-    width: 136px;
+    width: 56px;
+    padding: 15px;
     font-size: 15px;
     border-radius: 50px;
     font-family: NotoSans;
@@ -115,7 +132,6 @@ h4.light {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
   }
 
   & .shareAlert > ul {
@@ -125,11 +141,11 @@ h4.light {
     height: 35px;
     & li {
       cursor: default;
-      height: 100%;
       border: none;
       border-radius: 50px;
       background: #000;
       color: #fff;
+      height: 100%;
       padding: 0;
       text-align: center;
       display: flex;
@@ -149,13 +165,29 @@ h4.light {
 
   & .author {
     display: flex;
+    flex-direction: column;
 
     & .gradText {
       font-size: 24px;
-      margin: auto;
+      margin: 20px 0 0 5px;
     }
     & > div {
       margin: 0 20px 0px 0;
+    }
+  }
+
+  @media (--viewportSmall) {
+    margin: 10px 0 42px;
+    & .shareLinkButton {
+      height: 56px;
+      width: 136px;
+      padding: 15px 20px;
+    }
+    & .author {
+      flex-direction: row;
+      & .gradText {
+        margin: auto;
+      }
     }
   }
 }
@@ -291,21 +323,32 @@ h4.light {
 .headingContainer {
   border-bottom: 1px solid #e6e6e6;
   & > h3 {
-    font-size: 60px;
+    font-size: 36px;
     font-family: SongMyung;
     color: rgb(0, 0, 0);
     line-height: 0.8;
     font-weight: 400;
-    margin-top: 0;
+    margin: 24px 0;
   }
 
   & > p {
-    margin: 58px 0 30px;
+    margin: 20px 0 30px;
     font-size: 22px;
     font-family: NotoSans;
     color: rgb(0, 0, 0);
     line-height: 1.091;
     font-weight: 700;
+  }
+
+  @media (--viewportSmall) {
+    & > h3 {
+      font-size: 60px;
+      margin: unset;
+      margin-top: 0;
+    }
+    & > p {
+      margin: 58px 0 30px;
+    }
   }
 }
 
@@ -383,12 +426,7 @@ p.description {
   border: 1px solid #f2f2f2;
   border-radius: 10px;
 }
-.bidlink {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .successfulBid {
   margin: 2.3rem 0 1.3rem;
 
@@ -468,33 +506,30 @@ p.description {
   border-bottom: 1px solid #f2f2f2;
   padding: 2rem;
   max-height: 163px;
-  @media (--viewportMedium) {
-    max-height: unset;
-  }
 
   & > div {
-    flex-basis: 35%;
+    flex-basis: 20%;
     padding: 0;
   }
-  
-   & .border {
-     flex-basis: 20%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
 
-     @media (max-width: 768px) {
-     flex-basis: 20%;
-     }
-     &:after {
-       display: flex;
-       content: '';
-       width: 1px;
-       height: 100%;
-       background: #e6e6e6;
-       /* background: #fff; */
-     }
-   }
+  & .border {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-basis: 20%;
+    }
+    &:after {
+      display: flex;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background: #e6e6e6;
+      /* background: #fff; */
+    }
+  }
 
   & .winnerContainer {
     display: flex;
@@ -523,9 +558,30 @@ p.description {
       line-height: 1.2;
     }
   }
+  @media (max-width: 600px) {
+    max-height: unset;
+    flex-direction: column;
+    gap: 15px;
+
+    & > div {
+      flex-basis: 20%;
+      padding: 0;
+    }
+
+    & .pricing {
+      border-right: none;
+    }
+  }
 
   @media (--viewportMedium) {
+    max-height: unset;
     flex-direction: column;
+
+    & > div {
+      flex-basis: 35%;
+      padding: 0;
+    }
+
     & .pricing {
       border-right: none;
     }
@@ -576,7 +632,6 @@ p.description {
     color: rgb(0, 0, 0);
     line-height: 1.6;
     margin: 0;
-
   }
   & .time {
     display: flex;
@@ -587,6 +642,9 @@ p.description {
       flex-direction: column;
       margin: 1rem 18% 0 0;
 
+      @media (max-width: 600px) {
+        margin: 1rem 11% 0 0;
+      }
       @media (--viewportMedium) {
         margin: 1rem 11% 0 0;
       }
@@ -618,20 +676,59 @@ p.description {
 .bids {
   & .lastBids {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: #fff;
     border-radius: 10px;
     border: 1px solid #f2f2f2;
-    padding: 10px 22px;
+    padding: 20px;
     margin: 0 0 10px;
+    position: relative;
 
+    & .flexContainer {
+      display: flex;
+      justify-content: start;
+      /* align-items: self-end; */
+      width: 100%;
+      flex-direction: column-reverse;
+      grid-gap: 5px;
+
+      & .bidDetails {
+      }
+
+      & .bidAmount {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        & > img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+
+        & .cryptoValue {
+          font-size: 16px;
+          font-family: SongMyung;
+          color: rgb(0, 0, 0);
+          line-height: 1.2;
+        }
+
+        & .currencyValue {
+          font-size: 12px;
+          font-weight: 700;
+          font-family: NotoSans;
+          color: rgb(102, 102, 102);
+          line-height: 1.2;
+        }
+      }
+    }
     & .bidinfo {
       display: flex;
       align-items: center;
 
       & > span {
-        font-size: 20px;
+        font-size: 16px;
         font-family: SongMyung;
         font-weight: 400;
         color: rgb(0, 0, 0);
@@ -640,7 +737,11 @@ p.description {
     }
 
     & .bidDate {
+      font-size: 12px;
+      font-weight: 700;
+      font-family: NotoSans;
       color: rgb(153, 153, 153);
+      line-height: 1;
     }
 
     & > div:first-child {
@@ -649,33 +750,52 @@ p.description {
       margin: 0;
       padding: 0;
     }
-    & .bidAmount {
+    & .bidlink {
+      cursor: pointer;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
 
-      & > img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
+    @media (--viewportSmall) {
+      padding: 10px 22px;
+
+      & .flexContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        grid-gap: 0;
+        & .bidAmount {
+          display: flex;
+          flex-direction: column;
+          width: auto;
+          justify-content: unset;
+
+          & .cryptoValue {
+            font-size: 20px;
+          }
+
+          & .currencyValue {
+            font-size: 15px;
+          }
+        }
+
+        & .bidinfo {
+          & > span {
+            font-size: 20px;
+          }
+        }
+        & .bidDate {
+          font-size: 15px;
+        }
       }
 
-      & > div {
-        display: flex;
-        flex-direction: column;
-        margin-right: 10px;
-
-        & .cryptoValue {
-          font-size: 20px;
-          font-family: SongMyung;
-          color: rgb(0, 0, 0);
-          line-height: 1.2;
-        }
-
-        & .currencyValue {
-          font-size: 15px;
-          font-family: "Noto Sans CJK KR";
-          color: rgb(102, 102, 102);
-          line-height: 1.6;
-        }
+      & .bidlink {
+        position: relative;
+        right: unset;
+        bottom: unset;
       }
     }
   }

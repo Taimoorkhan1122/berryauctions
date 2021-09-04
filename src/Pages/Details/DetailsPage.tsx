@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { MouseEventHandler, useContext, useRef, useState } from "react";
+import React, { MouseEventHandler, useContext, useEffect, useRef, useState } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
@@ -31,6 +31,7 @@ import {
   useMenuState,
 } from "@szhsin/react-menu";
 import { LogoWhite } from "../../components/Logo/Logo";
+import useWindowSize from "../../utils/useWindowSize";
 
 interface IDetailsPageProps {
   pageData: AuctionData[];
@@ -65,6 +66,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
 
   const location = useLocation();
   const history = useHistory();
+  const windowWidth = useWindowSize();
 
   const [winner] = data?.bids.filter(
     (bid) => bid.isWinner && Object.keys(bid.walletAddress)
@@ -104,7 +106,8 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               }, 3000);
             }}
             ref={ref}>
-            <img src={shareIcon} alt="share icon" /> 공유하기{" "}
+            <img src={shareIcon} alt="share icon" />
+            {windowWidth.width < 786 ? "" : "공유하기 "}
           </button>
           <ControlledMenu
             {...menuProps}

@@ -22,24 +22,11 @@
   max-width: 1440px;
   display: flex;
   margin: auto;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-  /* gap: 96px; */
-
-  @media (--viewportLarge) {
-    margin-top: 2em;
-    gap: 3%;
-  }
-
-  @media (--viewportXLarge) {
-    margin-top: 2em;
-    gap: 5%;
-  }
-
-  @media (--viewportLargeWithPaddings) {
-    gap: 117px;
-  }
+  align-items: flex-start;
+  margin-top: 0rem;
+  gap: 30px;
 
   & h3 {
     font-size: 28px;
@@ -54,31 +41,50 @@
       margin: 12px 0;
     }
   }
+
+  @media (--viewportMedium) {
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2em;
+    gap: 3%;
+  }
+
+  @media (--viewportXLarge) {
+    gap: 5%;
+  }
+
+  @media (--viewportLargeWithPaddings) {
+    gap: 117px;
+  }
 }
 
 .imageContainer {
-  max-width: 660px;
+  /* min-width: 100%; */
   flex: 1;
   text-align: center;
+  margin: auto;
 
   & .insideContainer {
-    height: 558px;
-    width: 558px;
-    margin: 0 0 0 102px;
+    height: 400px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 
     & img {
       border: 1px solid #e6e6e6;
       background: #fff;
       padding: 10px;
-      max-height: 500px;
-      max-width: 500px;
+      max-width: 100%;
+      max-height: 400px;
       object-fit: contain;
     }
+  }
 
-    @media (--viewportMedium) {
+  @media (--viewportMedium) {
+    max-width: 660px;
+    & .insideContainer {
       height: 450px;
       width: 450px;
       margin: auto;
@@ -92,8 +98,10 @@
         object-fit: contain;
       }
     }
+  }
 
-    @media (--viewportLarge) {
+  @media (--viewportLarge) {
+    & .insideContainer {
       height: 500px;
       width: 500px;
       margin: auto;
@@ -107,8 +115,10 @@
         object-fit: contain;
       }
     }
+  }
 
-    @media (--viewportXLarge) {
+  @media (--viewportXLarge) {
+    & .insideContainer {
       height: 558px;
       width: 558px;
       margin: 0 0 0 20px;
@@ -122,11 +132,10 @@
         object-fit: contain;
       }
     }
-    @media (--viewportLargeWithPaddings) {
+  }
+  @media (--viewportLargeWithPaddings) {
+    & .insideContainer {
       margin: 0 0 0 102px;
-
-      /* max-width: 450px; */
-      /* margin: 10px 108px; */
     }
   }
 }
@@ -135,108 +144,137 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 648px;
-  height: 370px;
+  width: 100%;
+  height: auto;
   flex: 1 1;
+
+  & .auctionDetails {
+    display: flex;
+    max-height: unset;
+    flex-direction: column;
+    grid-gap: 20px;
+
+    & .pricing {
+      border-right: none;
+      margin-right: 48px;
+      padding-right: 48px;
+
+      @media (min-width: 1440px) {
+        margin-right: 58px;
+        padding-right: 58px;
+      }
+
+      & > span {
+        font-size: 15px;
+        font-family: NotoSans;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        line-height: 1;
+      }
+    }
+
+    & .timeLeft {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-gap: 12px;
+
+      & > span {
+        font-size: 15px;
+        font-family: NotoSans;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        line-height: 1;
+      }
+      & .time {
+        display: flex;
+        width: 100%;
+
+        & h3 {
+          display: flex;
+          flex-direction: column;
+          margin: 0 24px 0 0;
+          & .small {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
 
   @media (min-width: 1280px) {
     padding: 0;
   }
-}
 
-.contentContainer .author {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  & > div {
-    background: #fff;
-    margin-right: 23px;
-  }
-  & .gradText {
-    margin: 0 !important;
-    font-size: 24px;
-  }
-}
-
-.contentContainer .heroHeading {
-  font-size: 50px;
-  font-weight: normal;
-  font-family: SongMyung;
-  color: rgb(0, 0, 0);
-  line-height: 0.7;
-  margin: 34px 0 50px;
-
-  @media (min-width: 1280px) {
-    font-size: 60px;
-  }
-}
-
-.contentContainer .auctionDetails {
-  display: flex;
-  max-height: 94px;
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
-
-.contentContainer .auctionDetails .pricing {
-  border-right: 1px solid #e6e6e6;
-  margin-right: 48px;
-  padding-right: 48px;
-
-  @media (min-width: 1440px) {
-    margin-right: 58px;
-    padding-right: 58px;
-  }
-
-  & > span {
-    font-size: 15px;
-    font-family: NotoSans;
-    font-weight: 700;
+  & .heroHeading {
+    font-size: 36px;
+    font-weight: normal;
+    font-family: SongMyung;
     color: rgb(0, 0, 0);
-    line-height: 1;
-  }
-}
+    line-height: 0.7;
+    margin: 34px 0 25px;
 
-.contentContainer .auctionDetails .timeLeft {
-  & > span {
-    font-size: 15px;
-    font-family: NotoSans;
-    font-weight: 700;
-    color: rgb(0, 0, 0);
-    line-height: 1;
+    @media (--viewportSmall) {
+      font-size: 60px;
+      margin: 34px 0 50px;
+    }
   }
-  & .time {
+
+  & .author {
     display: flex;
     width: 100%;
+    align-items: center;
+    & > div {
+      background: #fff;
+      margin-right: 23px;
+    }
+    & .gradText {
+      margin: 0 !important;
+      font-size: 24px;
+    }
+  }
 
-    & h3 {
-      display: flex;
-      flex-direction: column;
-      margin: 0 24px 0 0;
-      & .small {
-        margin-top: 12px;
+  @media (--viewportSmall) {
+    height: 370px;
+    & .auctionDetails {
+      max-height: 94px;
+      grid-gap: unset;
+      flex-direction: row;
+
+      & .pricing {
+      border-right: 1px solid #e6e6e6;
       }
     }
+  }
+
+  @media (--viewportMedium) {
+    max-width: 490px;
+  }
+  @media (--viewportLarge) {
+    max-width: 648px;
   }
 }
 
 .cta {
   margin: 34px 0 0;
-  width: 450px;
+  width: auto;
   display: flex;
+
+  flex-wrap: wrap-reverse;
+  grid-gap: 20px;
+
   & button {
     height: 60px;
     margin-right: 20px;
     width: 100%;
   }
 
-  @media (--viewportLarge) {
+  @media (--viewportSmall) {
     width: 100%;
-
+    flex-wrap: nowrap;
+    grid-gap: 0;
+  }
+  @media (--viewportLarge) {
     & button {
       height: 60px;
       margin-right: 28px;

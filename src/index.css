@@ -106,12 +106,14 @@ p {
 }
 
 .container {
+  width: 100%;
+  margin: 22px 0px 130px;
+  padding: 30px 20px 0;
+
+  @media (--viewportMedium) {
   width: 95%;
-  height: 100%;
-  margin: 22px auto 130px;
-  
-  @media (--viewportMedium) { 
-     margin: 44px auto 130px;
+    margin: 44px auto 130px;
+    padding: 0;
   }
   @media (--viewportLarge) {
     margin: 88px auto 130px;

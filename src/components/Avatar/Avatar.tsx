@@ -4,7 +4,7 @@ import styles from './avatar.module.css';
 
 interface IAvatarProps {
     src?: string,
-    children: React.ReactNode,
+    children?: React.ReactNode,
     width?: string,
 }
 
