@@ -1,8 +1,14 @@
 .hamburger-container {
-    z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  margin: 35px 20px 0;
+  position: relative;
+  height: 56px;
+
   & a {
     margin-left: 46px;
-
     font-family: NotoSans;
     font-size: 16px;
     font-weight: 700;
@@ -25,12 +31,28 @@
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
-  width: 0;
-  height: 0;
-  right: 70px;
-  top: 30px;
+  right: 0;
+  top: 0;
   z-index: 1101 !important;
+  position: absolute;
+
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  will-change: transform;
+  border-radius: 999px;
+  border: 1px solid #e6e6e6;
+
+  & #react-burger-menu-btn {
+    width: 0 !important;
+    height: 0 !important;
+  }
+  & .hamburger-react {
+  }
 }
 
 /* Color/shape of burger icon bars */
@@ -67,7 +89,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #fafafa;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -80,7 +102,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 0;
 }
 
 /* Individual item */
@@ -91,4 +113,39 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.linksContainer {
+  margin: 0;
+  padding: 3.5em 0 56px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  & .linklist {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    & > a {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      font-family: NotoSans;
+      color: rgb(0, 0, 0);
+      line-height: 1;
+      margin: 0 0 18px;
+    }
+  }
+
+  & .connectWalletContainer {
+    width: 100%;
+
+    & button {
+      width: 100% !important;
+      height: 60px;
+    }
+  }
 }

@@ -27,14 +27,12 @@ interface ILoadingState {
   isActive: boolean;
 }
 
-const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
-  dark,
-  forcedOpen,
-}) => {
-  const {
-    state,
-    appDispatch,
-  } = useContext(GlobalContext);
+const ConnectWallet: React.FC<{
+  dark: boolean;
+  forcedOpen?: boolean;
+  btnType?: BtnType;
+}> = ({ dark, btnType, forcedOpen }) => {
+  const { state, appDispatch } = useContext(GlobalContext);
   // const [isOpen, setIsOpen] = useState<boolean>(false);
   const [signContract, setSignContract] = useState(false);
   const [loading, setLoading] = useState<ILoadingState[]>([
@@ -67,8 +65,8 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
       payload: {
         ...state,
         showModal: !state.showModal,
-      }
-    })
+      },
+    });
   };
 
   const handleConnect = (key: Wallet) => {
@@ -77,24 +75,23 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
     setLoading(tmp);
 
     setTimeout(() => {
-    
       setSignContract(true);
       setTimeout(() => {
-         appDispatch({
-           type: ActionTypes.SIGNIN,
-           payload: {
-             user: {
-               username: "Taimoor khan",
-               walletAddress: "0x42f3...aaa5",
-               walletAmount: "0.328 BBR",
-               artistData: artist,
-               listings,
-               bids,
-             },
-             isLoggedIn: true,
-             showModal: false,
-           },
-         });
+        appDispatch({
+          type: ActionTypes.SIGNIN,
+          payload: {
+            user: {
+              username: "Taimoor khan",
+              walletAddress: "0x42f3...aaa5",
+              walletAmount: "0.328 BBR",
+              artistData: artist,
+              listings,
+              bids,
+            },
+            isLoggedIn: true,
+            showModal: false,
+          },
+        });
         tmp[key].isActive = !tmp[key].isActive;
         history.push(state.redirectPath);
         setLoading(tmp);
@@ -103,7 +100,8 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
   };
 
   return (
-    <div className={state.isLoggedIn ? styles.container : styles.connectWalletBtn}>
+    <div
+      className={state.isLoggedIn ? styles.container : styles.connectWalletBtn}>
       {state.isLoggedIn ? (
         <div className={styles.userProfiler}>
           <MyAuctions count={state.user.bids.length} dark={dark} />
@@ -111,7 +109,7 @@ const ConnectWallet: React.FC<{ dark: boolean; forcedOpen?: boolean }> = ({
         </div>
       ) : (
         <Button
-          btnType={BtnType.SECONDARY}
+          btnType={btnType !== undefined ? btnType : BtnType.SECONDARY}
           children={"월렛 연결하기"}
           width="196px"
           fontSize="16px"

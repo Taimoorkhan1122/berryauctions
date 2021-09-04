@@ -25,13 +25,15 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
     : true;
 
   useEffect(() => {
-    windowWidth.width <= 768 ? setShowHamburger(true) : setShowHamburger(false);
+    windowWidth.width < 1024 ? setShowHamburger(true) : setShowHamburger(false);
   }, [windowWidth.width]);
-
+  console.log(windowWidth.width);
+  
   return (
     <main id="outerContainer" className={styles.container}>
       {showHamburger ? (
         <HamburgerMenu
+        links={links}
           dark={isDark}
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}

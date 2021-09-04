@@ -132,9 +132,11 @@ function App() {
                 <About />
               </Route>
 
+              {/* terms and conditions */}
               <Route path="/개인정보보호정책">
                 <Terms />
               </Route>
+
               <Route path="/이용약관">
                 <Terms />
               </Route>

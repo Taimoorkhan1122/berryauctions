@@ -9,7 +9,7 @@ export enum BtnType {
 }
 interface IBtnProps {
   disabled?: boolean;
-  btnType: BtnType;
+  btnType?: BtnType;
   children: React.ReactNode;
   width?: string;
   fontSize?: string;
