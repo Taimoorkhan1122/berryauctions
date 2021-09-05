@@ -34,7 +34,7 @@ const HamburgerMenu: React.FC<{
 
   return (
     <div className="hamburger-container">
-      {dark ? <LogoDark /> : <LogoWhite />}
+      {isOpen ? <LogoDark /> :  dark ? <LogoDark /> : <LogoWhite />}
       <div className="hamburgerProfileContainer">
         {state.isLoggedIn && <ProfileBtn user={state.user} />}
         <Menu
@@ -44,7 +44,7 @@ const HamburgerMenu: React.FC<{
           onClose={() => setOpen(false)}
           customBurgerIcon={
             <Hamburger
-              color={dark ? "#000" : "#fff"}
+              // color={dark ? "#000" : "#fff"}
               size={24}
               toggled={isOpen}
               toggle={setOpen}

@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .container {
   display: flex;
   width: 100%;
@@ -5,6 +13,10 @@
   max-width: 840px;
   margin: 10px auto auto;
   gap: 5%;
+
+  & button {
+    height: 60px !important;
+  }
 
   & h3 {
     font-family: SongMyung;
@@ -26,6 +38,14 @@
   }
 
   & .cardContainer {
+    display: block;
+    margin: 0;
+    width: 335px;
+    flex: 1;
+    @media (max-width: 850px) {
+      display: none;
+      flex: 0;
+    }
     & > div {
       width: 335px;
       margin: 0;
@@ -55,12 +75,17 @@
         line-height: 1;
       }
       & > span {
-        font-size: 15px;
-        font-family: NotoSans;
-        font-weight: 700;
-        color: rgb(0, 0, 0);
         line-height: 1;
+        font-size: 22px;
+        font-weight: 400;
+        font-family: SongMyung;
+        color: rgb(0, 0, 0);
+        line-height: 1.091;
+
         &:first-of-type {
+          font-size: 15px;
+          font-family: NotoSans;
+          font-weight: 700;
           margin: 0 0 13px;
         }
       }
@@ -91,27 +116,50 @@
           color: rgb(0, 0, 0);
           line-height: 0.571;
           min-width: 0;
-          max-width: 250px;
+          width: 100%;
+          max-width: auto;
+
           &:focus-visible {
             outline: none;
+          }
+
+          @media (--viewportMedium) {
+            max-width: 250px;
           }
         }
 
         & .dropdown {
           flex: 1;
-          padding: 5% 14px;
-          max-width: 200px;
+          padding: 10px 8px;
+          min-width: 120px;
           & button {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0;
+            width: 100%;
             & h3 {
               color: #fff;
               margin: 0 10px;
-              font-size: 34px;
+              font-size: 24px;
               font-family: SongMyung;
               font-weight: 400;
               line-height: 1.091;
+            }
+          }
+
+          @media (--viewportSmall) {
+            max-width: 140px;
+            padding: 10px 24px;
+          }
+          @media (--viewportMedium) {
+            padding: 5% 14px;
+            max-width: 160px;
+
+            & button {
+              & h3 {
+                font-size: 34px;
+              }
             }
           }
         }
@@ -129,7 +177,7 @@
       & .yourBalance {
         display: flex;
         justify-content: space-between;
-        padding: 5% 4%;
+        padding: 20px 4%;
         background: #e6e6e6;
         border-radius: 10px;
         margin: 0 0 35px;
@@ -151,6 +199,10 @@
           color: rgb(0, 0, 0);
           line-height: 1.091;
         }
+
+        @media (--viewportMedium) {
+          padding: 5% 4%;
+        }
       }
       & .info {
         font-size: 15px;
@@ -166,7 +218,7 @@
 
 .currencySlect {
   & > ul {
-    width: 100px;
+    width: 120px;
     border: none;
     border-radius: 10px;
     padding: 0;
@@ -183,7 +235,7 @@
     background: none;
 
     font-family: SongMyung;
-    font-size: 34px;
+    font-size: 24px;
     font-weight: 400;
 
     & > img {
@@ -192,6 +244,15 @@
 
     &:hover {
       background: #333 !important;
+    }
+  }
+  @media (--viewportMedium) {
+    & > ul {
+      width: 160px;
+    }
+
+    & .currencyItem {
+      font-size: 34px;
     }
   }
 }
@@ -294,4 +355,15 @@
     margin: 0 2px;
     color: #666666;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

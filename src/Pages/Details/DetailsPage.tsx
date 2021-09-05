@@ -39,7 +39,7 @@ interface IDetailsPageProps {
 
 const CurrencySelect = () => (
   <Menu
-    offsetX={-135}
+    offsetX={-80}
     offsetY={10}
     direction="top"
     className={styles.currencySlect}

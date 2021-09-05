@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .absContainer {
   position: absolute;
   width: 100%;
@@ -39,17 +47,27 @@
 
 .bottomContainer {
   padding: 5px 0 0;
-  display: flex;
-  gap: 28px;
   min-height: 70vh;
+  display: grid;
+  gap: 32px;
+
+  @media (min-width: 850px) {
+    grid-column-gap: 32px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-row-gap: 0px;
+  }
 }
 
 .asid {
-  flex-basis: 28%;
+  /* flex-basis: 28%; */
+  grid-area: unset;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
-  width: 335px;
+  width: 100%;
   & .addressContainer {
     display: flex;
     align-items: center;
@@ -103,16 +121,37 @@
   }
 
   & .artistDetails {
+    text-align: center;
     & .infoContainer {
-      margin: 3rem 0 50px;
-      & h3:first-of-type {
+      margin: 2rem 0;
+      & > div h3:first-of-type {
         font-size: 42px;
         font-family: NotoSans;
         font-weight: 700;
         color: rgb(0, 0, 0);
-        line-height: 0.976;
+        line-height: 1.2;
         margin: 0 0 20px;
+        
+        @media (max-width: 850px) {
+          text-align: center;
+          margin: 0 0 10px;
+          font-size: 36px;
+        }
       }
+
+      & .gradText {
+        font-size: 18px;
+        margin: 0;
+        
+        
+        @media (min-width: 768px) {
+          font-size: 24px;
+        }
+        @media (min-width: 1024px) {
+          font-size: 36px;
+        }
+      }
+
 
       & > div {
         display: flex;
@@ -120,28 +159,48 @@
         align-items: center;
       }
     }
+  }
 
-    & .aboutContainer {
-      & > h3 {
-        font-size: 20px;
-        font-family: NotoSans;
-        font-weight: 700;
-        color: rgb(0, 0, 0);
-        line-height: 2.049;
-        padding-bottom: 1.2rem;
-        margin-bottom: 1.2rem;
-        border-bottom: 1px solid #e6e6e6;
-      }
+  @media (min-width: 850px) {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 335px;
+    align-items: flex-start;
 
-      & .about {
-        font-size: 15px;
+    & .artistDetails {
+      text-align: left;
+      & .infoContainer {
+        margin: 3rem 0 50px;
       }
     }
   }
 }
 
+.aboutContainer {
+  grid-area: unset;
+  & > h3 {
+    font-size: 20px;
+    font-family: NotoSans;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 2.049;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  & .about {
+    font-size: 15px;
+  }
+
+  @media (min-width: 850px) {
+    grid-area: 2 / 1 / 5 / 2;
+  }
+}
+
 .listings {
-  flex-basis: 72%;
+  /* flex-basis: 72%; */
+
+  grid-area: unset;
 
   & > h3 {
     font-size: 22px;
@@ -152,6 +211,10 @@
     font-size: 22px;
     margin: 0 0 25px;
   }
+
+  @media (min-width: 850px) {
+    grid-area: 1 / 2 / 4 / 3;
+  }
 }
 
 .avatarContainer {
@@ -160,17 +223,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   background: #ffffff;
-  margin-top: -200px;
+  margin-top: -120px;
   position: absolute;
-}
 
-.avatarContainer img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  & img {
+    width: 100%;
+    height: 100%;
+    border: 10px solid #fff;
+    border-radius: 50%;
+  }
+
+  @media (min-width: 850px) {
+    width: 180px;
+    height: 180px;
+    margin-top: -200px;
+  }
 }
 
 .linksContainer {
@@ -181,7 +251,7 @@
   & .shareAlert {
     position: absolute;
   }
-  
+
   & .shareAlert > ul {
     border: none;
     border-radius: 50px;
@@ -244,8 +314,17 @@
 
 .work {
   & section > div {
-    @media (min-width: 1280px) {
-      width: 31.333%;
+    width: 100%;
+    margin: auto auto 1rem;
+
+    @media only screen and (max-width: 850px) and (min-width: 600px) {
+      & :global(.card_imgContainer__3AwCe) {
+        height: 60vh;
+      }
+    }
+
+    @media (min-width: 850px) {
+      width: 48%;
     }
   }
 }

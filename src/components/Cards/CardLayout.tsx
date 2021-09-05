@@ -19,13 +19,14 @@ const CardLayout: React.FC<ICardLayoutProps> = ({
   username,
   onClick, 
 }) => {
+  const shortHeading  = heading.length > 14 ? heading.slice(0,14) + "...": heading
   return (
     <div className={styles.container} onClick={onClick}>
       <div className={styles.imgContainer}>
         <img src={nftLink} alt="nft" loading="lazy" />
       </div>
       <div className={styles.bottomContainer}>
-        <span className={styles.heading}>{heading}</span>
+        <span className={styles.heading}>{shortHeading}</span>
 
         {/* Avatar container */}
         <div className={styles.avatarContainer}>
