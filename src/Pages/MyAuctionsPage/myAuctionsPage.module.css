@@ -1,3 +1,11 @@
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
+
 .section {
   margin: 0;
   min-height: 50vh;
@@ -9,9 +17,10 @@
   background: #fff;
   border-radius: 10px;
   border: 1px solid #f2f2f2;
-  padding: 40px;
-  gap: 40px;
+  padding: 20px;
+  gap: 30px;
   margin-bottom: 2rem;
+  flex-direction: column;
 
   & h3 {
     font-size: 36px;
@@ -24,7 +33,29 @@
 
   & > div:not(:first-child) {
     padding: 0;
-    height:221px;
+    height: 300px;
+  }
+
+  @media (--viewportSmall) {
+    & > div:not(:first-child) {
+      padding: 0;
+      height: 221px;
+    }
+  }
+  @media (--viewportMedium) {
+    flex-direction: row;
+    gap: 20px;
+    & h3 {
+      font-size: 24px;
+    }
+  }
+  @media (--viewportLarge) {
+    padding: 40px;
+    gap: 40px;
+
+    & h3 {
+      font-size: 36px;
+    }
   }
 }
 
@@ -46,13 +77,14 @@
 }
 
 .imgContainer {
+  width: 100%;
+  padding-top: calc(100% * 1);
   min-width: 280px;
-  height: 0;
-  padding-top: 280px;
   display: flex;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  margin: auto;
 
   & img {
     width: 100%;
@@ -63,13 +95,33 @@
     position: absolute;
     top: 0;
   }
+
+  @media (--viewportSmall) {
+    width: 400px;
+    padding-top: 400px;
+  }
+  @media (--viewportMedium) {
+    width: auto;
+    height: 0;
+    padding-top: 230px;
+  }
+  @media (--viewportLarge) {
+    padding-top: 280px;
+  }
 }
 
 .detailsContainer {
   width: 100%;
   position: relative;
-  margin-top: 35px;
+  margin: auto;
+
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-direction: column;
+
   &:after {
+    display: none;
     position: absolute;
     top: 50%;
     right: 0;
@@ -78,6 +130,9 @@
     height: 100%;
     width: 1px;
     background: #e6e6e6;
+    @media (--viewportMedium) {
+      display: block;
+    }
   }
   & .heading {
     font-size: 36px;
@@ -95,7 +150,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 30px  0;
+    margin: 20px 0;
   }
 
   & .avatarContainer img {
@@ -107,7 +162,6 @@
 
   & .avatarContainer span {
     padding-left: 12px;
-
     font-size: 15px;
     font-weight: 700;
     font-family: NotoSans;
@@ -118,14 +172,16 @@
   & .timeAndPricing {
     /* width: 100% */
     display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   & .pricing {
-    border-right: 1px solid #e6e6e6;
+    border-right: none;
     display: flex;
     flex-direction: column;
-    padding: 0 2rem 0 0;
-    margin: 0 2rem 0 0;
+    padding: 0;
+    margin: 0;
     & h3 {
       margin: 1rem 0;
       white-space: nowrap;
@@ -160,6 +216,35 @@
       }
     }
   }
+  @media (--viewportSmall) {
+    & .timeAndPricing {
+      flex-direction: row;
+
+      & .pricing {
+        border-right: 1px solid #e6e6e6;
+        padding: 0 2rem 0 0;
+        margin: 0 2rem 0 0;
+      }
+    }
+  }
+  @media (--viewportMedium) {
+    & .timeAndPricing {
+      
+      & .pricing {
+        padding: 0 1rem 0 0;
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+  @media (--viewportLarge) {
+    margin: unset;
+    margin-top: 35px;
+    display: block;
+
+    & .avatarContainer {
+      margin: 30px 0;
+    }
+  }
 }
 
 .timeRemaining {
@@ -169,7 +254,7 @@
   & h3 {
     display: flex;
     flex-direction: column;
-    margin: 15px 24px 0 0;
+    margin: 15px 12px 0 0;
     & .small {
       margin-top: 17px;
       font-size: 15px;
@@ -179,6 +264,12 @@
       line-height: 1;
     }
   }
+
+  @media (--viewportLarge) {
+    & h3 {
+      margin: 15px 24px 0 0;
+    }
+  }
 }
 
 .pricing {
@@ -186,7 +277,6 @@
   flex-direction: column;
   padding: 0 2rem 0 0;
   margin: 0 2rem 0 0;
-  height: 55%;
   justify-content: space-between;
   & h3 {
     margin: 26px 0;
@@ -199,7 +289,7 @@
     font-family: NotoSans;
     font-weight: 700;
     color: rgb(0, 0, 0);
-    line-height: 1.6;
+    line-height: 1;
   }
   & > .small {
     font-family: NotoSans;
@@ -211,14 +301,15 @@
 }
 
 .auctionStates {
-  margin-top: 35px;
+  margin: unset;
   padding: 32px 0;
-  min-width: 390px;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  height: 200px !important;
 
   & button {
     height: 60px;
@@ -240,6 +331,20 @@
 
   & > p {
     font-size: 15px;
+  }
+
+  @media (--viewportSmall) {
+    min-width: 390px;
+  }
+  @media (--viewportMedium) {
+    min-width: 280px;
+    margin: auto;
+    height: unset;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 35px;
+    min-width: 390px;
   }
 }
 
