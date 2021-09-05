@@ -17,15 +17,15 @@ const About = () => {
         {/* details container */}
         <div className={styles.details}>
           <div className={styles.aboutBerry}>
-            <h1>
-              About
+            <div className={styles.headingContainer}>
+              <h1>About</h1>
               <GradText
                 propStyles={{
                   fontSize: "82px",
                 }}>
                 BERRYAUCTIONS
               </GradText>
-            </h1>
+            </div>
             <p>
               베리옥션은 아티스트들이 기존의 작품들을 <br />
               완전히 새로운 방식의가치를 만들고 컬렉터들과 <br />
@@ -36,38 +36,46 @@ const About = () => {
           </div>
 
           <div className={styles.tokenEco}>
-            <h1>
-              Token
+            <div className={styles.headingContainer}>
+              <h1>Token</h1>
               <GradText parentClassName={styles.economy}>Economy</GradText>
-            </h1>
+            </div>
             <p>
               베리옥션은 BBR, ETH 두개의 코인으로 경매에 참여하실 수 있습니다.
               BBR은 입찰 및 즉시구매에 사용되며, ETH는 즉시구매에 사용됩니다.
             </p>
             {/* bit berry token */}
-            <div className={styles.bitberryToken}>
-              <div>
-                <img src={bbrLogo} alt="bit berry logo" />
+            <div className={styles.bottomFlexContainer}>
+              <div className={styles.bitberryToken}>
+                <div className={styles.tokeImgContainer}>
+                  <img src={bbrLogo} alt="bit berry logo" />
+                </div>
+                <div className={styles.aboutBbr}>
+                  <h3>BBR (Bit Berry Token)</h3>
+                  <p>
+                    BBR 컨트랙트 주소를 복사하여 귀하의 월렛에 BBR 코인을
+                    추가해주세요.
+                  </p>
+                  <Button
+                    width="186px"
+                    fontSize="15px"
+                    btnType={BtnType.PRIMARY}>
+                    컨트랙트 주소 복사
+                  </Button>
+                </div>
               </div>
-              <div className={styles.aboutBbr}>
-                <h3>BBR (Bit Berry Token)</h3>
+              <div className={styles.buttonContainer}>
                 <p>
-                  BBR 컨트랙트 주소를 복사하여 귀하의 월렛에 BBR 코인을
-                  추가해주세요.
+                  BBR코인은 비트베리파이낸스의 Defi 코인입니다. 현재 채굴이{" "}
+                  <br />
+                  종료되어, 비트베리스왑에서 타코인과의 교환을 통해 <br />
+                  구입하실 수 있습니다.
                 </p>
-                <Button width="186px" fontSize="15px" btnType={BtnType.PRIMARY}>
-                  컨트랙트 주소 복사
+                <Button width="282px" fontSize="15px" btnType={BtnType.PRIMARY}>
+                  비트베리스왑(BBR 교환) 바로가기
                 </Button>
               </div>
             </div>
-            <p>
-              BBR코인은 비트베리파이낸스의 Defi 코인입니다. 현재 채굴이 <br />
-              종료되어, 비트베리스왑에서 타코인과의 교환을 통해 <br />
-              구입하실 수 있습니다.
-            </p>
-            <Button width="45%" fontSize="15px" btnType={BtnType.PRIMARY}>
-              비트베리스왑(BBR 교환) 바로가기
-            </Button>
           </div>
         </div>
 
@@ -83,7 +91,7 @@ const About = () => {
       {/* bottom container */}
       <div className={styles.BottomContainer}>
         {/* image container */}
-        <div>
+        <div className={styles.whatIsNFT}>
           <img
             src={nftLogo1x}
             alt=""
@@ -91,9 +99,11 @@ const About = () => {
           />
         </div>
         <div className={styles.aboutNft}>
-          <h1>
-            WHAT IS <GradText parentClassName={styles.nft}>NFT</GradText>?
-          </h1>
+          <div className={styles.headingContainer}>
+            <h1>WHAT IS </h1>
+            <GradText parentClassName={styles.nft}>NFT</GradText>
+            <h1>?</h1>
+          </div>
           <p>
             <span>
               NFT는 대체 불가능한 토큰(Non-Fungible Token)'이라는 뜻으로 <br />
@@ -101,7 +111,8 @@ const About = () => {
             </span>
             <br />
             <span>
-              NFT는 블록체인 기술을 활용하지만, 기존의 가상자산과 달리 디지털 <br />
+              NFT는 블록체인 기술을 활용하지만, 기존의 가상자산과 달리 디지털{" "}
+              <br />
               자산에 별도의 고유한 인식 값을 부여하고 있어 <br />
               상호교환이 불가능하다는 특징이 있습니다.
             </span>

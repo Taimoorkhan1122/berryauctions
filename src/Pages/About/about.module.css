@@ -1,40 +1,78 @@
-.container {
-  
-  & h1 {
-    font-size: 82px;
-    margin: 0;
-    font-weight: 400;
-    font-family: SongMyung;
-    color: rgb(0, 0, 0);
-    line-height: 0.878;
-    text-transform: uppercase;
+@custom-media --viewportxSmall (min-width: 550px);
+@custom-media --viewportSmall (min-width: 768px);
+@custom-media --viewportMedium (min-width: 1024px);
+@custom-media --viewportLarge (min-width: 1152px);
+@custom-media --viewportXLarge (min-width: 1280px);
+@custom-media --viewportLargeWithPaddings (min-width: 1440px);
+@custom-media --viewportFHD (min-width: 1921px);
 
+.container {
+  & .headingContainer {
+    & h1 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 400;
+      font-family: SongMyung;
+      color: rgb(0, 0, 0);
+      line-height: 0.878;
+      text-transform: uppercase;
+    }
     & > h3 {
       margin: 0;
     }
+     & h3 {
+        font-size: 32px !important;
+      }
   }
 
   & p {
     font-size: 1.25em;
-    margin: 30px 0;
     font-weight: 600;
     font-family: NotoSans;
     color: rgb(0, 0, 0);
     line-height: 1.455;
+    max-width: 500px;
+    margin: 30px auto;
+  }
+
+  @media (--viewportSmall) {
+    & .headingContainer {
+      & > h1 {
+        font-size: 52px;
+      }
+      & h3 {
+        font-size: 52px !important;
+      }
+    }
+  }
+
+  @media (--viewportXLarge) {
+    & h1 {
+      font-size: 82px;
+    }
+    & p {
+      margin: 30px 0;
+    }
   }
 }
 
 .topContainer {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+
   gap: 34px;
+  flex-direction: column-reverse;
   & .details {
-    flex: 1;
-    padding-right: 4rem;
+    flex: 1 1;
+    padding-right: 0;
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
     & .aboutBerry {
-      padding-bottom: 10%;
+      padding-bottom: 5%;
     }
     & .tokenEco {
+      /* max-width: 700px; */
       & > h1 {
         text-transform: capitalize;
         line-height: 0.6;
@@ -42,19 +80,25 @@
       & .bitberryToken {
         display: flex;
         gap: 2rem;
-        margin: 6% 0;
+        margin: 0;
         align-items: center;
+        max-width: 100%;
+
+        & img {
+          max-width: 100%;
+        }
+
         & .aboutBbr {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
           & > h3 {
-            font-size: 42px;
+            font-size: 32px;
             font-family: SongMyung;
             font-weight: 400;
             color: rgb(0, 0, 0);
-            line-height: 0.762;
+            line-height: 1;
             margin: 0;
           }
           & > p {
@@ -64,6 +108,13 @@
             height: 40px;
             padding: 0;
           }
+        }
+      }
+
+      & .buttonContainer {
+        margin: 0;
+        & p {
+          margin-top: 0;
         }
       }
 
@@ -84,23 +135,75 @@
       border: 10px solid #fff;
     }
   }
+
+  @media (--viewportLarge) {
+    flex-direction: row;
+
+    & .details {
+      text-align: left;
+      width: auto;
+      padding-right: 4rem;
+      & .aboutBerry {
+        padding-bottom: 10%;
+      }
+      & .tokenEco {
+        & .bitberryToken {
+          margin: 6% 0;
+
+          & img {
+            max-width: unset;
+          }
+
+          & .aboutBbr {
+            & h3 {
+              font-size: 42px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (--viewportXLarge) {
+    align-items: flex-start;
+  }
 }
 
 .BottomContainer {
-  margin: 40px 0 100px;
+  margin: 50px 0 0px;
   display: flex;
   align-items: center;
-  gap: 34px;
-  padding-right: 2%;
+  justify-content: center;
+  text-align: center;
+  grid-gap: 34px;
+  gap: 24px;
+  padding-right: 0;
+  flex-wrap: wrap;
+
+  & .whatIsNFT {
+    & img {
+      max-width: 100%;
+    }
+  }
 
   & .aboutNft {
-    & > h1 {
+    & .headingContainer {
       display: flex;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      & > h1 {
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+      }
       & > h3 {
+        font-size: 28px;
         margin-left: 1rem;
       }
     }
+
     & > p {
       display: flex;
       flex-direction: column;
@@ -108,6 +211,41 @@
         margin: 0 0 1%;
       }
     }
+  }
+
+  @media (--viewportSmall) {
+    & .aboutNft {
+      & .headingContainer {
+        & > h1 {
+          font-size: 52px;
+        }
+        & h3 {
+          font-size: 52px;
+        }
+      }
+    }
+  }
+  @media (--viewportLarge) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    text-align: left;
+    & .aboutNft {
+      & .headingContainer {
+        justify-content: flex-start;
+
+        & > h1 {
+          font-size: 82px;
+        }
+        & h3 {
+          font-size: 82px !important;
+        }
+      }
+    }
+    margin: 40px 0 100px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding-right: 2%;
   }
 }
 
@@ -129,4 +267,30 @@
 
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
+}
+
+.bottomFlexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  text-align: left;
+
+  & > div {
+    flex: 1;
+    height: 200px;
+  }
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+    align-items: center;
+  gap: 20px;
+
+  }
+  @media (--viewportLarge) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
 }
