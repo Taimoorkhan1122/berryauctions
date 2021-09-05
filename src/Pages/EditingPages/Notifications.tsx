@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import { emailPattern } from "./EditProfile";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Button, { BtnType } from "../../components/Button/Button";
+import classNames from "classnames";
 
 type Inputs = {
   email: string;
@@ -34,7 +35,7 @@ const Notifications = () => {
   return (
     <PageLayout heading="이메일 알림 설정" className={styles.notification}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputContainer}>
+        <div className={classNames(styles.emailContainer, styles.inputContainer)}>
           <label htmlFor="email">이메일 주소</label>
           <input
             placeholder="이메일 주소"
