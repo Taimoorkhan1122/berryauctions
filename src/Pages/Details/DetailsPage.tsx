@@ -72,6 +72,10 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
     (bid) => bid.isWinner && Object.keys(bid.walletAddress)
   );
 
+  const handleLink = () => {
+    window.open("https://www.facebook.com", "_blank")?.focus();
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -141,12 +145,9 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                 <div>
                   <img src={etherscan} alt="etherscan icon" />
                   <span>이더스캔 보기</span>
+                  
                 </div>
-                <img
-                  className={styles.linkIcon}
-                  src={linkIcon}
-                  alt="bid link"
-                />
+                <div onClick={handleLink} className={styles.copyBtn}></div>
               </div>
 
               <div className={styles.link}>
@@ -154,11 +155,8 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <img src={ipfs} alt="etherscan icon" />
                   <span>IPFS 보기</span>
                 </div>
-                <img
-                  className={styles.linkIcon}
-                  src={linkIcon}
-                  alt="bid link"
-                />
+              <div  onClick={handleLink}  className={styles.copyBtn}></div>
+                
               </div>
 
               <div className={styles.link}>
@@ -166,11 +164,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <img src={ipfsMeta} alt="etherscan icon" />
                   <span>IPFS 메타데이터 보기</span>
                 </div>
-                <img
-                  className={styles.linkIcon}
-                  src={linkIcon}
-                  alt="bid link"
-                />
+               <div onClick={handleLink} className={styles.copyBtn}></div>
               </div>
             </div>
           </div>

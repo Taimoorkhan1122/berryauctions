@@ -21,7 +21,8 @@ const useProfile = () => {
       Works = state.user.listings?.map((item, index) => {
         if (item.owner === state.user.username) {
           listings++;
-          return <MajorWorkCard key={index + "_01"} data={item} />;
+          // return <MajorWorkCard key={index + "_01"} data={item} />;
+          return null;
         }
         return null;
       });

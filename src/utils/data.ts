@@ -10,6 +10,8 @@ import artist1 from "../images/content_images/박기웅_배경화면.jpg";
 import artist2 from "../images/content_images/오승환_배경화면.jpg";
 import artist3 from "../images/content_images/하지원_배경화면.jpg";
 
+import defaultAvatar from "../images/defaultAvatar.png";
+
 export type AuctionData = {
   id: string;
   heading: string;
@@ -344,6 +346,7 @@ export interface IArtistData {
   about: string;
   totalWork: number;
   walletAddress: string;
+  links?: string[];
 }
 
 export const artistData: IArtistData[] = [
@@ -353,6 +356,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "박기웅",
     profession: "Arttrainer",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 15,
@@ -360,12 +365,11 @@ export const artistData: IArtistData[] = [
   },
   {
     imgLink: artist2,
-    avatar:
-      "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
+    avatar: defaultAvatar,
     username: "Taimoor khan",
     profession: "Sport Star",
-    about:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, exercitationem? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, exercitationem?",
+    links: [],
+    about: "",
     totalWork: 5,
     walletAddress: " 0x42f3...aaa5",
   },
@@ -375,6 +379,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "오승환",
     profession: "Arttrainer",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
@@ -386,6 +392,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Ilyas Afridi",
     profession: "Arttrainer",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
@@ -398,6 +406,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Umair khan",
     profession: "Sport Star",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 5,
@@ -409,6 +419,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Nawaz",
     profession: "Sport Star",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 5,
@@ -420,6 +432,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "some other guy",
     profession: "Arttrainer",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,
@@ -431,6 +445,8 @@ export const artistData: IArtistData[] = [
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Robert Junior",
     profession: "Arttrainer",
+    links: ["hello"],
+
     about:
       "다양한 팔색조 매력을 가지고 있어서 선역·악역, 청순 하고 귀여운 캐릭터·강렬하고 섹시한 캐릭터, 현대극· 사극, 비극·코미디, 멜로·액션 등 어떤 장르의 어떤 캐 릭터에도 다 잘 어울리는, 스펙트럼이 무척 넓은 스...",
     totalWork: 25,

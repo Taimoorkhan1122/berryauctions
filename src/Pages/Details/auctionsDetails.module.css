@@ -132,6 +132,11 @@ h4.light {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s;
+
+    &:hover {
+      border: 1px solid #000;
+    }
   }
 
   & .shareAlert > ul {
@@ -234,6 +239,18 @@ h4.light {
       flex: 1;
       flex-basis: 45%;
     }
+  }
+}
+
+.copyBtn {
+  cursor: pointer;
+  background-image: url("../../images/link.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s;
+  &:hover {
+    background-image: url("../../images/linkDark.png");
   }
 }
 
@@ -372,6 +389,15 @@ p.description {
     border-radius: 10px;
     margin-bottom: 10px;
     border: 1px solid #f2f2f2;
+    & > div {
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      & > div {
+        transform: translate3d(5px, 0px, 0px);
+      }
+    }
 
     & .linkIcon {
       cursor: pointer;
@@ -758,6 +784,7 @@ p.description {
       position: absolute;
       right: 15px;
       bottom: 15px;
+      margin-left: 22px;
     }
 
     @media (--viewportSmall) {

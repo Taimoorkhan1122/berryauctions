@@ -63,7 +63,7 @@ const ProfilePage = () => {
   // const [instaState, setInstaState] = useState<MenuState>("closed")
 
   const history = useHistory();
-  const {width} = useWindowSize();
+  const { width } = useWindowSize();
 
   const imgStyles = {
     backgroundRepeat: "no-repeat",
@@ -72,7 +72,11 @@ const ProfilePage = () => {
     backgroundSize: "cover",
     width: "100%",
     paddingBottom: width > 850 ? 280 : 180,
-    backgroundImage: `url(${coverImage})`,
+    backgroundImage: `url()`,
+  };
+
+  const handleLink = () => {
+    window.open("https://www.facebook.com", "_blank")?.focus();
   };
 
   return (
@@ -96,17 +100,21 @@ const ProfilePage = () => {
         <div className={styles.asid}>
           {/* avatar container */}
           <div className={styles.avatarContainer}>
+            {/* if user had updated data */}
+            {/* <img src={user.artistData?.avatar} alt="user avatar" /> */}
+
+            {/* default avatar */}
             <img src={user.artistData?.avatar} alt="user avatar" />
           </div>
           <div className={styles.addressContainer}>
-            <Button width="90px" btnType={BtnType.PRIMARY}>
-              월렛주소
-            </Button>
+            {/* <Button width="90px" btnType={BtnType.PRIMARY}> */}
+            <span className={styles.btnName}>월렛주소</span>
+            {/* </Button> */}
             <span>{user.artistData?.walletAddress}</span>
             {/* copy address button */}
             <div
               ref={ref}
-              className={styles.copyBtn}
+              className={styles.copyAddress}
               onClick={() => {
                 toggleMenu(true);
                 setTimeout(() => {
@@ -155,7 +163,7 @@ const ProfilePage = () => {
             <SectionLayout
               legendEnglish="auction in progress"
               legendKorean="진행중인 경매"
-              children={Works}
+              children={[Works]}
               hideLegend
             />
           </div>
@@ -163,138 +171,67 @@ const ProfilePage = () => {
         {/* about container start */}
         <div className={styles.aboutContainer}>
           <h3>아티스트 소개</h3>
-
+         
           {user.artistData ? (
             <>
               <p className={styles.about}>
-                {user.artistData?.about
+                {user.artistData?.about.length !== 0
                   ? user.artistData?.about
                   : "소개말이 없습니다."}
               </p>
+              {!(user.artistData.links?.length === 0) && (
+                <div className={styles.linksContainer}>
+                  {/* social media links */}
 
-              <div className={styles.linksContainer}>
-                {/* social media links */}
-
-                <div className={styles.link}>
-                  <div>
-                    <img
-                      className={styles.linkIcon}
-                      src={instagram}
-                      alt="instgram icon"
-                    />
-                    <span>Instagram</span>
+                  <div className={styles.link}>
+                    <div>
+                      <img
+                        className={styles.linkIcon}
+                        src={instagram}
+                        alt="instgram icon"
+                      />
+                      <span>Instagram</span>
+                    </div>
+                    <div onClick={handleLink} className={styles.copyBtn}></div>
                   </div>
-                  <div
-                    ref={instaRef}
-                    onClick={() => {
-                      setInstaState("open");
-                      setTimeout(() => {
-                        setInstaState("closed");
-                      }, 3000);
-                    }}
-                    className={styles.copyBtn}></div>
-                  <ControlledMenu
-                    unmountOnClose={true}
-                    anchorRef={instaRef}
-                    state={instaState}
-                    offsetX={-24}
-                    offsetY={20}
-                    direction="top"
-                    className={styles.shareAlert}>
-                    <MenuItem>링크 복사됨</MenuItem>
-                  </ControlledMenu>
-                </div>
 
-                <div className={styles.link}>
-                  <div>
-                    <img
-                      className={styles.linkIcon}
-                      src={facebook}
-                      alt="instgram icon"
-                    />
-                    <span>Facebook</span>
+                  <div className={styles.link}>
+                    <div>
+                      <img
+                        className={styles.linkIcon}
+                        src={facebook}
+                        alt="instgram icon"
+                      />
+                      <span>Facebook</span>
+                    </div>
+                    <div onClick={handleLink} className={styles.copyBtn}></div>
                   </div>
-                  <div
-                    ref={fbRef}
-                    onClick={() => {
-                      setfbState("open");
-                      setTimeout(() => {
-                        setfbState("closed");
-                      }, 3000);
-                    }}
-                    className={styles.copyBtn}></div>
-                  <ControlledMenu
-                    unmountOnClose
-                    anchorRef={fbRef}
-                    state={fbState}
-                    offsetX={-24}
-                    offsetY={20}
-                    direction="top"
-                    className={styles.shareAlert}>
-                    <MenuItem>링크 복사됨</MenuItem>
-                  </ControlledMenu>
-                </div>
 
-                <div className={styles.link}>
-                  <div>
-                    <img
-                      className={styles.linkIcon}
-                      src={twitter}
-                      alt="instgram icon"
-                    />
-                    <span>Twitter</span>
+                  <div className={styles.link}>
+                    <div>
+                      <img
+                        className={styles.linkIcon}
+                        src={twitter}
+                        alt="instgram icon"
+                      />
+                      <span>Twitter</span>
+                    </div>
+                    <div onClick={handleLink} className={styles.copyBtn}></div>
                   </div>
-                  <div
-                    ref={twitterRef}
-                    onClick={() => {
-                      settwitterState("open");
-                      setTimeout(() => {
-                        settwitterState("closed");
-                      }, 3000);
-                    }}
-                    className={styles.copyBtn}></div>
-                  <ControlledMenu
-                    unmountOnClose
-                    anchorRef={twitterRef}
-                    state={twitterState}
-                    offsetX={-24}
-                    offsetY={20}
-                    direction="top"
-                    className={styles.shareAlert}>
-                    <MenuItem>링크 복사됨</MenuItem>
-                  </ControlledMenu>
-                </div>
 
-                <div className={styles.link}>
-                  <div>
-                    <img
-                      className={styles.linkIcon}
-                      src={vlive}
-                      alt="instgram icon"
-                    />
-                    <span>Vlive</span>
+                  <div className={styles.link}>
+                    <div>
+                      <img
+                        className={styles.linkIcon}
+                        src={vlive}
+                        alt="instgram icon"
+                      />
+                      <span>Vlive</span>
+                    </div>
+                    <div onClick={handleLink} className={styles.copyBtn}></div>
                   </div>
-                  <div
-                    ref={vLiveRef}
-                    onClick={() => {
-                      setvLiveState("open");
-                      setTimeout(() => {
-                        setvLiveState("closed");
-                      }, 3000);
-                    }}
-                    className={styles.copyBtn}></div>
-                  <ControlledMenu
-                    unmountOnClose
-                    anchorRef={vLiveRef}
-                    state={vliveState}
-                    offsetX={-24}
-                    offsetY={20}
-                    direction="top"
-                    className={styles.shareAlert}>
-                    <MenuItem>링크 복사됨</MenuItem>
-                  </ControlledMenu>
                 </div>
-              </div>
+              )}
             </>
           ) : (
             <p className={styles.about}>소개말이 없습니다.</p>

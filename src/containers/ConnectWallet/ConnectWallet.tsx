@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Button, { BtnType } from "../../components/Button/Button";
 import Modal from "../Modal/Modal";
@@ -123,7 +123,7 @@ const ConnectWallet: React.FC<{
             <Modal isOpen={true} handleClick={handleClick}>
               <div className={styles.modal}>
                 <div className={styles.close} onClick={handleClick}>
-                  <img src={close} alt="modal close button" />
+                  {/* <img src={close} alt="modal close button" /> */}
                 </div>
 
                 {signContract ? (
@@ -140,7 +140,13 @@ const ConnectWallet: React.FC<{
                   // Wallet container
                   <div className={styles.walletContainer}>
                     <div className={styles.details}>
-                      <h3>월렛을 연결하기 위해서 서명해 주세요.</h3>
+                      <h3>월렛 연결하기</h3>
+                      <p>
+                        월렛을 연결함으로써 귀하는 당사의 <br />
+                        <Link to="/이용약관">이용약관</Link> 및
+                        <Link to="/개인정보보호정책">개인정보</Link> 보호정책에
+                        동의합니다.
+                      </p>
                     </div>
                     {/* buttons container */}
                     <div className={styles.walletOptions}>

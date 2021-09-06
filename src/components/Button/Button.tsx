@@ -46,10 +46,12 @@ const Button: React.FC<IBtnProps> = ({
       form={form}
       type={type}
       className={classname}
-      style={{ width: width, fontSize }}
+      style={{ width: width, fontSize, verticalAlign: "middle" }}
       onClick={onClick}
       disabled={disabled}>
+      <span className={styles.arrow}>
       {children}
+      </span>
     </button>
   );
 };
