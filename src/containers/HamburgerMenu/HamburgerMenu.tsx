@@ -52,6 +52,7 @@ const HamburgerMenu: React.FC<{
             />
           }
           right
+          noTransition
           isOpen={isOpen}
           noOverlay={true}>
           <div className={"linksContainer"}>

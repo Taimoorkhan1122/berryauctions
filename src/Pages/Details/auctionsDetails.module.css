@@ -55,7 +55,7 @@ h4.light {
   }
 
   & .aspectContainer {
-    height: 400px;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -73,12 +73,12 @@ h4.light {
       background: #fff;
       padding: 10px;
       max-width: 100%;
-      max-height: 400px;
+      max-height: 100%;
       object-fit: contain;
     }
   }
 
-  @media (--viewportxSmall) {
+  @media (--viewportSmall) {
     margin-bottom: 36px;
     min-height: unset;
     & .aspectContainer {
@@ -383,7 +383,7 @@ p.description {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+    max-width: 100%;
     background: #fff;
     padding: 15px 18px;
     border-radius: 10px;
@@ -421,6 +421,11 @@ p.description {
         color: rgb(0, 0, 0);
         line-height: 1.6;
       }
+    }
+
+    @media (--viewportSmall) {
+    max-width: 400px;
+      
     }
   }
 }

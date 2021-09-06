@@ -322,9 +322,16 @@
     margin-bottom: 10px;
     border: 1px solid #f2f2f2;
 
+    &:hover {
+      & > div {
+        padding:  0 0 0 5px;
+      }
+    }
+
     & > div {
       display: flex;
       align-items: center;
+      transition: all 0.5s;
 
       & .linkIcon {
         margin-right: 18px;
