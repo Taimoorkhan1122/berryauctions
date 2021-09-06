@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "../../components/Avatar/Avatar";
 import Button, { BtnType } from "../../components/Button/Button";
-import GradText from "../../components/GradText/GradText";
+import GradText, { TextType } from "../../components/GradText/GradText";
 
 import styles from "./heroContainer.module.css";
 import heroImage from "../../images/content_images/park_03.jpg";
@@ -17,7 +17,11 @@ const HeroContainer = () => {
       <div className={styles.contentContainer}>
         <div className={styles.author}>
           <Avatar children={"Taimoor khan"} />{" "}
-          <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
+          <GradText
+            textType={TextType.ARTTRAINER}
+            parentClassName={styles.gradText}>
+            Arttrainer
+          </GradText>
         </div>
         <h2 className={styles.heroHeading}>The other side</h2>
         {/* auction details start */}

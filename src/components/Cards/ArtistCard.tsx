@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { useHistory } from "react-router";
 import Button, { BtnType } from "../Button/Button";
-import GradText from "../GradText/GradText";
+import GradText, { TextType } from "../GradText/GradText";
 
 import styles from "./card.module.css";
 
@@ -25,6 +25,9 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
 }) => {
   const history = useHistory();
   const route = `아티스트/${username}`;
+  const type = profession.split(" ").filter(t => t).join('').toUpperCase();
+  console.log(type, TextType[type as keyof typeof TextType]);
+  
 
   return (
     <div className={styles.container} onClick={() => history.push(route)}>
@@ -39,7 +42,9 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
         </div>
         <div className={styles.infoContainer}>
           <h3>{username}</h3>
-          <GradText>{profession}</GradText>
+          <GradText textType={TextType[type as keyof typeof TextType]}>
+            {profession}
+          </GradText>
         </div>
         <p className={styles.about}>{about}</p>
       </div>

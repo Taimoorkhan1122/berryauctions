@@ -2,25 +2,33 @@
   font-family: SongMyung !important;
   font-weight: 400 !important;
   /* font-size: 24px !important; */
-  background: #a46ffe;
-  background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
+
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1 !important;
+  line-height: 1.2 !important;
 }
 
-/* 
 .artTrainer {
-  background: #a46ffe;
-  background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-color: #9c6bff;
+  background-image: linear-gradient(90deg, #9c6bff 8%, #ed68bb 45%);
 }
-
 .sportsStar {
-  background: #a46ffe;
-  background: linear-gradient(120deg, #a46ffe 10%, #ef69c3 50%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1 !important;
-} */
+  background-color: #ff6b83;
+  background-image: linear-gradient(90deg, #ff6b83 0%, #eddb68 100%);
+}
+.artist {
+  background-color: #6ac6ff;
+  background-image: linear-gradient(90deg, #6ac6ff 0%, #a167ed 74%);
+}
+.celebrity {
+  background-color: #e36bff;
+  background-image: linear-gradient(90deg, #e36bff 0%, #ed687a 100%);
+}
+.gameItem {
+  background-color: #52d78f;
+  background-image: linear-gradient(90deg, #52d78f 0%, #518bc8 52%);
+}
+.collector {
+  background-color: #54f2d4;
+  background-image: linear-gradient(90deg, #54f2d4 0%, #4258e0 55%);
+}

@@ -6,7 +6,7 @@ import "react-image-lightbox/style.css";
 
 import Avatar from "../../components/Avatar/Avatar";
 import Button, { BtnType } from "../../components/Button/Button";
-import GradText from "../../components/GradText/GradText";
+import GradText, { TextType } from "../../components/GradText/GradText";
 import ProfileBtn from "../../components/ProfileBtn/ProfileBtn";
 import { GlobalContext } from "../../Context/GlobalProvider";
 
@@ -98,7 +98,11 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
         <div className={styles.authorInfo}>
           <div className={styles.author}>
             <Avatar width="136px" children={data.username} />{" "}
-            <GradText parentClassName={styles.gradText}>Arttrainer</GradText>
+            <GradText
+              textType={TextType.ARTTRAINER}
+              parentClassName={styles.gradText}>
+              Arttrainer
+            </GradText>
           </div>
           <button
             className={styles.shareLinkButton}
@@ -145,7 +149,6 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                 <div>
                   <img src={etherscan} alt="etherscan icon" />
                   <span>이더스캔 보기</span>
-                  
                 </div>
                 <div onClick={handleLink} className={styles.copyBtn}></div>
               </div>
@@ -155,8 +158,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <img src={ipfs} alt="etherscan icon" />
                   <span>IPFS 보기</span>
                 </div>
-              <div  onClick={handleLink}  className={styles.copyBtn}></div>
-                
+                <div onClick={handleLink} className={styles.copyBtn}></div>
               </div>
 
               <div className={styles.link}>
@@ -164,7 +166,7 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
                   <img src={ipfsMeta} alt="etherscan icon" />
                   <span>IPFS 메타데이터 보기</span>
                 </div>
-               <div onClick={handleLink} className={styles.copyBtn}></div>
+                <div onClick={handleLink} className={styles.copyBtn}></div>
               </div>
             </div>
           </div>
@@ -287,7 +289,9 @@ const DetailsPage: React.FC<IDetailsPageProps> = ({ pageData }) => {
               </div>
               <div className={styles.infoContainer}>
                 <h3>{artistData[0].username}</h3>
-                <GradText parentClassName={styles.gradText}>
+                <GradText
+                  textType={TextType.ARTTRAINER}
+                  parentClassName={styles.gradText}>
                   {artistData[0].profession}
                 </GradText>
               </div>

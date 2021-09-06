@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import styles from "./profile.module.css";
 import Button, { BtnType } from "../../components/Button/Button";
-import GradText from "../../components/GradText/GradText";
+import GradText, { TextType } from "../../components/GradText/GradText";
 import SectionLayout from "../Home/SectionLayout";
 import useProfile from "./useProfile";
 
@@ -148,7 +148,9 @@ const ProfilePage = () => {
                   </Button>
                 )}
               </div>
-              <GradText parentClassName={styles.gradText}>
+              <GradText
+                textType={TextType.ARTTRAINER}
+                parentClassName={styles.gradText}>
                 {user.artistData?.profession}
               </GradText>
             </div>
@@ -171,7 +173,7 @@ const ProfilePage = () => {
         {/* about container start */}
         <div className={styles.aboutContainer}>
           <h3>아티스트 소개</h3>
-         
+
           {user.artistData ? (
             <>
               <p className={styles.about}>

@@ -2,7 +2,7 @@ import React from "react";
 
 import Button, { BtnType } from "../../components/Button/Button";
 import styles from "./about.module.css";
-import GradText from "../../components/GradText/GradText";
+import GradText, { TextType } from "../../components/GradText/GradText";
 
 import bbrLogo from "../../images/about/BBR-logo.png";
 import nftLogo1x from "../../images/about/nftLogo@1x.png";
@@ -20,6 +20,7 @@ const About = () => {
             <div className={styles.headingContainer}>
               <h1>About</h1>
               <GradText
+                textType={TextType.ARTTRAINER}
                 propStyles={{
                   fontSize: "82px",
                 }}>
@@ -38,7 +39,11 @@ const About = () => {
           <div className={styles.tokenEco}>
             <div className={styles.headingContainer}>
               <h1>Token</h1>
-              <GradText parentClassName={styles.economy}>Economy</GradText>
+              <GradText
+                textType={TextType.ARTTRAINER}
+                parentClassName={styles.economy}>
+                Economy
+              </GradText>
             </div>
             <p>
               베리옥션은 BBR, ETH 두개의 코인으로 경매에 참여하실 수 있습니다.
@@ -101,7 +106,11 @@ const About = () => {
         <div className={styles.aboutNft}>
           <div className={styles.headingContainer}>
             <h1>WHAT IS </h1>
-            <GradText parentClassName={styles.nft}>NFT</GradText>
+            <GradText
+              textType={TextType.ARTTRAINER}
+              parentClassName={styles.nft}>
+              NFT
+            </GradText>
             <h1>?</h1>
           </div>
           <p>

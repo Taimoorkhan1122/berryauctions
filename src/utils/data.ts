@@ -355,7 +355,7 @@ export const artistData: IArtistData[] = [
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "박기웅",
-    profession: "Arttrainer",
+    profession: "Artist",
     links: ["hello"],
 
     about:
@@ -391,7 +391,7 @@ export const artistData: IArtistData[] = [
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Ilyas Afridi",
-    profession: "Arttrainer",
+    profession: "GameItem",
     links: ["hello"],
 
     about:
@@ -431,7 +431,7 @@ export const artistData: IArtistData[] = [
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "some other guy",
-    profession: "Arttrainer",
+    profession: "Celebrity",
     links: ["hello"],
 
     about:
@@ -444,7 +444,7 @@ export const artistData: IArtistData[] = [
     avatar:
       "https://fiverr-res.cloudinary.com/image/upload/t_profile_thumb,q_auto,f_auto/v1/attachments/profile/photo/2c7ea5a3fefaecf1c80831e2a8b315b8-1541763397614/919d4883-a517-42d4-9cbe-cfac66389679.jpeg",
     username: "Robert Junior",
-    profession: "Arttrainer",
+    profession: "Collector",
     links: ["hello"],
 
     about:
