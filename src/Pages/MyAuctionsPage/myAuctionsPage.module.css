@@ -24,13 +24,13 @@
   position: relative;
 
   & .mobileBorder {
-      width: 100%;
-      height: 1px !important;
-      background: #e6e6e6;
-      margin: 20px 0;
-    
+    width: 100%;
+    height: 1px !important;
+    background: #e6e6e6;
+    margin: 20px 0;
+
     @media (--viewportSmall) {
-        display: none;
+      display: none;
     }
   }
 
@@ -241,7 +241,6 @@
   }
   @media (--viewportMedium) {
     & .timeAndPricing {
-      
       & .pricing {
         padding: 0 1rem 0 0;
         margin: 0 1rem 0 0;
@@ -382,7 +381,7 @@
   justify-content: center;
   align-items: center;
   & h3 {
-    font-size: 36px;
+    font-size: 22px;
     font-family: NotoSans;
     font-weight: 700;
     color: rgb(0, 0, 0);
@@ -398,5 +397,11 @@
     color: rgb(102, 102, 102);
     line-height: 1.6;
     margin: 1.5em 0 2.5em;
+  }
+
+  @media (--viewportSmall) {
+    & h3 {
+      font-size: 36px;
+    }
   }
 }

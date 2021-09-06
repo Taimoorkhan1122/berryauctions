@@ -43,6 +43,7 @@ const InstantBuyPage: React.FC<IInstantBuyPageProps> = ({ data, user, handleClci
       data.currentBid,
       currentValue
     );
+  console.log("is Disable button  ---->", isDisabled);
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
       console.log("submiting form", data);
@@ -93,7 +94,7 @@ const InstantBuyPage: React.FC<IInstantBuyPageProps> = ({ data, user, handleClci
                   )}
                   name="currency"
                   control={control}
-                  defaultValue="" 
+                  defaultValue=""
                 />
               </span>
             </form>
@@ -112,7 +113,7 @@ const InstantBuyPage: React.FC<IInstantBuyPageProps> = ({ data, user, handleClci
         disabled={isDisabled}
         width="100%"
         btnType={BtnType.PRIMARY}>
-        즉시구매하기
+        {message}
       </Button>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../Context/GlobalProvider';
 
+import defaultAvatar from "../../images/defaultAvatar.png";
 import styles from './avatar.module.css';
 
 interface IAvatarProps {
@@ -12,10 +13,8 @@ interface IAvatarProps {
 const Avatar: React.FC<IAvatarProps> = ({children, width=""}) => {
     const {state:{user}} = useContext(GlobalContext);
     return (
-      <div
-        className={styles.container}
-        style={{ width: width && width }}>
-        <img src={user.artistData?.avatar} alt="user avatar" />
+      <div className={styles.container} style={{ width: width && width }}>
+        <img src={user.artistData?.avatar || defaultAvatar} alt="user avatar" />
         <span>{children}</span>
       </div>
     );

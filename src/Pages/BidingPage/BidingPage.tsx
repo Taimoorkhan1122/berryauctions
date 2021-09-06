@@ -45,7 +45,7 @@ const BidingPage: React.FC<IBidingPageProps> = ({
     user.walletAmount,
     data.currentBid,
     currentValue
-  );
+  );  
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log("submiting form", data);

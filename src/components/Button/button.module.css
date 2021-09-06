@@ -8,6 +8,18 @@
   min-width: 60px;
   font-size: 16px;
   transition: all 0.5s;
+
+  &:disabled {
+    background: #e6e6e6 !important;
+    padding-right:0 !important;
+    & > span {
+      color: #000 !important;
+      &:after {
+        display: none;
+
+      }
+    }
+  }
 }
 
 .PRIMARY {
@@ -17,10 +29,8 @@
     color: #fff !important;
   }
 
-
   &:hover {
     padding-right: 25px;
-
   }
 
   &:hover span:after {
@@ -71,5 +81,10 @@
 
   & .arrow:after {
     display: none;
+  }
+
+  &:hover {
+  border: 2px solid #000;
+   
   }
 }

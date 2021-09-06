@@ -205,7 +205,14 @@
         line-height: 1.6;
 
         &:focus-visible {
-          outline: #cacaca auto;
+          outline: none;
+          box-shadow: 0 0 0 2px #000;
+          border-radius: 10px;
+        }
+
+        &::placeholder{
+          color: #666;
+          font-weight: 700;
         }
       }
     }
@@ -257,16 +264,19 @@
         border: 1px solid #e6e6e6;
 
         font-size: 15px;
-        color: #666666;
+        color: #000;
         font-family: NotoSans;
         font-weight: 700;
         line-height: 1.6;
 
         &:focus-visible {
-          outline: #cacaca auto;
+          outline: none;
+          box-shadow: 0 0 0 2px #000;
+          border-radius: 10px;
         }
         &::placeholder {
-          color: #adadad;
+          color: #666;
+          font-weight: 700;
         }
       }
 
@@ -282,12 +292,19 @@
         border: 1px solid #e6e6e6;
 
         font-size: 15px;
-        color: #666666;
+        color: #000;
         font-family: NotoSans;
         line-height: 1.6;
 
         &:focus-visible {
-          outline: #cacaca auto;
+          outline: none;
+          box-shadow: 0 0 0 2px #000;
+          border-radius: 10px;
+        }
+
+        &::placeholder {
+          color: #666;
+          font-weight: 700;
         }
       }
 
@@ -317,12 +334,17 @@
           display: flex;
           justify-content: start;
           align-items: center;
-          gap: 12px;
-          padding: 0 30px;
 
-          & > .icon {
-            width: 26px;
-            object-fit: none;
+          & > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            gap: 12px;
+            & > .icon {
+              width: 26px;
+              object-fit: none;
+            }
           }
         }
       }

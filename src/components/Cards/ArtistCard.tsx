@@ -34,7 +34,11 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
       <div className={classNames(styles.imgContainer, styles.artistImg)}>
         <img src={imgLink} alt="nft" />
       </div>
-      <div className={styles.bottomContainer}>
+      <div
+        className={classNames(
+          styles.bottomContainer,
+          styles.artistInfoContainer
+        )}>
         {/* Avatar container */}
         <div
           className={classNames(styles.avatarContainer, styles.artistAvatar)}>
@@ -48,7 +52,8 @@ const ArtistCard: React.FC<IArtistCardProps> = ({
         </div>
         <p className={styles.about}>{about}</p>
       </div>
-      <div className={classNames(styles.detailsContainer)}>
+      <div
+        className={classNames(styles.detailsContainer, styles.artistContainer)}>
         <div>
           <span className={styles.totalWorks} style={{ color: "#000" }}>
             {totalWork}
