@@ -35,8 +35,5 @@
 }
 
 .logoName {
-    display: none;
-    @media (--viewportSmall) {
-        display: inline;
-    }
+    display: inline;
 }

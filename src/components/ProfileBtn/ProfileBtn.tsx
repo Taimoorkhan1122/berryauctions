@@ -33,7 +33,9 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
       offsetY={20}>
       <MenuItem onClick={() => history.push("/프로필")}>
         {" "}
-        <Avatar width={"196px"}>내 프로필 보기</Avatar>
+        <div className={styles.avatarContainer}>
+          <Avatar width={"196px"}>내 프로필 보기</Avatar>
+        </div>
         <img src={arrow} alt="arrow" />
       </MenuItem>
       <MenuItem onClick={() => history.push("/이메일 알림 설정")}>

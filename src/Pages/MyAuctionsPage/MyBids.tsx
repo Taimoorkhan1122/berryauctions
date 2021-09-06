@@ -77,6 +77,7 @@ const MyBids: React.FC<IMyBidsProps> = ({ data, user }) => {
           </div>
         </div>
       </div>
+      <div className={styles.mobileBorder}></div>
       <div className={styles.auctionStates}>
         {isWinner ? (
           <>

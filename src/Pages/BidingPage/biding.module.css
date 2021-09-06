@@ -153,7 +153,7 @@
             padding: 10px 24px;
           }
           @media (--viewportMedium) {
-            padding: 5% 14px;
+            padding: 10px 14px;
             max-width: 160px;
 
             & button {

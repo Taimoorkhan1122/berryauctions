@@ -5,8 +5,10 @@ import GradText, { TextType } from "../../components/GradText/GradText";
 
 import styles from "./heroContainer.module.css";
 import heroImage from "../../images/content_images/park_03.jpg";
+import useWindowSize from "../../utils/useWindowSize";
 
 const HeroContainer = () => {
+  const {width}  = useWindowSize();
   return (
     <div className={styles.headerContainer}>
       <div className={styles.imageContainer}>
@@ -56,12 +58,12 @@ const HeroContainer = () => {
         {/* auction details end */}
         <div className={styles.cta}>
           <Button
-            width="285px"
+            width={width > 766 ? "285px" : "100%"}
             btnType={BtnType.PRIMARY}
             children="경매 참여하기"
           />
           <Button
-            width="224px"
+            width={width > 766 ? "224px" : "100%"}
             btnType={BtnType.SECONDARY}
             children="작품보기"
           />

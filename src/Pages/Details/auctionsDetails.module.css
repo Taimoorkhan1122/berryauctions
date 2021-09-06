@@ -41,7 +41,7 @@ h4.light {
   position: relative;
 
   margin-bottom: 18px;
-  min-height: 66vh;
+  min-height: 46vh;
 
   & .expand {
     cursor: pointer;
@@ -78,15 +78,15 @@ h4.light {
     }
   }
 
-  @media (--viewportSmall) {
+  @media (--viewportxSmall) {
     margin-bottom: 36px;
     min-height: unset;
     & .aspectContainer {
-      height: 500px;
-      width: 500px;
+      height: 550px;
+      width: 560px;
       & img {
-        max-height: 500px;
-        max-width: 500px;
+        max-height: 550px;
+        max-width: 550px;
       }
     }
   }
@@ -853,16 +853,16 @@ p.description {
   padding-top: 2rem;
 
   & .about {
-    font-size: 22px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
     line-height: 1.546;
   }
 
   & .artistNameAvatar {
     display: flex;
+    width: 100%;
     align-items: center;
-    margin-right: 200px;
+    margin-right: 0;
 
     & .avatarContainer {
       border-radius: 50px;
@@ -871,7 +871,7 @@ p.description {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin: 8px 2rem 0 0;
+      margin: 0 2rem 0 0;
     }
 
     & .avatarContainer img {
@@ -882,8 +882,8 @@ p.description {
     }
 
     & .artistAvatar {
-      width: 120px;
-      height: 120px;
+      width: 90px;
+      height: 90px;
       background: #ffffff;
       display: flex;
       justify-content: center;
@@ -903,12 +903,36 @@ p.description {
       }
       & > h3:first-child {
         margin: 0;
-        font-size: 36px;
+        font-size: 26px;
         font-weight: 700;
         font-family: NotoSans;
         color: rgb(0, 0, 0);
         line-height: 1.091;
       }
+    }
+    @media (--viewportSmall) {
+      width: auto;
+      display: flex;
+      align-items: center;
+      margin-right: 200px;
+      & .avatarContainer {
+        margin: 8px 2rem 0 0;
+      }
+
+      & > h3:first-child {
+        font-size: 36px;
+      }
+
+      & .artistAvatar {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  @media (--viewportxSmall) {
+    & .about {
+      font-size: 22px;
     }
   }
 

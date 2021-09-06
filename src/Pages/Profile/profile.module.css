@@ -275,7 +275,7 @@
 
 .linksContainer {
   margin-top: 3rem;
-  width: 77%;
+  width: 100%;
   position: relative;
 
   & .shareAlert {
@@ -314,7 +314,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 260px;
+    width: 100%;
     height: 48px;
     background: #fff;
     padding: 0 18px;
@@ -340,6 +340,15 @@
       }
     }
   }
+  @media (--viewportSmall) {
+    width: 77%;
+
+  & .link {
+    width: 260px;
+
+  }
+
+  }
 }
 
 .work {
@@ -359,24 +368,22 @@
     @media (min-width: 980px) {
       & > div {
         width: 48%;
-      margin-right: 2.5%;
-
+        margin-right: 2.5%;
       }
       & :global(.card_container__1FRaf:nth-child(3n)) {
-          margin-right: 0;
-        }
+        margin-right: 0;
+      }
     }
     @media (min-width: 1150px) {
       & > div {
         width: 31.3333%;
       }
       & :global(.card_container__1FRaf:nth-child(3n + 1)) {
-          margin-right: 0;
-        }
+        margin-right: 0;
+      }
       & :global(.card_container__1FRaf:not(:nth-child(3n + 1))) {
-                margin-right: 2.5%;
-
-        }
+        margin-right: 2.5%;
+      }
     }
   }
 }

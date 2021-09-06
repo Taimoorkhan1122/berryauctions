@@ -25,6 +25,11 @@
   }
 }
 
+.avatarContainer {
+  width: 56px;
+  height: 56px;
+}
+
 :global(.szh-menu-button) {
   outline: none;
   background: none;
@@ -35,6 +40,9 @@
 :global(.szh-menu-button) {
   & > div {
     padding: 0 12px;
+    @media (max-width: 1024px) {
+      padding: 0 7px;
+    }
   }
 }
 :global(.szh-menu) {
@@ -81,11 +89,14 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 10px 0;
+      margin: 10px 0;
       width: auto;
       background: transparent;
       border: none;
       border-radius: 0;
+        & > div {
+          border: none;
+        }
     }
   }
   &:not(:first-child) {

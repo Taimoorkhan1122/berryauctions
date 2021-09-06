@@ -82,19 +82,19 @@
     }
   }
 
-  @media (--viewportMedium) {
+  @media (--viewportxSmall) {
     max-width: 660px;
     & .insideContainer {
-      height: 450px;
-      width: 450px;
+      height: 550px;
+      width: 550px;
       margin: auto;
 
       & img {
         border: 1px solid #e6e6e6;
         background: #fff;
         padding: 10px;
-        max-height: 450px;
-        max-width: 450px;
+        max-height: 550px;
+        max-width: 550px;
         object-fit: contain;
       }
     }
@@ -207,7 +207,7 @@
   }
 
   & .heroHeading {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: normal;
     font-family: SongMyung;
     color: rgb(0, 0, 0);
@@ -242,7 +242,7 @@
       flex-direction: row;
 
       & .pricing {
-      border-right: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
       }
     }
   }
@@ -265,14 +265,17 @@
 
   & button {
     height: 60px;
-    margin-right: 20px;
     width: 100%;
+    margin-right: 0;
   }
 
   @media (--viewportSmall) {
     width: 100%;
-    flex-wrap: nowrap;
     grid-gap: 0;
+    flex-wrap: nowrap;
+    & button {
+      margin-right: 20px;
+    }
   }
   @media (--viewportLarge) {
     & button {
