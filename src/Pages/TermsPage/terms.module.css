@@ -54,4 +54,8 @@
         font-weight: 700 !important;
         margin: 0;
     }
+
+    @media (max-width: 766px) {
+    margin: 8% 0 12%;
+    }
 }

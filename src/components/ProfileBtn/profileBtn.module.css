@@ -40,7 +40,7 @@
 :global(.szh-menu-button) {
   & > div {
     padding: 0 12px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1150px) {
       padding: 0 7px;
     }
   }
@@ -54,6 +54,18 @@
   box-shadow: none;
 }
 
+.myAuctions {
+    padding: 20px 26px !important;
+
+    & a {
+      margin-left: 12px;
+      color: #000 !important;
+    }
+
+    @media (--viewportMedium) {
+      display: none !important;
+    }
+  }
 :global(.szh-menu__item) {
   margin: 0;
   display: flex;
@@ -66,13 +78,14 @@
   color: rgb(0, 0, 0);
   line-height: 1.5;
 
-  & > div, & > span {
-  transition: all 300ms ease-in-out;
-
+  & > div,
+  & > span {
+    transition: all 300ms ease-in-out;
   }
-  
+
   &:hover {
-    & > div, & > span {
+    & > div,
+    & > span {
       transform: translate3d(5px, 0px, 0px);
       background: none;
     }
@@ -83,7 +96,6 @@
     border-bottom: 1px solid #e6e6e6;
     border-radius: 10px;
     background: #fff;
-    
 
     & > div {
       display: flex;
@@ -94,15 +106,17 @@
       background: transparent;
       border: none;
       border-radius: 0;
-        & > div {
-          border: none;
-        }
+      & > div {
+        border: none;
+        padding: 5px 0;
+      }
     }
   }
   &:not(:first-child) {
     border-bottom: 1px solid #f2f2f2;
     padding: 26px;
   }
+
   & > span {
     display: flex;
     align-items: center;
@@ -135,7 +149,6 @@
     display: inline;
   }
 }
-
 
 :global(.szh-menu__item--active) {
   background: none;

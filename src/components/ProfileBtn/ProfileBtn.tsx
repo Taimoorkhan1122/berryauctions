@@ -12,6 +12,7 @@ import arrow from "../../images/arrow.png";
 import emailNoti from "../../images/emailNoti.png";
 import endSession from "../../images/endSession.png";
 import useWindowSize from "../../utils/useWindowSize";
+import MyAuctions from "../MyAuctions/MyAuctions";
 
 const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
   const history = useHistory();
@@ -38,6 +39,15 @@ const ProfileBtn: React.FC<{ user: User }> = ({ user }) => {
         </div>
         <img src={arrow} alt="arrow" />
       </MenuItem>
+
+      {/* my auctions button will only show on mobile screens */}
+      <MenuItem
+        onClick={() => history.push("/나의경매")}
+        className={styles.myAuctions}>
+        <MyAuctions count={user.bids.length} dark={true} />
+        <img src={arrow} alt="arrow" />
+      </MenuItem>
+
       <MenuItem onClick={() => history.push("/이메일 알림 설정")}>
         <span>
           <img src={emailNoti} alt="email settings" />

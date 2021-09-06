@@ -9,7 +9,7 @@ const MyAuctions: React.FC<{ count: number; dark: boolean }> = ({
   dark,
 }) => {
   return (
-    <div className={styles.container}>
+    <div  className={styles.container}>
       <span
         className={classNames(
           styles.auctionsCount,

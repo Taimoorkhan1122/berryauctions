@@ -130,7 +130,7 @@
 
         & .dropdown {
           flex: 1;
-          padding: 10px 8px;
+          padding: 7px 8px;
           min-width: 120px;
           & button {
             display: flex;
@@ -154,7 +154,7 @@
           }
           @media (--viewportMedium) {
             padding: 10px 14px;
-            max-width: 160px;
+            min-width: 160px;
 
             & button {
               & h3 {
@@ -244,6 +244,11 @@
 
     &:hover {
       background: #333 !important;
+    }
+  }
+  @media (--viewportMedium) {
+    & > ul {
+      width: 140px;
     }
   }
   @media (--viewportMedium) {
